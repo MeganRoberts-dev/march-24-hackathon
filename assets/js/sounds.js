@@ -48,7 +48,7 @@ var dropDownData = {
 
 const initialX = 20; // X position offset for the first player
 const initialY = 70; // Y position offset for the first player
-const playerSpacing = 75; // Vertical spacing between players
+const playerSpacing = 90; // Vertical spacing between players
 
 // ensure youtube api loaded before adding default player list
 function onYouTubeIframeAPIReady() {
@@ -91,6 +91,7 @@ function addPlayer(playerName, videoId) {
     // Create player container
     var container = document.createElement('div');
     container.classList.add('player-container');
+    container.classList.add('frosted-glass-effect');
     container.setAttribute('id', 'container-' + playerId); // Set an ID for the container
 
     // Add player name label
@@ -374,12 +375,6 @@ function makeDraggable(element) {
 }
 
 
-
-
-
-
-
-
 // Make all player containers draggable
 document.querySelectorAll('.player-container').forEach(makeDraggable);
 
@@ -401,5 +396,3 @@ function savePlayersData() {
     const playersDataString = JSON.stringify(simplifiedPlayersData);
     localStorage.setItem('playersData', playersDataString);
 }
-// Ensure this runs when the document is fully loaded
-document.addEventListener('DOMContentLoaded', loadPlayersData);
