@@ -44,7 +44,9 @@ var dropDownData = {
 };
 
 function onYouTubeIframeAPIReady() {
+    // console.log("API Ready, initializing players...");
     Object.entries(videoData).forEach(([playerName, videoId]) => {
+        // console.log(`Adding player: ${playerName}, Video ID: ${videoId}`);
         addPlayer(playerName, videoId);
     });
 }
@@ -61,6 +63,7 @@ function addPlayer(playerName, videoId) {
     // Add player name label
     var nameLabel = document.createElement('p');
     nameLabel.textContent = playerName;
+    nameLabel.classList.add("sound-name");
     container.appendChild(nameLabel);
 
     // add player div
@@ -206,6 +209,18 @@ document.getElementById('addPlayerBtn').addEventListener('click', function() {
 // Function to populate the dropdown
 function populateDropdown() {
     var dropdown = document.getElementById('videoDropdown');
+    
+    // Clear existing options
+    while (dropdown.firstChild) {
+        dropdown.removeChild(dropdown.firstChild);
+    }
+
+    // Add a default option
+    var defaultOption = document.createElement('option');
+    defaultOption.text = 'Click to Select';
+    dropdown.appendChild(defaultOption);
+
+    // Populate with new options
     Object.keys(dropDownData).forEach(function(key) {
         var option = document.createElement('option');
         option.text = key;
@@ -248,4 +263,4 @@ document.getElementById('addPlayerSubmit').addEventListener('click', function() 
 });
 
 
-onYouTubeIframeAPIReady(); // DEBUG ONLY - DELETE
+// onYouTubeIframeAPIReady(); // DEBUG ONLY - DELETE
