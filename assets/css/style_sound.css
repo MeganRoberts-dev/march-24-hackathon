@@ -1,0 +1,14 @@
+.player-container {
+    margin-bottom: 10px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+.volume-slider {
+    display: none;
+    width: 100px;
+    margin-left: 10px;
+}

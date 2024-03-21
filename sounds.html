@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Soundscape Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style_sound.css">
+    
+</head>
+    <body>
+        <!-- button to add a new sound player to the page-->
+        <button id="addPlayerBtn"><i class="fas fa-plus"></i> Add Player</button>
+        
+        <!-- sound player instances get added inside this div-->
+        <div id="playersContainer"></div>
+        
+
+            <!-- Add Player Modal -->
+            <div id="addPlayerModal" style="display:none">
+                <div style="background-color: white; margin: 100px auto; padding: 20px; width: 300px;">
+                    <div>
+                        <label for="playerName">Sound Name:</label>
+                        <input type="text" id="playerName" name="playerName">
+                    </div>
+                    <div>
+                        <label for="videoId">YT Video ID:</label>
+                        <input type="text" id="videoId" name="videoId">
+                    </div>
+                    <button id="addPlayerSubmit">Add Sound</button>
+                    <button id="cancelAddPlayer">Cancel</button>
+                </div>
+            </div>
+
+
+        <script src="assets/js/sounds.js"></script>        
+    </body>
+</html>
