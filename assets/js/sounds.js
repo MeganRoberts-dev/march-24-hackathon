@@ -50,30 +50,38 @@ const initialX = 20; // X position offset for the first player
 const initialY = 70; // Y position offset for the first player
 const playerSpacing = 75; // Vertical spacing between players
 
-// ensure youtube api loaded before adding deffault player list
+// ensure youtube api loaded before adding default player list
 function onYouTubeIframeAPIReady() {
+    let playersToPosition = []; 
     const storedPlayersData = localStorage.getItem('playersData');
     if (storedPlayersData) {
         const loadedPlayers = JSON.parse(storedPlayersData);
         Object.values(loadedPlayers).forEach((player, index) => {
             addPlayer(player.name, player.videoId);
-            // Apply saved position
-            const container = document.getElementById('container-player' + (index + 1));
-            if (player.position && player.position.top && player.position.left) {
-                container.style.top = player.position.top;
-                container.style.left = player.position.left;
-            } else {
-                // Position players in a column by default with initialX, initialY, and playerSpacing
-                container.style.top = `${initialY + (index * playerSpacing)}px`; // Adjust Y position and spacing
-                container.style.left = `${initialX}px`; // Adjust X position
-            }
+            // Prepare for positioning
+            playersToPosition.push({ position: player.position, index });
         });
     } else {
-           // build list of players from default list
-        Object.entries(videoData).forEach(([playerName, videoId]) => {
+        // build list of players from default list
+        Object.entries(videoData).forEach(([playerName, videoId], index) => {
             addPlayer(playerName, videoId);
+            // Default players
+            playersToPosition.push({ index });
         });
     }
+
+    // Position players
+    playersToPosition.forEach(({ position, index }) => {
+        const container = document.getElementById('container-player' + (index + 1));
+        if (position && position.top && position.left) {
+            container.style.top = position.top;
+            container.style.left = position.left;
+        } else {
+            // Position players in a column by default with initialX, initialY, and playerSpacing
+            container.style.top = `${initialY + (index * playerSpacing)}px`;
+            container.style.left = `${initialX}px`; 
+        }
+    });
 }
 // main function to add a sound player to the page
 function addPlayer(playerName, videoId) {
@@ -206,7 +214,7 @@ document.addEventListener('input', function(event) {
 
 // user clicks play or pause sound from specific player
 function togglePlayPause(playerId) {
-    var player = players[playerId].player; // Access the YT.Player instance
+    var player = players[playerId].player;
     var state = player.getPlayerState();
     var button = document.querySelector(`button[data-player="${playerId}"]`);
     if (state === YT.PlayerState.PLAYING || state === YT.PlayerState.BUFFERING) {
