@@ -11,9 +11,29 @@
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
+    position: absolute;
+    cursor: grab;
+}
 
-    position: absolute; /* Allow absolute positioning */
-    cursor: grab; /* Visual cue for draggable items */
+.playButton {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: inherit;
+}
+
+.volumeButton {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: inherit;
+}
+
+.deleteButton {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: inherit;
 }
 
 .controls {
@@ -56,4 +76,25 @@ body {
     padding: 5px; 
     border-radius: 10px;
     border: none;
+}
+
+/* Custom Volume Slider Controls */
+.volume-slider {
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }

@@ -130,7 +130,9 @@ function addPlayer(playerName, videoId) {
 
         var deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('deleteButton');
         deleteButton.setAttribute('data-player', playerId); // Associate button with specific player
+        deleteButton.innerHTML = '<i class="fas fa-times-circle"></i>';
         deleteButton.style.display = 'none';
         deleteButton.onclick = function() {
             // Remove player container from DOM
