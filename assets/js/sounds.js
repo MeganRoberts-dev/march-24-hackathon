@@ -46,26 +46,35 @@ var dropDownData = {
     'Sleep Hypnosis': 'Sh-YrLYC7p8',
 };
 
+const initialX = 20; // X position offset for the first player
+const initialY = 70; // Y position offset for the first player
+const playerSpacing = 75; // Vertical spacing between players
+
 // ensure youtube api loaded before adding deffault player list
 function onYouTubeIframeAPIReady() {
     const storedPlayersData = localStorage.getItem('playersData');
-    // check for local storage and load if present
     if (storedPlayersData) {
         const loadedPlayers = JSON.parse(storedPlayersData);
-
-        // Correctly extract and use the name and videoId
-        Object.values(loadedPlayers).forEach((player) => {
-            console.log(`Adding player: ${player.name} with video ID ${player.videoId}`);
+        Object.values(loadedPlayers).forEach((player, index) => {
             addPlayer(player.name, player.videoId);
+            // Apply saved position
+            const container = document.getElementById('container-player' + (index + 1));
+            if (player.position && player.position.top && player.position.left) {
+                container.style.top = player.position.top;
+                container.style.left = player.position.left;
+            } else {
+                // Position players in a column by default with initialX, initialY, and playerSpacing
+                container.style.top = `${initialY + (index * playerSpacing)}px`; // Adjust Y position and spacing
+                container.style.left = `${initialX}px`; // Adjust X position
+            }
         });
     } else {
-        // build list of players from default list
+           // build list of players from default list
         Object.entries(videoData).forEach(([playerName, videoId]) => {
             addPlayer(playerName, videoId);
         });
     }
 }
-
 // main function to add a sound player to the page
 function addPlayer(playerName, videoId) {
     var playerCount = Object.keys(players).length + 1;
@@ -134,6 +143,9 @@ function addPlayer(playerName, videoId) {
 
     // add player to playersContainer div
     document.getElementById('playersContainer').appendChild(container);
+
+    // add drag and drop functionality to player
+    makeDraggable(container);
 
     // Store player name and videoId in the players object
     players[playerId] = { name: playerName, videoId: videoId, player: createPlayer(playerId, videoId) };
@@ -310,6 +322,58 @@ document.getElementById('muteAllBtn').addEventListener('click', function() {
         }
     });
 });
+
+
+function makeDraggable(element) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+    element.onmousedown = dragMouseDown;
+
+    function dragMouseDown(e) {
+        // dont drag when adjusting volume
+        if (e.target.closest('.volume-slider')) {
+            //  control -> don't drag
+            e.stopPropagation();
+        } else {
+            // Prepare to drag the whole container
+            e.preventDefault();
+            // Get the mouse cursor position
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // Call function when cursor moves:
+            document.onmousemove = elementDrag;
+        }
+    }
+
+    function elementDrag(e) {
+        e.preventDefault(); 
+        // Calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // Set the element's new position:
+        element.style.top = (element.offsetTop - pos2) + "px";
+        element.style.left = (element.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+        // Stop drag when mouse button released:
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+}
+
+
+
+
+
+
+
+
+// Make all player containers draggable
+document.querySelectorAll('.player-container').forEach(makeDraggable);
 
 // save current players to local machine for later retreival
 function savePlayersData() {
