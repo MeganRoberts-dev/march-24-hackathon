@@ -46,26 +46,35 @@ var dropDownData = {
     'Sleep Hypnosis': 'Sh-YrLYC7p8',
 };
 
+const initialX = 20; // X position offset for the first player
+const initialY = 70; // Y position offset for the first player
+const playerSpacing = 75; // Vertical spacing between players
+
 // ensure youtube api loaded before adding deffault player list
 function onYouTubeIframeAPIReady() {
     const storedPlayersData = localStorage.getItem('playersData');
-    // check for local storage and load if present
     if (storedPlayersData) {
         const loadedPlayers = JSON.parse(storedPlayersData);
-
-        // Correctly extract and use the name and videoId
-        Object.values(loadedPlayers).forEach((player) => {
-            console.log(`Adding player: ${player.name} with video ID ${player.videoId}`);
+        Object.values(loadedPlayers).forEach((player, index) => {
             addPlayer(player.name, player.videoId);
+            // Apply saved position
+            const container = document.getElementById('container-player' + (index + 1));
+            if (player.position && player.position.top && player.position.left) {
+                container.style.top = player.position.top;
+                container.style.left = player.position.left;
+            } else {
+                // Position players in a column by default with initialX, initialY, and playerSpacing
+                container.style.top = `${initialY + (index * playerSpacing)}px`; // Adjust Y position and spacing
+                container.style.left = `${initialX}px`; // Adjust X position
+            }
         });
     } else {
-        // build list of players from default list
+           // build list of players from default list
         Object.entries(videoData).forEach(([playerName, videoId]) => {
             addPlayer(playerName, videoId);
         });
     }
 }
-
 // main function to add a sound player to the page
 function addPlayer(playerName, videoId) {
     var playerCount = Object.keys(players).length + 1;
