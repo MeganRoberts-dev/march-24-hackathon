@@ -206,6 +206,18 @@ document.getElementById('addPlayerBtn').addEventListener('click', function() {
 // Function to populate the dropdown
 function populateDropdown() {
     var dropdown = document.getElementById('videoDropdown');
+    
+    // Clear existing options
+    while (dropdown.firstChild) {
+        dropdown.removeChild(dropdown.firstChild);
+    }
+
+    // Add a default option
+    var defaultOption = document.createElement('option');
+    defaultOption.text = 'Click to Select';
+    dropdown.appendChild(defaultOption);
+
+    // Populate with new options
     Object.keys(dropDownData).forEach(function(key) {
         var option = document.createElement('option');
         option.text = key;
