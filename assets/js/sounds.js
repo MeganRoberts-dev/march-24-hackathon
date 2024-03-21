@@ -11,43 +11,45 @@ var videoData = {
     'Lake Waters': 'zdGs4pvgR9M',
 };
 
+var isMuted = false;
+
 // optional sounds provided as dropdown
 var dropDownData = {
     'Music Lofi': 'Ah7i5EFVDqA',
     'Music Alpha Waves': 'WPni755-Krg',
-    'Soft Piano Music': 'cHKHv3ZHTkM',
-    'Soft Jazz Music': '13jhFFYCWVU',
+    'Piano Music': 'cHKHv3ZHTkM',
+    'Smooth Jazz': '13jhFFYCWVU',
     'Uplifting Playlist': 'CpNBODqTA34',
     'Yoga ': 'G7WnJ1qBwCA',
     'Yoga 2 ': 'FTqrQsSIKR0',
     'Rain': 'J4d-a7dVtiQ',
-    'Snow Fall With Windy Trees': 'vz91QpgUjFc',
+    'Thunderstorm': 'mPZkdNFkNps',
+    'Winter Storm': 'sGkh1W5cbH4',
+    'Snow Fall Forrest': 'vz91QpgUjFc',
     'Birds': 'bKmmcKWMDfM',
     'Fireplace': '3_gdxb7AyGo',
     'Brown Noise': 'RqzGzwTY-6w',
-    'Winter Storm Winds': 'sGkh1W5cbH4',
+    'Ceiling Fan': 'Xkx6Y0nYAYw',
+    'Aircraft Cabin': 'co7KgV2edvI',
+    'Train Ride': 'pqfQhPM8reU',
+    'Coffee House': 'FTWd28r472c',
     'Traffic': 'fh3EdeGNKus',
-    'Thunderstorm': 'mPZkdNFkNps',
     'Cat Purring': 'SR5L2BSYNuE',
     'Lake Waters': 'zdGs4pvgR9M',
+    'Soft Brook': 'IvjMgVS6kng',
     'Wind Chimes': 'T_wKO6XdEh8',
     'Night Ambience': 'g1w3IT5WnYw',
-    'Night Lake Frogs And Insects': 'ih4_1FyVjaY',
+    'Night Lake': 'ih4_1FyVjaY',
     'Forrest': 'xNN7iTA57jM',
-    'Keyboard Typing AMSR': '-2RiNR2fqRY',
-    'Soft Brook': 'IvjMgVS6kng',
-    'Coffee House': 'FTWd28r472c',
-    'Train Ride': 'pqfQhPM8reU',
-    'Aircraft Cabin': 'co7KgV2edvI',
-    'Bedtime Story - Adults': 'V4fBgXgxjjg',
-    'Guided Sleep Hypnosis': 'Sh-YrLYC7p8',
-    'Ceiling Fan': 'Xkx6Y0nYAYw',
+    'Keyboard AMSR': '-2RiNR2fqRY',
+    'Bedtime Story': 'V4fBgXgxjjg',
+    'Sleep Hypnosis': 'Sh-YrLYC7p8',
 };
 
 // ensure youtube api loaded before adding deffault player list
 function onYouTubeIframeAPIReady() {
     const storedPlayersData = localStorage.getItem('playersData');
-
+    // check for local storage and load if present
     if (storedPlayersData) {
         const loadedPlayers = JSON.parse(storedPlayersData);
 
@@ -57,7 +59,7 @@ function onYouTubeIframeAPIReady() {
             addPlayer(player.name, player.videoId);
         });
     } else {
-        console.log("No players found in localStorage, using default data.");
+        // build list of players from default list
         Object.entries(videoData).forEach(([playerName, videoId]) => {
             addPlayer(playerName, videoId);
         });
@@ -277,6 +279,36 @@ document.getElementById('addPlayerSubmit').addEventListener('click', function() 
     } else {
         alert('Please fill in both fields.');
     }
+});
+// add overall controls for all sounds
+// stop all sound players
+document.getElementById('stopAllBtn').addEventListener('click', function() {
+    Object.values(players).forEach(player => {
+        player.player.pauseVideo();
+    });
+});
+
+// mute active players and toggle back on if needed.
+document.getElementById('muteAllBtn').addEventListener('click', function() {
+    // toggel mute state for all players
+    isMuted = !isMuted;
+
+    // toggle the button 
+    this.innerHTML = isMuted ? '<i class="fas fa-volume-mute"></i>' : '<i class="fas fa-volume-up"></i>';
+
+    // Apply mute or unmute
+    Object.values(players).forEach(player => {
+        if (isMuted) {
+            player.player.mute();
+        } else {
+            player.player.unMute();
+            // delay volume restoration after unmuting
+            setTimeout(() => {
+                var overallVolume = document.getElementById('overallVolumeControl').value;
+                player.player.setVolume(overallVolume);
+            }, 100);
+        }
+    });
 });
 
 // save current players to local machine for later retreival
