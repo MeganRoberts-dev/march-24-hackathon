@@ -11,6 +11,9 @@
     max-width: 255px;
     margin-left: auto;
     margin-right: auto;
+
+    position: absolute; /* Allow absolute positioning */
+    cursor: grab; /* Visual cue for draggable items */
 }
 
 .controls {

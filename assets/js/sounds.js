@@ -135,6 +135,9 @@ function addPlayer(playerName, videoId) {
     // add player to playersContainer div
     document.getElementById('playersContainer').appendChild(container);
 
+    // add drag and drop functionality to player
+    makeDraggable(container);
+
     // Store player name and videoId in the players object
     players[playerId] = { name: playerName, videoId: videoId, player: createPlayer(playerId, videoId) };
 
@@ -310,6 +313,58 @@ document.getElementById('muteAllBtn').addEventListener('click', function() {
         }
     });
 });
+
+
+function makeDraggable(element) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+    element.onmousedown = dragMouseDown;
+
+    function dragMouseDown(e) {
+        // dont drag when adjusting volume
+        if (e.target.closest('.volume-slider')) {
+            //  control -> don't drag
+            e.stopPropagation();
+        } else {
+            // Prepare to drag the whole container
+            e.preventDefault();
+            // Get the mouse cursor position
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // Call function when cursor moves:
+            document.onmousemove = elementDrag;
+        }
+    }
+
+    function elementDrag(e) {
+        e.preventDefault(); 
+        // Calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // Set the element's new position:
+        element.style.top = (element.offsetTop - pos2) + "px";
+        element.style.left = (element.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+        // Stop drag when mouse button released:
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+}
+
+
+
+
+
+
+
+
+// Make all player containers draggable
+document.querySelectorAll('.player-container').forEach(makeDraggable);
 
 // save current players to local machine for later retreival
 function savePlayersData() {
