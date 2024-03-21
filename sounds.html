@@ -19,12 +19,18 @@
             <div id="addPlayerModal" style="display:none">
                 <div style="background-color: white; margin: 100px auto; padding: 20px; width: 300px;">
                     <div>
-                        <label for="playerName">Sound Name:</label>
-                        <input type="text" id="playerName" name="playerName">
+                        <label for="videoId">Select Preset Sound:</label>
+                        <select id="videoDropdown">
+                            <option value="">Select a Sound</option>
+                        </select>
                     </div>
                     <div>
-                        <label for="videoId">YT Video ID:</label>
+                        <label for="videoID">YouTubeID:</label>
                         <input type="text" id="videoId" name="videoId">
+                    </div>
+                    <div>
+                        <label for="playerName">Sound Name:</label>
+                        <input type="text" id="playerName" name="playerName">
                     </div>
                     <button id="addPlayerSubmit">Add Sound</button>
                     <button id="cancelAddPlayer">Cancel</button>

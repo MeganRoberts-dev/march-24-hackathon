@@ -1,35 +1,46 @@
 // default llist of suggested sounds for dropdown
 var players = {};
+// default sounds to initialize webpage
 var videoData = {
     'Music Lofi': 'Ah7i5EFVDqA',
-    // 'Music Alpha Waves': 'WPni755-Krg',
-    // 'Soft Piano Music': 'cHKHv3ZHTkM',
-    // 'Soft Jazz Music': '13jhFFYCWVU',
-    // 'Uplifting Playlist': 'CpNBODqTA34',
+    'Soft Piano Music': 'cHKHv3ZHTkM',
+    'Birds': 'bKmmcKWMDfM',
+    'Fireplace': '3_gdxb7AyGo',
+    'Cat Purring': 'SR5L2BSYNuE',
+    'Lake Waters': 'zdGs4pvgR9M',
+};
+
+// optional sounds provided as dropdown
+var dropDownData = {
+    'Music Lofi': 'Ah7i5EFVDqA',
+    'Music Alpha Waves': 'WPni755-Krg',
+    'Soft Piano Music': 'cHKHv3ZHTkM',
+    'Soft Jazz Music': '13jhFFYCWVU',
+    'Uplifting Playlist': 'CpNBODqTA34',
     'Yoga ': 'G7WnJ1qBwCA',
     'Yoga 2 ': 'FTqrQsSIKR0',
     'Rain': 'J4d-a7dVtiQ',
     'Snow Fall With Windy Trees': 'vz91QpgUjFc',
     'Birds': 'bKmmcKWMDfM',
-    // 'Fireplace': '3_gdxb7AyGo',
-    // 'Brown Noise': 'RqzGzwTY-6w',
-    // 'Winter Storm Winds': 'sGkh1W5cbH4',
-    // 'Traffic': 'fh3EdeGNKus',
-    // 'Thunderstorm': 'mPZkdNFkNps',
-    // 'Cat Purring': 'SR5L2BSYNuE',
-    // 'Lake Waters': 'zdGs4pvgR9M',
-    // 'Wind Chimes': 'T_wKO6XdEh8',
-    // 'Night Ambience': 'g1w3IT5WnYw',
-    // 'Night Lake Frogs And Insects': 'ih4_1FyVjaY',
-    // 'Forrest': 'xNN7iTA57jM',
-    // 'Keyboard Typing AMSR': '-2RiNR2fqRY',
-    // 'Soft Brook': 'IvjMgVS6kng',
-    // 'Coffee House': 'FTWd28r472c',
-    // 'Train Ride': 'pqfQhPM8reU',
-    // 'Aircraft Cabin': 'co7KgV2edvI',
-    // 'Bedtime Story - Adults': 'V4fBgXgxjjg',
-    // 'Guided Sleep Hypnosis': 'Sh-YrLYC7p8',
-    // 'Ceiling Fan': 'Xkx6Y0nYAYw',
+    'Fireplace': '3_gdxb7AyGo',
+    'Brown Noise': 'RqzGzwTY-6w',
+    'Winter Storm Winds': 'sGkh1W5cbH4',
+    'Traffic': 'fh3EdeGNKus',
+    'Thunderstorm': 'mPZkdNFkNps',
+    'Cat Purring': 'SR5L2BSYNuE',
+    'Lake Waters': 'zdGs4pvgR9M',
+    'Wind Chimes': 'T_wKO6XdEh8',
+    'Night Ambience': 'g1w3IT5WnYw',
+    'Night Lake Frogs And Insects': 'ih4_1FyVjaY',
+    'Forrest': 'xNN7iTA57jM',
+    'Keyboard Typing AMSR': '-2RiNR2fqRY',
+    'Soft Brook': 'IvjMgVS6kng',
+    'Coffee House': 'FTWd28r472c',
+    'Train Ride': 'pqfQhPM8reU',
+    'Aircraft Cabin': 'co7KgV2edvI',
+    'Bedtime Story - Adults': 'V4fBgXgxjjg',
+    'Guided Sleep Hypnosis': 'Sh-YrLYC7p8',
+    'Ceiling Fan': 'Xkx6Y0nYAYw',
 };
 
 function onYouTubeIframeAPIReady() {
@@ -188,8 +199,32 @@ function onPlayerStateChange(event) {
 
 // detect click on add player button
 document.getElementById('addPlayerBtn').addEventListener('click', function() {
-document.getElementById('addPlayerModal').style.display = 'block';
+    document.getElementById('addPlayerModal').style.display = 'block';
+    populateDropdown(); // build dropdown
+    });
+
+// Function to populate the dropdown
+function populateDropdown() {
+    var dropdown = document.getElementById('videoDropdown');
+    Object.keys(dropDownData).forEach(function(key) {
+        var option = document.createElement('option');
+        option.text = key;
+        option.value = dropDownData[key];
+        dropdown.appendChild(option);
+    });
+}
+
+// populate modal sound name fields when drop down is selected
+document.getElementById('videoDropdown').addEventListener('change', function() {
+    // Get selected video ID and Sound Name
+    var videoId = this.value; 
+    var soundName = this.options[this.selectedIndex].text;
+    
+    // Populate the Sound Name and Video ID fields
+    document.getElementById('playerName').value = soundName;
+    document.getElementById('videoId').value = videoId;
 });
+
 
 // detect click on cancel button in modal
 document.getElementById('cancelAddPlayer').addEventListener('click', function() {
