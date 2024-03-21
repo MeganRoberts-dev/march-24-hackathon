@@ -36,6 +36,21 @@
     font-size: inherit;
 }
 
+#addPlayerSubmit {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 2em;
+}
+
+#cancelAddPlayer {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 2em;
+}
+
+
 .controls {
     display: flex;
     align-items: center;
@@ -97,4 +112,30 @@ body {
     background: rgb(255, 255, 255);
     cursor: grab;
     box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Style modal */
+.input-transparent, .select-transparent {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#addPlayerModal {
+    position: fixed;
+    top: 100px;
+    left: calc(50% - 150px);
+    width: 600px !important;
+    display: none;
+}
+
+input::placeholder {
+    color: white;
+  }
+
+/* Style adjustments for labels for better visibility */
+label {
+    color: rgba(255, 255, 255, 0.7);
 }

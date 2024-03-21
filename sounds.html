@@ -26,26 +26,28 @@
 
             <!-- Add Player Modal -->
             <div id="addPlayerModal" style="display:none">
-                <div style="background-color: white; margin: 100px auto; padding: 20px; width: 300px;">
+                <div class="frosted-glass-effect" style="margin: 100px auto; width: 300px;">
                     <div>
                         <label for="videoId">Select Preset Sound:</label>
-                        <select id="videoDropdown">
-                            <option value="">Select a Sound</option>
+                        <select id="videoDropdown" class="select-transparent mb-5">
+                            <option value=""></option>
                         </select>
                     </div>
                     <div>
                         Or enter your own youtube ID below:
                     </div>
                     <div>
-                        <label for="videoID">YouTubeID:</label>
-                        <input type="text" id="videoId" name="videoId">
+                        <input type="text" id="videoId" name="videoId" class="input-transparent my-3"  placeholder="YouTubeID">
                     </div>
                     <div>
-                        <label for="playerName">Sound Name:</label>
-                        <input type="text" id="playerName" name="playerName">
+                        <input type="text" id="playerName" name="playerName" class="input-transparent"  placeholder="Enter Sound Name">
                     </div>
-                    <button id="addPlayerSubmit">Add Sound</button>
-                    <button id="cancelAddPlayer">Cancel</button>
+                    <div>
+                        <input type="range" id="volumeControl" class="volume-slider" class="input-transparent">
+                    </div>
+                    <button id="addPlayerSubmit" class="icon-button"><i class="fas fa-check-circle"></i></button>
+                    <button id="cancelAddPlayer" class="icon-button"><i class="fas fa-times-circle"></i></button>
+
                 </div>
             </div>
 
