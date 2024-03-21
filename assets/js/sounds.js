@@ -1,5 +1,6 @@
-// default llist of suggested sounds for dropdown
+// create object to store all current players
 var players = {};
+
 // default sounds to initialize webpage
 var videoData = {
     'Music Lofi': 'Ah7i5EFVDqA',
@@ -43,14 +44,27 @@ var dropDownData = {
     'Ceiling Fan': 'Xkx6Y0nYAYw',
 };
 
+// ensure youtube api loaded before adding deffault player list
 function onYouTubeIframeAPIReady() {
-    // console.log("API Ready, initializing players...");
-    Object.entries(videoData).forEach(([playerName, videoId]) => {
-        // console.log(`Adding player: ${playerName}, Video ID: ${videoId}`);
-        addPlayer(playerName, videoId);
-    });
+    const storedPlayersData = localStorage.getItem('playersData');
+
+    if (storedPlayersData) {
+        const loadedPlayers = JSON.parse(storedPlayersData);
+
+        // Correctly extract and use the name and videoId
+        Object.values(loadedPlayers).forEach((player) => {
+            console.log(`Adding player: ${player.name} with video ID ${player.videoId}`);
+            addPlayer(player.name, player.videoId);
+        });
+    } else {
+        console.log("No players found in localStorage, using default data.");
+        Object.entries(videoData).forEach(([playerName, videoId]) => {
+            addPlayer(playerName, videoId);
+        });
+    }
 }
 
+// main function to add a sound player to the page
 function addPlayer(playerName, videoId) {
     var playerCount = Object.keys(players).length + 1;
     var playerId = 'player' + playerCount;
@@ -103,6 +117,7 @@ function addPlayer(playerName, videoId) {
             document.getElementById('playersContainer').removeChild(container);
             // Delete player from players object
             delete players[playerId];
+            savePlayersData();
         };
 
     // build controls for player
@@ -120,6 +135,7 @@ function addPlayer(playerName, videoId) {
 
     // Store player name and videoId in the players object
     players[playerId] = { name: playerName, videoId: videoId, player: createPlayer(playerId, videoId) };
+
 }
 
 // create a new YT player
@@ -253,6 +269,7 @@ document.getElementById('addPlayerSubmit').addEventListener('click', function() 
 
     if (playerName && videoId) {
         addPlayer(playerName, videoId);
+        savePlayersData();
         //reset and hide modal
         document.getElementById('addPlayerModal').style.display = 'none';
         document.getElementById('playerName').value = '';
@@ -262,5 +279,23 @@ document.getElementById('addPlayerSubmit').addEventListener('click', function() 
     }
 });
 
+// save current players to local machine for later retreival
+function savePlayersData() {
+    // object to hold player data
+    const simplifiedPlayersData = {};
 
-// onYouTubeIframeAPIReady(); // DEBUG ONLY - DELETE
+    // Iterate over the players object
+    Object.keys(players).forEach(key => {
+        const player = players[key];
+        simplifiedPlayersData[key] = {
+            name: player.name,
+            videoId: player.videoId
+        };
+    });
+
+    // Convert the simplified object to a string and save it to localStorage
+    const playersDataString = JSON.stringify(simplifiedPlayersData);
+    localStorage.setItem('playersData', playersDataString);
+}
+// Ensure this runs when the document is fully loaded
+document.addEventListener('DOMContentLoaded', loadPlayersData);
