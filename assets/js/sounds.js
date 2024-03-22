@@ -261,7 +261,7 @@ function onPlayerStateChange(event) {
     }
 }
 
-// detect click on add player button
+// detect click on add sound button
 document.getElementById('addPlayerBtn').addEventListener('click', function() {
     document.getElementById('addPlayerModal').style.display = 'block';
     populateDropdown(); // build dropdown
@@ -300,7 +300,6 @@ document.getElementById('videoDropdown').addEventListener('change', function() {
     document.getElementById('playerName').value = soundName;
     document.getElementById('videoId').value = videoId;
 });
-
 
 // detect click on cancel button in modal
 document.getElementById('cancelAddPlayer').addEventListener('click', function() {

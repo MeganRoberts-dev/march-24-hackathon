@@ -36,6 +36,16 @@
     font-size: inherit;
 }
 
+#addPlayerBtn,
+#muteAllBtn,
+#stopAllBtn,
+#timerBtn {
+    border: none;
+    background-color: transparent;
+    color: rgb(146, 146, 146);
+    font-size: inherit;
+}
+
 #addPlayerSubmit {
     border: none;
     background-color: transparent;
