@@ -1,3 +1,7 @@
+#playersContainer{
+    position: absolute;
+}
+
 .player-container {
     display: flex;
     flex-direction: column;
@@ -5,15 +9,55 @@
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     padding: 10px;
-    background-color: #fff;
+    background-color: #000000;
+    color: rgb(0, 0, 0);
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
+    position: fixed;
+    cursor: move;
+    z-index: 9999;
+}
 
-    position: absolute; /* Allow absolute positioning */
-    cursor: grab; /* Visual cue for draggable items */
+.playButton {
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-size: inherit;
+}
+
+.gearButton {
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-size: inherit;
+}
+
+.deleteButton {
+    border: none;
+    background-color: transparent;
+    color: rgb(174, 0, 0);
+    font-size: inherit;
+}
+
+#addPlayerBtn,
+#muteAllBtn,
+#closeAllBtn,
+#stopAllBtn,
+#timerBtn {
+    border: none;
+    background-color: transparent;
+    color: rgb(146, 146, 146);
+    font-size: inherit;
+}
+
+#addPlayerSubmit,
+#cancelAddPlayer  {
+    border: none;
+    background-color: transparent;
+    font-size: 2em;
 }
 
 .controls {
@@ -34,26 +78,140 @@
     margin-top: 2px;
 }
 
-html {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0; 
-    height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?q=80&w=4170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 .frosted-glass-effect {
-    color: rgba(255, 255, 255, 0.7);
     font-weight: 500;
     backdrop-filter: blur(5px); 
-    background-color: rgba(255, 255, 255, 0.1); 
+    background-color: rgba(0, 0, 0, 0.1); 
     padding: 5px; 
     border-radius: 10px;
     border: none;
+
+}
+
+.frosted-glass-modal {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    backdrop-filter: blur(5px); 
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding: 5px; 
+    border-radius: 10px;
+    border: none;
+
+}
+
+/* Custom Volume Slider Controls */
+.volume-slider {
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+/* Custom Color Slider Controls */
+.color-slider {
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: rgba(32, 32, 32, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.color-slider::-webkit-slider-thumb {
+    appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: rgb(35, 35, 35);
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+
+}
+
+/* Style modal */
+.input-transparent, .select-transparent {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+input::placeholder {
+    color: rgb(0, 0, 0);
+  }
+
+#videoId::placeholder,
+#playerName::placeholder {
+    color: rgb(184, 184, 184);
+}
+
+#videoDropdown {
+    color: rgb(184, 184, 184);
+}
+
+/* timer styling */
+.draggable {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: grab;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    backdrop-filter: blur(5px); 
+    background-color: rgba(0, 0, 0, 0.1); 
+    position: fixed;
+    top: 0.5%;
+    left: 30%;
+    z-index: 999;
+}
+
+#timer {
+    margin: 0;
+    font-size: 20px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.icon-button i {
+    font-size: 20px; 
+}
+
+.draggable #start-stop-btn {
+    color: black;
+}
+
+.modal {
+    color: black;
 }

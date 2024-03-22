@@ -52,6 +52,7 @@ const playerSpacing = 90; // Vertical spacing between players
 
 // ensure youtube api loaded before adding default player list
 function onYouTubeIframeAPIReady() {
+    console.log("YouTube API is ready.");
     let playersToPosition = []; 
     const storedPlayersData = localStorage.getItem('playersData');
     if (storedPlayersData) {
@@ -88,78 +89,97 @@ function addPlayer(playerName, videoId) {
     var playerCount = Object.keys(players).length + 1;
     var playerId = 'player' + playerCount;
 
-    // Create player container
     var container = document.createElement('div');
     container.classList.add('player-container');
     container.classList.add('frosted-glass-effect');
-    container.setAttribute('id', 'container-' + playerId); // Set an ID for the container
+    container.setAttribute('id', 'container-' + playerId);
 
-    // Add player name label
     var nameLabel = document.createElement('p');
     nameLabel.textContent = playerName;
     nameLabel.classList.add("sound-name");
     container.appendChild(nameLabel);
 
-    // add player div
     var playerDiv = document.createElement('div');
     playerDiv.id = playerId;
     container.appendChild(playerDiv);
 
-    // add player controls div
     var controlsDiv = document.createElement('div');
     controlsDiv.classList.add('controls');
+
+    var playButton = document.createElement('button');
+    playButton.classList.add('playButton');
+    playButton.setAttribute('data-player', playerId);
+    playButton.innerHTML = '<i class="fas fa-play"></i>';
+    playButton.disabled = true;
+
+    var gearButton = document.createElement('button');
+    gearButton.classList.add('gearButton');
+    gearButton.setAttribute('data-player', playerId);
+    gearButton.innerHTML = '<i class="fas fa-cog"></i>';
+
+    var volumeSlider = document.createElement('input');
+    volumeSlider.type = 'range';
+    volumeSlider.classList.add('volume-slider');
+    volumeSlider.setAttribute('data-player', playerId);
+    volumeSlider.min = '0';
+    volumeSlider.max = '100';
+    volumeSlider.value = '100';
+    volumeSlider.style.width = '80px';
+
+    var colorSlider = document.createElement('input');
+    colorSlider.type = 'range';
+    colorSlider.classList.add('color-slider');
+    colorSlider.min = '0';
+    colorSlider.max = '255';
+    colorSlider.value = '255';
+    colorSlider.style.width = '80px';
+    colorSlider.style.display = 'none';
+    colorSlider.setAttribute('data-player', playerId);
+
+    colorSlider.addEventListener('input', function() {
+        var value = 255 - this.value;
+        container.style.backgroundColor = `rgba(${value}, ${value}, ${value}, 0.1)`;
     
-        var playButton = document.createElement('button');
-        playButton.classList.add('playButton');
-        playButton.setAttribute('data-player', playerId);
-        playButton.innerHTML = '<i class="fas fa-play"></i>';
-        playButton.disabled = true; // Enabled later when player is ready
+        // toggle dark mode for max slider value
+        var textColor = this.value == '255' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)';
+        container.style.color = textColor;
+    
+        // buttons to toggle
+        var playButton = container.querySelector('.playButton i');
+        var gearButton = container.querySelector('.gearButton i');
+        
+        // Set the color
+        if (playButton) playButton.style.color = textColor;
+        if (gearButton) gearButton.style.color = textColor;
+      
+    });
 
-        var volumeButton = document.createElement('button');
-        volumeButton.classList.add('volumeButton');
-        volumeButton.setAttribute('data-player', playerId);
-        volumeButton.innerHTML = '<i class="fas fa-cog"></i>';
+    var deleteButton = document.createElement('button');
+    deleteButton.classList.add('deleteButton');
+    deleteButton.setAttribute('data-player', playerId);
+    deleteButton.innerHTML = '<i class="fas fa-times-circle"></i>';
+    deleteButton.style.display = 'none';
+    deleteButton.onclick = function() {
+        document.getElementById('playersContainer').removeChild(container);
+        delete players[playerId];
+    };
 
-        var volumeSlider = document.createElement('input');
-        volumeSlider.type = 'range';
-        volumeSlider.classList.add('volume-slider');
-        volumeSlider.setAttribute('data-player', playerId);
-        volumeSlider.min = '0';
-        volumeSlider.max = '100';
-        volumeSlider.value = '100';
-
-        var deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.setAttribute('data-player', playerId); // Associate button with specific player
-        deleteButton.style.display = 'none';
-        deleteButton.onclick = function() {
-            // Remove player container from DOM
-            document.getElementById('playersContainer').removeChild(container);
-            // Delete player from players object
-            delete players[playerId];
-            savePlayersData();
-        };
-
-    // build controls for player
     controlsDiv.appendChild(playButton);
-    controlsDiv.appendChild(volumeButton);
+    controlsDiv.appendChild(gearButton);
     controlsDiv.appendChild(volumeSlider);
+    controlsDiv.appendChild(colorSlider);
     controlsDiv.appendChild(deleteButton);
     
-    // add player and controls together
     container.appendChild(playerDiv);
     container.appendChild(controlsDiv);
 
-    // add player to playersContainer div
     document.getElementById('playersContainer').appendChild(container);
 
-    // add drag and drop functionality to player
     makeDraggable(container);
 
-    // Store player name and videoId in the players object
     players[playerId] = { name: playerName, videoId: videoId, player: createPlayer(playerId, videoId) };
-
 }
+
 
 // create a new YT player
 function createPlayer(elementId, videoId) {
@@ -183,7 +203,7 @@ function createPlayer(elementId, videoId) {
 
 // only enable play pause buttons once YT player is ready
 function onPlayerReady(event) {
-    document.querySelectorAll('.playButton, .volumeButton').forEach(button => button.disabled = false);
+    document.querySelectorAll('.playButton, .gearButton').forEach(button => button.disabled = false);
 }
 
 // Event delegation for play and volume controls
@@ -192,15 +212,34 @@ document.addEventListener('click', function(event) {
         var button = event.target.closest('.playButton');
         var playerId = button.getAttribute('data-player');
         togglePlayPause(playerId);
-    } else if (event.target.closest('.volumeButton')) {
-        var volumeButton = event.target.closest('.volumeButton');
-        var playerId = volumeButton.getAttribute('data-player');
-        var slider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
-        var deleteButton = document.querySelector(`button[data-player="${playerId}"]:not(.playButton, .volumeButton)`);
-        // toggle volume slider and delete buttons 
-        slider.style.display = slider.style.display === 'block' ? 'none' : 'block';
+    } else if (event.target.closest('.gearButton')) {
+        var gearButton = event.target.closest('.gearButton');
+        var playerId = gearButton.getAttribute('data-player');
+        var colorSlider = document.querySelector(`.color-slider[data-player="${playerId}"]`);
+        var volumeSlider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
+        var deleteButton = document.querySelector(`button.deleteButton[data-player="${playerId}"]`);
+        // toggle visibility of buttons
+        colorSlider.style.display = colorSlider.style.display === 'block' ? 'none' : 'block';
+        volumeSlider.style.display = volumeSlider.style.display === 'block' ? 'none' : 'block';
         deleteButton.style.display = deleteButton.style.display === 'block' ? 'none' : 'block';
     }
+});
+
+// closeall players controls at once
+document.getElementById('closeAllBtn').addEventListener('click', function() {
+    // Iterate over each gear button to simulate a click or directly toggle the visibility of associated controls.
+    document.querySelectorAll('.gearButton').forEach(gearButton => {
+        var playerId = gearButton.getAttribute('data-player');
+        
+        // set individual controls
+        var colorSlider = document.querySelector(`.color-slider[data-player="${playerId}"]`);
+        var volumeSlider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
+        var deleteButton = document.querySelector(`button.deleteButton[data-player="${playerId}"]`);
+        
+        colorSlider.style.display = 'none';
+        volumeSlider.style.display = 'none';
+        deleteButton.style.display = 'none';
+    });
 });
 
 // user changes volume slider
@@ -217,29 +256,32 @@ document.addEventListener('input', function(event) {
 function togglePlayPause(playerId) {
     var player = players[playerId].player;
     var state = player.getPlayerState();
-    var button = document.querySelector(`button[data-player="${playerId}"]`);
+    var icon = document.querySelector(`button[data-player="${playerId}"] i`);
     if (state === YT.PlayerState.PLAYING || state === YT.PlayerState.BUFFERING) {
         player.pauseVideo();
-        button.innerHTML = '<i class="fas fa-play"></i>';
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
     } else {
         player.playVideo();
-        button.innerHTML = '<i class="fas fa-pause"></i>';
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
     }
 }
 
 // toggle display of play pause buttons
 function onPlayerStateChange(event) {
-    var playerElementId = event.target.getIframe().id;
     var playerKey = Object.keys(players).find(key => players[key].player === event.target);
-    var button = document.querySelector(`button[data-player="${playerKey}"]`);
+    var icon = document.querySelector(`button[data-player="${playerKey}"] i`);
     if (event.data === YT.PlayerState.PLAYING) {
-        button.innerHTML = '<i class="fas fa-pause"></i>';
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
     } else {
-        button.innerHTML = '<i class="fas fa-play"></i>';
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
     }
 }
 
-// detect click on add player button
+// detect click on add sound button
 document.getElementById('addPlayerBtn').addEventListener('click', function() {
     document.getElementById('addPlayerModal').style.display = 'block';
     populateDropdown(); // build dropdown
@@ -279,7 +321,6 @@ document.getElementById('videoDropdown').addEventListener('change', function() {
     document.getElementById('videoId').value = videoId;
 });
 
-
 // detect click on cancel button in modal
 document.getElementById('cancelAddPlayer').addEventListener('click', function() {
     document.getElementById('addPlayerModal').style.display = 'none';
@@ -301,7 +342,9 @@ document.getElementById('addPlayerSubmit').addEventListener('click', function() 
         alert('Please fill in both fields.');
     }
 });
+
 // add overall controls for all sounds
+
 // stop all sound players
 document.getElementById('stopAllBtn').addEventListener('click', function() {
     Object.values(players).forEach(player => {
@@ -332,7 +375,19 @@ document.getElementById('muteAllBtn').addEventListener('click', function() {
     });
 });
 
+// toggle timer on / off
+document.getElementById('timerBtn').addEventListener('click', function() {
+    var timerDiv = document.getElementById('draggable-timer');
+    var isVisible = !timerDiv.classList.contains('d-none');
+    
+    if (isVisible) {
+        timerDiv.classList.add('d-none');
+    } else {
+        timerDiv.classList.remove('d-none');
+    }
+});
 
+// make a player draggable
 function makeDraggable(element) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
@@ -340,7 +395,7 @@ function makeDraggable(element) {
 
     function dragMouseDown(e) {
         // dont drag when adjusting volume
-        if (e.target.closest('.volume-slider')) {
+        if (e.target.closest('.volume-slider, .color-slider')) {
             //  control -> don't drag
             e.stopPropagation();
         } else {
@@ -374,6 +429,33 @@ function makeDraggable(element) {
     }
 }
 
+// make add sound modal draggable
+document.addEventListener('DOMContentLoaded', (event) => {
+    const modal = document.getElementById('addPlayerModal');
+    let isDragging = false, x = 0, y = 0, dx = 0, dy = 0;
+
+    modal.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        x = e.clientX;
+        y = e.clientY;
+        document.addEventListener('mousemove', mouseMove);
+        document.addEventListener('mouseup', () => {
+            document.removeEventListener('mousemove', mouseMove);
+            isDragging = false;
+        }, { once: true });
+    });
+
+    function mouseMove(e) {
+        if (!isDragging) return;
+        dx = e.clientX - x;
+        dy = e.clientY - y;
+        x = e.clientX;
+        y = e.clientY;
+        modal.style.top = (modal.offsetTop + dy) + 'px';
+        modal.style.left = (modal.offsetLeft + dx) + 'px';
+    }
+});
+
 
 // Make all player containers draggable
 document.querySelectorAll('.player-container').forEach(makeDraggable);
@@ -395,4 +477,57 @@ function savePlayersData() {
     // Convert the simplified object to a string and save it to localStorage
     const playersDataString = JSON.stringify(simplifiedPlayersData);
     localStorage.setItem('playersData', playersDataString);
+}
+
+
+// #########################  ADD TIMER TEST ####################
+document.addEventListener('DOMContentLoaded', function() {
+    let timerDiv = document.getElementById('draggable-timer');
+    makeDraggable(timerDiv);
+    setupTimerControl();
+});
+
+let timerInterval;
+let timerRunning = false;
+let seconds = 0;
+
+function setupTimerControl() {
+    let startStopBtn = document.getElementById('start-stop-btn');
+    let timer = document.getElementById('timer');
+
+    function formatTime(sec) {
+        let minutes = Math.floor(sec / 60);
+        let seconds = sec % 60;
+        minutes = String(minutes).padStart(2, '0');
+        seconds = String(seconds).padStart(2, '0');
+        return `${minutes}:${seconds}`;
+    }
+
+    startStopBtn.addEventListener('click', function() {
+        let icon = startStopBtn.querySelector('i');
+        if (!timerRunning) {
+            //start
+            timerInterval = setInterval(function() {
+                seconds++;
+                timer.innerText = formatTime(seconds);
+            }, 1000);
+            icon.classList.remove('fa-play');
+            icon.classList.add('fa-stop');
+            timerRunning = true;
+        } else {
+            //stop
+            clearInterval(timerInterval);
+            if (icon.classList.contains('fa-stop')) {
+                icon.classList.remove('fa-stop');
+                icon.classList.add('fa-sync-alt');
+            } else {
+                //reset
+                seconds = 0;
+                timer.innerText = formatTime(seconds);
+                icon.classList.remove('fa-sync-alt');
+                icon.classList.add('fa-play');
+                timerRunning = false;
+            }
+        }
+    });
 }

@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
+
+/*  ----  General  ----  */
+body {
+	background-color: rgb(175 255 0 / 24%);
+	padding: 0;
+}
+
+.container-fluid,
+.row,
+.no-gutters {
+	width: 100%;
+	max-width: 100%;
+	margin: 0;
+}
+
+/* ---- Bold Text ---- */
+
+.bold {
+	font-weight: bold;
+}
+
+
+/* ----- Logo -----*/
+
+.logo {
+	height: 90px;
+}
+
+
+/*  ----  Navigation  ----  */
+
+.navbar-container {
+	background-color: black;
+	padding-top: 0;
+	margin-top: -1rem;
+	box-shadow: 0 12px 8px -5px #ffffff54;
+}
+
+a:hover {
+	text-decoration: none;
+	color: rgb(181, 205, 0);
+}
+
+.nav-links {
+	font-family: "Happy Monkey", system-ui;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 160%;
+
+	padding-top: 20px;
+	padding-bottom: 3px;
+	padding-left: 14px;
+	padding-right: 14px;
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.nav-links i {
+	margin-right: 8px;
+}
+
+.nav-icons {
+    margin-bottom: 4px;
+}
+
+.list-inline-item:hover {
+	text-decoration: none;
+	background-color: rgba(45, 45, 45, 0.769);
+	border-radius: 22px;
+}
+
+/* ---- Home Link ---- */
+.nav-home .nav-links{
+	color: #B0C5A4;
+}
+
+/* ---- Sounds Link ---- */
+.nav-sounds .nav-links {
+    color: #D37676;
+}
+
+/* ---- Games Link ---- */
+.nav-games .nav-links {
+    color: #EBC49F;
+}
+
+/* ---- Memes Link ---- */
+.nav-memes .nav-links {
+    color: #F1EF99;
+}
+
+/* ---- About Link ---- */
+.nav-about .nav-links {
+    color: grey;
+}
+
+
+/* ------- Content -------*/
+
+.description-home {
+	background-color: rgba(212, 212, 212, 0.112);
+}
+
+h2 {
+	color: rgb(68, 68, 68);
+}
+
+span {
+	color: white;
+}
+
+
+/* ------ Theme Items ------*/
+
+.theme-item {
+	margin-top: 55px;
+	margin-bottom: 55px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+
+	width: 70%;
+	border-radius: 15px;
+}
+
+
+/* ------ Theme Cards ------*/
+
+section::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#ff000073, #00000098);
+	clip-path: circle(30% at right 70%);
+}
+
+section::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#000000c3, #00e5ff89);
+	clip-path: circle(20% at 10% 10%);
+}
+
+.container {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 40px 0;
+}
+
+.container .card {
+	position: relative;
+	width: 300px;
+	height: 400px;
+	background: rgba(255, 255, 255, 0.05);
+	margin: 20px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(10px);
+}
+
+.container .card .content {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transition: 0.5s;
+}
+
+.container .card:hover .content {
+	transform: translateY(-20px);
+}
+
+.container .card .content .imgBx {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+}
+
+.container .card .content .imgBx img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.container .card .content .contentBx h3 {
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 500;
+	font-size: 18px;
+	text-align: center;
+	margin: 20px 0 10px;
+	line-height: 1.1em;
+}
+
+.container .card .content .contentBx h3 span {
+	font-size: 12px;
+	font-weight: 300;
+	text-transform: initial;
+}
+
+.container .card .sci {
+	position: absolute;
+	bottom: 50px;
+	display: flex;
+}
+
+.container .card .sci li {
+	list-style: none;
+	margin: 0 10px;
+	transform: translateY(40px);
+	transition: 0.5s;
+	opacity: 0;
+}
+
+.container .card:hover .sci li {
+	transform: translateY(0px);
+	opacity: 1;
+}
+
+.container .card .sci li a {
+	color: #fff;
+	font-size: 20px;
+}
+
+/* ---- END OF CARDS ---- */
+
+
+
+/* ------------------- Media Queries ------------------- */
+
+@media (max-width: 768px) {
+	.nav-links {
+		font-size: 120%;
+		padding-top: 2px;
+		padding-bottom: 2px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.list-inline-item {
+		margin-right: 1rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.nav-links {
+		font-size: 100%;
+		padding: 5px;
+	}
+
+	.list-inline-item {
+		margin-right: 0.5rem;
+	}
+}
+
+
+@media (min-width: 768px) {
+	.col-6 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+
+/* ------------- Footer ------------- */
+
+footer {
+	background-color: grey;
+	min-height: 80px;
+}
