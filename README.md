@@ -38,3 +38,8 @@ The target audience for this app is anyone looking to add happiness to their day
 
 - Simple and intuitive user interface
 - Easy to understand explanation of what the site contains
+- To be able to choose from a selection of predefined images and sounds
+
+
+
+
