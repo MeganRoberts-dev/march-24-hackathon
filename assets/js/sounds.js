@@ -134,9 +134,23 @@ function addPlayer(playerName, videoId) {
     colorSlider.style.width = '80px';
     colorSlider.style.display = 'none';
     colorSlider.setAttribute('data-player', playerId);
+
     colorSlider.addEventListener('input', function() {
         var value = 255 - this.value;
         container.style.backgroundColor = `rgba(${value}, ${value}, ${value}, 0.1)`;
+    
+        // toggle dark mode for max slider value
+        var textColor = this.value == '255' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)';
+        container.style.color = textColor;
+    
+        // buttons to toggle
+        var playButton = container.querySelector('.playButton i');
+        var gearButton = container.querySelector('.gearButton i');
+        
+        // Set the color
+        if (playButton) playButton.style.color = textColor;
+        if (gearButton) gearButton.style.color = textColor;
+      
     });
 
     var deleteButton = document.createElement('button');
@@ -209,6 +223,7 @@ document.addEventListener('click', function(event) {
         deleteButton.style.display = deleteButton.style.display === 'block' ? 'none' : 'block';
     }
 });
+
 
 // user changes volume slider
 document.addEventListener('input', function(event) {

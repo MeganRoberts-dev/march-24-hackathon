@@ -32,7 +32,7 @@
 .deleteButton {
     border: none;
     background-color: transparent;
-    color: white;
+    color: rgb(174, 0, 0);
     font-size: inherit;
 }
 
@@ -49,7 +49,6 @@
     color: white;
     font-size: 2em;
 }
-
 
 .controls {
     display: flex;
@@ -114,7 +113,7 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-/* Custom Volume Slider Controls */
+/* Custom Color Slider Controls */
 .color-slider {
     appearance: none;
     width: 100%;
