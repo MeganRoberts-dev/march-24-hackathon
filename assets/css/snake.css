@@ -79,10 +79,13 @@ body {
   border-right: 1px solid #171B26;
 }
 @media screen and (max-width: 800px) {
+  
   .wrapper {
-    width: 90vmin;
-    height: 115vmin;
+    margin-top: 4vh;
+    width: 75%;
+    height: 80%;    
   }
+
   .game-details {
     font-size: 1rem;
     padding: 15px 27px;
