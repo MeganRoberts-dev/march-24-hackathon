@@ -44,6 +44,10 @@ body {
   box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
 }
 
+.scores {
+  color: lightblue;
+}
+
 .game-details {
   color: #B8C6DC;
   font-weight: 500;
@@ -56,14 +60,16 @@ body {
   height: 100%;
   width: 100%;
   display: grid;
-  background: #212837;
+  background: #212837; 
+  background:url('../images/snake_background.png')no-repeat center center/cover;
   grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+  background-attachment:fixed;
 }
 .play-board .food {
-  background: #FF003D;
+  background: rgb(252, 0, 0);
 }
 .play-board .head {
-  background: #60CBFF;
+  background:yellow;
 }
 .controls {
   display: none;
