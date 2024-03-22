@@ -15,15 +15,27 @@
 </head>
 
 <body>
-
+  
 
   <div class="container my-5">
     <div class="card  shadow rounded-xl" style="max-width: 500px; margin: auto;">
       <div class="card-body">
+        
+        <div class="alert alert-primary d-none" role="alert" id="alertSuccess">
+          Your Email was sent! Have a happy day :)
+        </div>
+        <div class="alert alert-danger d-none" role="alert" id="alertFail">
+          Something went wrong, sorry :(
+        </div>
+        <div class="alert alert-warning d-none" role="alert" id="alertValidate">
+          <p>Please fill out all the required fields!</p> 
+          <p>Thanks and have a peachy day!</p>
+        </div>
+        
         <div class="row">
           <!-- Form Fields: -->
           <div class="col-md-8 ">
-            <form>
+            <form id="email">
               <small id="emailHelp" class="form-text text-muted">Share some positivity today. Pass it forward.</small>
 
               <div class="form-group mb-3">
@@ -42,7 +54,7 @@
                 <button type="button" class="btn btn-secondary" id="randomButton">PotLuck</button>
               </div>
 
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary" id="sendEmail">Submit</button>
             </form>
           </div>
 
