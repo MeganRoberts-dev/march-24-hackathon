@@ -11,7 +11,7 @@ document.getElementById("email").addEventListener("submit", function(e) {
   const temp = sendTo.split("@");
   const recipient = temp[0];
   const happiness = document.getElementById("emojiSlider").value;
-  const max = 20;
+  const max = 21;
 
   if (sendFrom && sendTo) {
     emailjs.send("service_skg63xk", "template_i8yav5k", {
