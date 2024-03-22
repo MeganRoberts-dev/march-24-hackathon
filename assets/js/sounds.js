@@ -108,45 +108,66 @@ function addPlayer(playerName, videoId) {
     // add player controls div
     var controlsDiv = document.createElement('div');
     controlsDiv.classList.add('controls');
-    
-        var playButton = document.createElement('button');
-        playButton.classList.add('playButton');
-        playButton.setAttribute('data-player', playerId);
-        playButton.innerHTML = '<i class="fas fa-play"></i>';
-        playButton.disabled = true; // Enabled later when player is ready
 
-        var volumeButton = document.createElement('button');
-        volumeButton.classList.add('volumeButton');
-        volumeButton.setAttribute('data-player', playerId);
-        volumeButton.innerHTML = '<i class="fas fa-cog"></i>';
+    var playButton = document.createElement('button');
+    playButton.classList.add('playButton');
+    playButton.setAttribute('data-player', playerId);
+    playButton.innerHTML = '<i class="fas fa-play"></i>';
+    playButton.disabled = true;
 
-        var volumeSlider = document.createElement('input');
-        volumeSlider.type = 'range';
-        volumeSlider.classList.add('volume-slider');
-        volumeSlider.setAttribute('data-player', playerId);
-        volumeSlider.min = '0';
-        volumeSlider.max = '100';
-        volumeSlider.value = '100';
+    var gearButton = document.createElement('button');
+    gearButton.classList.add('gearButton');
+    gearButton.setAttribute('data-player', playerId);
+    gearButton.innerHTML = '<i class="fas fa-cog"></i>';
 
-        var deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.classList.add('deleteButton');
-        deleteButton.setAttribute('data-player', playerId); // Associate button with specific player
-        deleteButton.innerHTML = '<i class="fas fa-times-circle"></i>';
-        deleteButton.style.display = 'none';
-        deleteButton.onclick = function() {
-            // Remove player container from DOM
-            document.getElementById('playersContainer').removeChild(container);
-            // Delete player from players object
-            delete players[playerId];
-            savePlayersData();
-        };
+    var volumeSlider = document.createElement('input');
+    volumeSlider.type = 'range';
+    volumeSlider.classList.add('volume-slider');
+    volumeSlider.setAttribute('data-player', playerId);
+    volumeSlider.min = '0';
+    volumeSlider.max = '100';
+    volumeSlider.value = '100';
+    volumeSlider.style.width = '80px';
 
-    // build controls for player
+    var deleteButton = document.createElement('button');
+    deleteButton.classList.add('deleteButton');
+    deleteButton.setAttribute('data-player', playerId);
+    deleteButton.innerHTML = '<i class="fas fa-times-circle"></i>';
+    deleteButton.style.display = 'none';
+    deleteButton.onclick = function() {
+        document.getElementById('playersContainer').removeChild(container);
+        delete players[playerId];
+        savePlayersData();
+    };
+
+    // build bootstrap toggle button    
+    var toggleSwitchDiv = document.createElement('div');
+    toggleSwitchDiv.classList.add('custom-control', 'custom-switch', 'ml-2');
+    toggleSwitchDiv.style.display = 'none';
+    var toggleSwitch = document.createElement('input');
+    toggleSwitch.type = 'checkbox';
+    toggleSwitch.classList.add('custom-control-input');
+    toggleSwitch.id = 'customSwitch' + playerId;
+    var toggleLabel = document.createElement('label');
+    toggleLabel.classList.add('custom-control-label');
+    toggleLabel.setAttribute('for', toggleSwitch.id);
+
+    toggleSwitchDiv.appendChild(toggleSwitch);
+    toggleSwitchDiv.appendChild(toggleLabel);
+
+    gearButton.addEventListener('click', function() {
+        toggleSwitchDiv.style.display = toggleSwitchDiv.style.display === 'none' ? 'block' : 'none';
+    });
+
     controlsDiv.appendChild(playButton);
-    controlsDiv.appendChild(volumeButton);
+    controlsDiv.appendChild(gearButton);
     controlsDiv.appendChild(volumeSlider);
+    controlsDiv.appendChild(toggleSwitchDiv);
     controlsDiv.appendChild(deleteButton);
+
+    // tweak toggle button down
+    toggleSwitchDiv.style.marginTop = '2px';
+
     
     // add player and controls together
     container.appendChild(playerDiv);
@@ -185,7 +206,7 @@ function createPlayer(elementId, videoId) {
 
 // only enable play pause buttons once YT player is ready
 function onPlayerReady(event) {
-    document.querySelectorAll('.playButton, .volumeButton').forEach(button => button.disabled = false);
+    document.querySelectorAll('.playButton, .gearButton').forEach(button => button.disabled = false);
 }
 
 // Event delegation for play and volume controls
@@ -194,11 +215,11 @@ document.addEventListener('click', function(event) {
         var button = event.target.closest('.playButton');
         var playerId = button.getAttribute('data-player');
         togglePlayPause(playerId);
-    } else if (event.target.closest('.volumeButton')) {
-        var volumeButton = event.target.closest('.volumeButton');
-        var playerId = volumeButton.getAttribute('data-player');
+    } else if (event.target.closest('.gearButton')) {
+        var gearButton = event.target.closest('.gearButton');
+        var playerId = gearButton.getAttribute('data-player');
         var slider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
-        var deleteButton = document.querySelector(`button[data-player="${playerId}"]:not(.playButton, .volumeButton)`);
+        var deleteButton = document.querySelector(`button[data-player="${playerId}"]:not(.playButton, .gearButton)`);
         // toggle volume slider and delete buttons 
         slider.style.display = slider.style.display === 'block' ? 'none' : 'block';
         deleteButton.style.display = deleteButton.style.display === 'block' ? 'none' : 'block';

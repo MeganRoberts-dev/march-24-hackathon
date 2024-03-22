@@ -22,7 +22,7 @@
     font-size: inherit;
 }
 
-.volumeButton {
+.gearButton {
     border: none;
     background-color: transparent;
     color: white;
@@ -138,4 +138,57 @@ input::placeholder {
 /* Style adjustments for labels for better visibility */
 label {
     color: rgba(255, 255, 255, 0.7);
+}
+
+/* dark theme options */
+.player-container-dark {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-bottom: 20px;
+    border: 1px solid #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    background-color: #000000;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    cursor: grab;
+}
+
+.playButton-dark {
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-size: inherit;
+}
+
+.gearButton-dark {
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-size: inherit;
+}
+
+.deleteButton-dark {
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-size: inherit;
+}
+
+#addPlayerSubmit-dark {
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-size: 2em;
+}
+
+#cancelAddPlayer-dark {
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-size: 2em;
 }
