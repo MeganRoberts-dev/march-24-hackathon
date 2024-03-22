@@ -56,8 +56,17 @@ if (sendBtn && emailForm) {
   emailForm.addEventListener("keydown", handleEnterKey);
 }
 
+// handle email form emojis
 document.getElementById('emojiSlider').addEventListener('input', function() {
   var value = this.value;
   var newSrc = `assets/images/emojis/emoji${value}.png`;
+  document.getElementById('emojiImage').src = newSrc;
+});
+
+// adjust the value of 12 if more emojis are added
+document.getElementById('randomButton').addEventListener('click', function() {
+  var randomValue = Math.floor(Math.random() * 12) + 1;
+  document.getElementById('emojiSlider').value = randomValue;
+  var newSrc = `assets/images/emojis/emoji${randomValue}.png`;
   document.getElementById('emojiImage').src = newSrc;
 });
