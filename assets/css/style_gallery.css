@@ -1,0 +1,21 @@
+/* Quiet Space HTML */
+.carousel-container {
+    padding: 0;
+  }
+  
+  .carousel-item img {
+    min-height: 95vh;
+    max-height: 95vh;
+    object-fit: cover;
+  }
+  
+  .carousel-control-next, .carousel-control-prev {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .sr-only {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+    color: #151515;
+    font-weight: 400;
+  }
