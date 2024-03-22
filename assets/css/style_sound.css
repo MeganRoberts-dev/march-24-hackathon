@@ -114,6 +114,27 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
+/* Custom Volume Slider Controls */
+.color-slider {
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: rgba(32, 32, 32, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.color-slider::-webkit-slider-thumb {
+    appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: rgb(35, 35, 35);
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
 /* Style modal */
 .input-transparent, .select-transparent {
     background-color: rgba(255, 255, 255, 0.2);
@@ -138,57 +159,4 @@ input::placeholder {
 /* Style adjustments for labels for better visibility */
 label {
     color: rgba(255, 255, 255, 0.7);
-}
-
-/* dark theme options */
-.player-container-dark {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin-bottom: 20px;
-    border: 1px solid #222;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    background-color: #000000;
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    cursor: grab;
-}
-
-.playButton-dark {
-    border: none;
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    font-size: inherit;
-}
-
-.gearButton-dark {
-    border: none;
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    font-size: inherit;
-}
-
-.deleteButton-dark {
-    border: none;
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    font-size: inherit;
-}
-
-#addPlayerSubmit-dark {
-    border: none;
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    font-size: 2em;
-}
-
-#cancelAddPlayer-dark {
-    border: none;
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    font-size: 2em;
 }

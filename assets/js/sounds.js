@@ -88,24 +88,20 @@ function addPlayer(playerName, videoId) {
     var playerCount = Object.keys(players).length + 1;
     var playerId = 'player' + playerCount;
 
-    // Create player container
     var container = document.createElement('div');
     container.classList.add('player-container');
     container.classList.add('frosted-glass-effect');
-    container.setAttribute('id', 'container-' + playerId); // Set an ID for the container
+    container.setAttribute('id', 'container-' + playerId);
 
-    // Add player name label
     var nameLabel = document.createElement('p');
     nameLabel.textContent = playerName;
     nameLabel.classList.add("sound-name");
     container.appendChild(nameLabel);
 
-    // add player div
     var playerDiv = document.createElement('div');
     playerDiv.id = playerId;
     container.appendChild(playerDiv);
 
-    // add player controls div
     var controlsDiv = document.createElement('div');
     controlsDiv.classList.add('controls');
 
@@ -129,6 +125,20 @@ function addPlayer(playerName, videoId) {
     volumeSlider.value = '100';
     volumeSlider.style.width = '80px';
 
+    var colorSlider = document.createElement('input');
+    colorSlider.type = 'range';
+    colorSlider.classList.add('color-slider');
+    colorSlider.min = '0';
+    colorSlider.max = '255';
+    colorSlider.value = '0';
+    colorSlider.style.width = '80px';
+    colorSlider.style.display = 'none';
+    colorSlider.setAttribute('data-player', playerId);
+    colorSlider.addEventListener('input', function() {
+        var value = 255 - this.value;
+        container.style.backgroundColor = `rgba(${value}, ${value}, ${value}, 0.1)`;
+    });
+
     var deleteButton = document.createElement('button');
     deleteButton.classList.add('deleteButton');
     deleteButton.setAttribute('data-player', playerId);
@@ -137,52 +147,24 @@ function addPlayer(playerName, videoId) {
     deleteButton.onclick = function() {
         document.getElementById('playersContainer').removeChild(container);
         delete players[playerId];
-        savePlayersData();
     };
-
-    // build bootstrap toggle button    
-    var toggleSwitchDiv = document.createElement('div');
-    toggleSwitchDiv.classList.add('custom-control', 'custom-switch', 'ml-2');
-    toggleSwitchDiv.style.display = 'none';
-    var toggleSwitch = document.createElement('input');
-    toggleSwitch.type = 'checkbox';
-    toggleSwitch.classList.add('custom-control-input');
-    toggleSwitch.id = 'customSwitch' + playerId;
-    var toggleLabel = document.createElement('label');
-    toggleLabel.classList.add('custom-control-label');
-    toggleLabel.setAttribute('for', toggleSwitch.id);
-
-    toggleSwitchDiv.appendChild(toggleSwitch);
-    toggleSwitchDiv.appendChild(toggleLabel);
-
-    gearButton.addEventListener('click', function() {
-        toggleSwitchDiv.style.display = toggleSwitchDiv.style.display === 'none' ? 'block' : 'none';
-    });
 
     controlsDiv.appendChild(playButton);
     controlsDiv.appendChild(gearButton);
     controlsDiv.appendChild(volumeSlider);
-    controlsDiv.appendChild(toggleSwitchDiv);
+    controlsDiv.appendChild(colorSlider);
     controlsDiv.appendChild(deleteButton);
-
-    // tweak toggle button down
-    toggleSwitchDiv.style.marginTop = '2px';
-
     
-    // add player and controls together
     container.appendChild(playerDiv);
     container.appendChild(controlsDiv);
 
-    // add player to playersContainer div
     document.getElementById('playersContainer').appendChild(container);
 
-    // add drag and drop functionality to player
     makeDraggable(container);
 
-    // Store player name and videoId in the players object
     players[playerId] = { name: playerName, videoId: videoId, player: createPlayer(playerId, videoId) };
-
 }
+
 
 // create a new YT player
 function createPlayer(elementId, videoId) {
@@ -218,10 +200,12 @@ document.addEventListener('click', function(event) {
     } else if (event.target.closest('.gearButton')) {
         var gearButton = event.target.closest('.gearButton');
         var playerId = gearButton.getAttribute('data-player');
-        var slider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
-        var deleteButton = document.querySelector(`button[data-player="${playerId}"]:not(.playButton, .gearButton)`);
-        // toggle volume slider and delete buttons 
-        slider.style.display = slider.style.display === 'block' ? 'none' : 'block';
+        var colorSlider = document.querySelector(`.color-slider[data-player="${playerId}"]`);
+        var volumeSlider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
+        var deleteButton = document.querySelector(`button.deleteButton[data-player="${playerId}"]`);
+        // toggle visibility of buttons
+        colorSlider.style.display = colorSlider.style.display === 'block' ? 'none' : 'block';
+        volumeSlider.style.display = volumeSlider.style.display === 'block' ? 'none' : 'block';
         deleteButton.style.display = deleteButton.style.display === 'block' ? 'none' : 'block';
     }
 });
@@ -363,7 +347,7 @@ function makeDraggable(element) {
 
     function dragMouseDown(e) {
         // dont drag when adjusting volume
-        if (e.target.closest('.volume-slider')) {
+        if (e.target.closest('.volume-slider, .color-slider')) {
             //  control -> don't drag
             e.stopPropagation();
         } else {
