@@ -20,7 +20,8 @@ const updateFoodPosition = () => {
 const handleGameOver = () => {
     // Clearing the timer and reloading the page on game over
     clearInterval(setIntervalId);
-    alert("Game Over! Press OK to replay...");
+    //alert("Game Over! Press OK to replay...");//
+    alertify.alert('Alert Title', 'Game over! Press OK to replay...!');
     location.reload();
 }
 const changeDirection = e => {
