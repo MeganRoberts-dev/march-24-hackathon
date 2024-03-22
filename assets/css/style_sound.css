@@ -1,6 +1,5 @@
 #playersContainer{
     position: absolute;
-    /* z-index: 999; */
 }
 
 .player-container {
@@ -10,15 +9,16 @@
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     padding: 10px;
     background-color: #000000;
+    color: rgb(0, 0, 0);
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
     position: fixed;
     cursor: move;
-    z-index: 99999;
+    z-index: 9999;
 }
 
 .playButton {
@@ -26,7 +26,6 @@
     background-color: transparent;
     color: rgb(0, 0, 0);
     font-size: inherit;
-
 }
 
 .gearButton {
@@ -34,7 +33,6 @@
     background-color: transparent;
     color: rgb(0, 0, 0);
     font-size: inherit;
-
 }
 
 .deleteButton {
@@ -55,17 +53,10 @@
     font-size: inherit;
 }
 
-#addPlayerSubmit {
+#addPlayerSubmit,
+#cancelAddPlayer  {
     border: none;
     background-color: transparent;
-    color: white;
-    font-size: 2em;
-}
-
-#cancelAddPlayer {
-    border: none;
-    background-color: transparent;
-    color: white;
     font-size: 2em;
 }
 
@@ -74,24 +65,20 @@
     align-items: center;
     justify-content: start;
     gap: 10px;
-
 }
 
 .volume-slider {
     display: none;
     width: 100px;
     margin-left: 10px;
-
 }
 
 .sound-name {
     margin-bottom: 5px;
     margin-top: 2px;
-
 }
 
 .frosted-glass-effect {
-    color: rgba(255, 255, 255, 1);
     font-weight: 500;
     backdrop-filter: blur(5px); 
     background-color: rgba(0, 0, 0, 0.1); 
@@ -102,7 +89,7 @@
 }
 
 .frosted-glass-modal {
-    color: rgba(82, 82, 82, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
     backdrop-filter: blur(5px); 
     background-color: rgba(0, 0, 0, 0.4); 
@@ -110,11 +97,6 @@
     border-radius: 10px;
     border: none;
 
-}
-
-/* Style adjustments for labels for better visibility */
-label {
-    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Custom Volume Slider Controls */
@@ -171,20 +153,18 @@ label {
     padding: 5px;
 }
 
-#addPlayerModal {
-    position: fixed;
-    top: 100px;
-    left: calc(50% - 150px);
-    width: 600px !important;
-    display: none;
-}
-
 input::placeholder {
     color: rgb(0, 0, 0);
   }
 
+#videoId::placeholder,
+#playerName::placeholder {
+    color: rgb(184, 184, 184);
+}
 
-
+#videoDropdown {
+    color: rgb(184, 184, 184);
+}
 
 /* timer styling */
 .draggable {
