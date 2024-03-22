@@ -1,3 +1,8 @@
+#playersContainer{
+    position: absolute;
+    /* z-index: 999; */
+}
+
 .player-container {
     display: flex;
     flex-direction: column;
@@ -11,8 +16,9 @@
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
-    position: absolute;
+    position: fixed;
     cursor: grab;
+    z-index: 99999;
 }
 
 .playButton {
@@ -20,6 +26,7 @@
     background-color: transparent;
     color: white;
     font-size: inherit;
+
 }
 
 .gearButton {
@@ -27,6 +34,7 @@
     background-color: transparent;
     color: white;
     font-size: inherit;
+
 }
 
 .deleteButton {
@@ -65,41 +73,31 @@
     align-items: center;
     justify-content: start;
     gap: 10px;
+
 }
 
 .volume-slider {
     display: none;
     width: 100px;
     margin-left: 10px;
+
 }
 
 .sound-name {
     margin-bottom: 5px;
     margin-top: 2px;
-}
 
-html {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0; 
-    height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?q=80&w=4170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .frosted-glass-effect {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(109, 109, 109, 0.7);
     font-weight: 500;
     backdrop-filter: blur(5px); 
     background-color: rgba(255, 255, 255, 0.1); 
     padding: 5px; 
     border-radius: 10px;
     border: none;
+
 }
 
 /* Custom Volume Slider Controls */
@@ -110,6 +108,7 @@ body {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     cursor: pointer;
+
 }
 
 .volume-slider::-webkit-slider-thumb {
@@ -121,6 +120,7 @@ body {
     background: rgb(255, 255, 255);
     cursor: grab;
     box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    z-index: 999;
 }
 
 /* Custom Color Slider Controls */
@@ -142,13 +142,14 @@ body {
     background: rgb(35, 35, 35);
     cursor: grab;
     box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+
 }
 
 /* Style modal */
 .input-transparent, .select-transparent {
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     padding: 5px;
 }
@@ -162,7 +163,7 @@ body {
 }
 
 input::placeholder {
-    color: white;
+    color: rgb(0, 0, 0);
   }
 
 /* Style adjustments for labels for better visibility */
@@ -170,25 +171,12 @@ label {
     color: rgba(255, 255, 255, 0.7);
 }
 
-.draggable {
-    width: 100px;
-    height: 50px;
-    background-color: lightblue;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 50px;
-    cursor: move;
-    position: absolute;
-    top: 50px;
-    left: 50px;
-}
-
 
 /* timer styling */
 .draggable {
     width: 150px;
     height: 50px;
-    background-color: lightblue;
+    background-color: rgb(0, 0, 0);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -197,14 +185,14 @@ label {
     position: absolute;
     top: 50px;
     left: 50px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.7);
     font-weight: 500;
     backdrop-filter: blur(5px); 
-    background-color: rgba(255, 255, 255, 0.1); 
+    background-color: rgba(0, 0, 0, 0.1); 
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0.5%;
+    left: 30%;
+    z-index: 999;
 }
 
 #timer {
@@ -223,5 +211,9 @@ label {
 }
 
 .icon-button i {
-    font-size: 20px;
+    font-size: 20px; 
+}
+
+.draggable #start-stop-btn {
+    color: black;
 }
