@@ -2,10 +2,16 @@ body{
     margin: 0;
     padding: 0;
     min-height:100vh;
-    /*background-image: linear-gradient(125deg, #6a89cc, #b8e994) ; */
-    background: url('../images/error404.jpg') no-repeat center center/cover;
+    background-image: linear-gradient(125deg, #c3c3c4, #fff45b) ;
+    background: url('../images/404_background.png') no-repeat center center/cover;
     width:100%;
     background-attachment:fixed;
+}
+
+span{
+    color:yellow;
+    text-transform:uppercase;
+    text-decoration: underline;
 }
 
 p{
@@ -18,8 +24,8 @@ p{
     top:50%;
     transform: translateY(-50%);
     text-align: center;
-    color: #f1f1f1;
-    background: radial-gradient(#000000, transparent);
+    color: #000000;
+    /*background: radial-gradient(#000000, transparent);*/
     padding-bottom: 30px;
 }
 
