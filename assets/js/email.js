@@ -2,47 +2,59 @@
 // Initialize EmailJS user ID
 emailjs.init("PHl0QftQP_tfIeF6N");
 
-const sendBtn = document.getElementById("sendEmail");
-const emailForm = document.getElementById("email");
+document.getElementById("email").addEventListener("submit", function(e) {
+  e.preventDefault(); // Prevent the default form submission
+  
+  console.log('Attempting to send email');
+  const sendTo = document.getElementById("exampleInputEmail1").value;
+  console.log(sendTo);
+  
+  const sendFrom = document.getElementById("nameInput").value;
+  console.log(sendFrom);
+  
+  const msg = "This is a test message. Hello World!";
+  console.log(msg);
+  
+  if (sendFrom && sendTo) {
+    emailjs.send("service_skg63xk", "template_i8yav5k", {
+      to_email: sendTo,
+      subject_from_name: sendFrom,
+      to_name: sendTo,
+      user_name: sendFrom,
+      message: msg,
+    })
+    .then(function(response) {
+      // SUCCESS
+      console.log('SUCCESS!', response.status, response.text);
+      // Show alert
+      const alertSuccess = document.getElementById("alertSuccess");
+      alertSuccess.classList.remove("d-none");
+      // Automatically hide >5 seconds
+      setTimeout(() => {
+        alertSuccess.classList.add("d-none");
+      }, 5000);
 
-const sendEmail = () => {
-  const email = document.getElementById("email").value;
-  const sendFrom = document.getElementById("sendFrom").value;
-  const sendTo = document.getElementById("sendTo").value;
-  const msg = "This is a test message. Hello World!"
-  if (
-    sendFrom &&
-    sendTo &&
-    email
-  ) {
-    emailjs
-      .send("service_skg63xk", "template_i8yav5k", {
-        to_email: email,
-        subject_from_name: sendFrom,
-        to_name: sendTo,
-        user_name: sendFrom,
-        message: msg,
-      })
-      .then(
-        function (response) {
-          // Show Bootstrap alert
-          const alertSuccess = document.getElementById("alertSuccess");
-          alertSuccess.style.display = "block";
-          // Hide after 5 seconds
-          setTimeout(() => {
-            alertSuccess.style.display = "none";
-          }, 2500);
-        },
-        function (error) {
-          alert("Failed to send the email.");
-        }
-      );
+      // Reset the form
+      document.getElementById("email").reset();
+    }, function(error) {
+      // FAILED
+      console.log('FAILED...', error);
+      const alertFail = document.getElementById("alertFail");
+      alertFail.classList.remove("d-none");
+      // Automatically hide >5 seconds
+      setTimeout(() => {
+        alertFail.classList.add("d-none");
+      }, 5000);
+    });
   } else {
-    alert(
-      "Please fill in all the fields first. Thanks! Have a happy day :)"
-    );
+    const alertValidate = document.getElementById("alertValidate");
+      alertValidate.classList.remove("d-none");
+      // Automatically hide >5 seconds
+      setTimeout(() => {
+        alertValidate.classList.add("d-none");
+      }, 5000);
   }
-};
+});
 
 const handleEnterKey = (e) => {
   if (e.key === "Enter") {
@@ -51,10 +63,6 @@ const handleEnterKey = (e) => {
   }
 };
 
-if (sendBtn && emailForm) {
-  sendBtn.addEventListener("click", sendEmail);
-  emailForm.addEventListener("keydown", handleEnterKey);
-}
 
 // handle email form emojis
 document.getElementById('emojiSlider').addEventListener('input', function() {
