@@ -52,6 +52,7 @@ const playerSpacing = 90; // Vertical spacing between players
 
 // ensure youtube api loaded before adding default player list
 function onYouTubeIframeAPIReady() {
+    console.log("YouTube API is ready.");
     let playersToPosition = []; 
     const storedPlayersData = localStorage.getItem('playersData');
     if (storedPlayersData) {
