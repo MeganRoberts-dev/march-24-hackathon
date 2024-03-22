@@ -55,3 +55,9 @@ if (sendBtn && emailForm) {
   sendBtn.addEventListener("click", sendEmail);
   emailForm.addEventListener("keydown", handleEnterKey);
 }
+
+document.getElementById('emojiSlider').addEventListener('input', function() {
+  var value = this.value;
+  var newSrc = `assets/images/emojis/emoji${value}.png`;
+  document.getElementById('emojiImage').src = newSrc;
+});

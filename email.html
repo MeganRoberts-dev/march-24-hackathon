@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email</title>
-    <!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<!-- Font Awesome  -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/sounds.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/sounds.css">
 </head>
+
 <body>
-    
+
 
   <div class="container my-5">
     <div class="card" style="max-width: 500px; margin: auto;">
-        <div class="card-body">
+      <div class="card-body">
+        <div class="row">
+          <!-- Form Fields: -->
+          <div class="col-md-8">
             <form>
-              <small id="emailHelp" class="form-text text-muted">Share some positivity today. Pass it forward.</small>  
-              <div class="form-group mb-3">
-                  <label for="nameInput">Name</label>
-                  <input type="text" class="form-control" id="nameInput" placeholder="Enter name">
-                </div>
-                
-                <div class="form-group mb-3">
-                  <label for="exampleInputEmail1">Send To</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                  
-                </div>
-                
-                <div class="form-group mb-3">
-                    <label for="formControlRange">Current Happiness Factor!!!</label>
-                    <input type="range" class="form-control-range" id="formControlRange">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-    </div>
-</div>
+              
+              <small id="emailHelp" class="form-text text-muted">Share some positivity today. Pass it forward.</small>
 
-    
+              <div class="form-group mb-3">
+                <label for="nameInput">Name</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="Enter name">
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="exampleInputEmail1">Send To</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="Enter email">
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="emojiSlider">Current happiness factor:</label>
+                <input type="range" class="form-control-range" id="emojiSlider" min="1" max="12" value="1">
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+          </div>
+
+          <!-- Emoji Image  -->
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <img src="assets/images/emojis/emoji1.png" alt="Emoji" id="emojiImage" style="width: 100px; height: 100px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
+
 </html>
