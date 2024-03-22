@@ -225,6 +225,22 @@ document.addEventListener('click', function(event) {
     }
 });
 
+// closeall players controls at once
+document.getElementById('closeAllBtn').addEventListener('click', function() {
+    // Iterate over each gear button to simulate a click or directly toggle the visibility of associated controls.
+    document.querySelectorAll('.gearButton').forEach(gearButton => {
+        var playerId = gearButton.getAttribute('data-player');
+        
+        // set individual controls
+        var colorSlider = document.querySelector(`.color-slider[data-player="${playerId}"]`);
+        var volumeSlider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
+        var deleteButton = document.querySelector(`button.deleteButton[data-player="${playerId}"]`);
+        
+        colorSlider.style.display = 'none';
+        volumeSlider.style.display = 'none';
+        deleteButton.style.display = 'none';
+    });
+});
 
 // user changes volume slider
 document.addEventListener('input', function(event) {
