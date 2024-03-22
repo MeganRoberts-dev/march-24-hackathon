@@ -18,11 +18,17 @@
         <div id="overallControls">
             <button id="stopAllBtn"><i class="fas fa-stop"></i> Stop All</button>
             <button id="muteAllBtn"><i class="fas fa-volume-up"></i></button>
+            <button id="timerBtn"><i class="far fa-clock"></i></button>
         </div>
         
         <!-- sound player instances get added inside this div-->
         <div id="playersContainer"></div>
         
+
+        <div id="draggable-timer" class="draggable d-none">
+            <button id="start-stop-btn" class="icon-button"><i class="fas fa-play"></i></button>
+            <p id="timer">00:00</p>
+        </div>
 
             <!-- Add Player Modal -->
             <div id="addPlayerModal" style="display:none">

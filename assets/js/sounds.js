@@ -323,7 +323,9 @@ document.getElementById('addPlayerSubmit').addEventListener('click', function() 
         alert('Please fill in both fields.');
     }
 });
+
 // add overall controls for all sounds
+
 // stop all sound players
 document.getElementById('stopAllBtn').addEventListener('click', function() {
     Object.values(players).forEach(player => {
@@ -354,7 +356,19 @@ document.getElementById('muteAllBtn').addEventListener('click', function() {
     });
 });
 
+// toggle timer on / off
+document.getElementById('timerBtn').addEventListener('click', function() {
+    var timerDiv = document.getElementById('draggable-timer');
+    var isVisible = !timerDiv.classList.contains('d-none');
+    
+    if (isVisible) {
+        timerDiv.classList.add('d-none');
+    } else {
+        timerDiv.classList.remove('d-none');
+    }
+});
 
+// make a player draggable
 function makeDraggable(element) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
@@ -444,4 +458,57 @@ function savePlayersData() {
     // Convert the simplified object to a string and save it to localStorage
     const playersDataString = JSON.stringify(simplifiedPlayersData);
     localStorage.setItem('playersData', playersDataString);
+}
+
+
+// #########################  ADD TIMER TEST ####################
+document.addEventListener('DOMContentLoaded', function() {
+    let timerDiv = document.getElementById('draggable-timer');
+    makeDraggable(timerDiv);
+    setupTimerControl();
+});
+
+let timerInterval;
+let timerRunning = false;
+let seconds = 0;
+
+function setupTimerControl() {
+    let startStopBtn = document.getElementById('start-stop-btn');
+    let timer = document.getElementById('timer');
+
+    function formatTime(sec) {
+        let minutes = Math.floor(sec / 60);
+        let seconds = sec % 60;
+        minutes = String(minutes).padStart(2, '0');
+        seconds = String(seconds).padStart(2, '0');
+        return `${minutes}:${seconds}`;
+    }
+
+    startStopBtn.addEventListener('click', function() {
+        let icon = startStopBtn.querySelector('i');
+        if (!timerRunning) {
+            //start
+            timerInterval = setInterval(function() {
+                seconds++;
+                timer.innerText = formatTime(seconds);
+            }, 1000);
+            icon.classList.remove('fa-play');
+            icon.classList.add('fa-stop');
+            timerRunning = true;
+        } else {
+            //stop
+            clearInterval(timerInterval);
+            if (icon.classList.contains('fa-stop')) {
+                icon.classList.remove('fa-stop');
+                icon.classList.add('fa-sync-alt');
+            } else {
+                //reset
+                seconds = 0;
+                timer.innerText = formatTime(seconds);
+                icon.classList.remove('fa-sync-alt');
+                icon.classList.add('fa-play');
+                timerRunning = false;
+            }
+        }
+    });
 }
