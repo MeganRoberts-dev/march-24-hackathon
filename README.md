@@ -1,12 +1,12 @@
 ** Banner **
 
 
-# Sadness Not Found 😊 by 404 Sadness Not Found
+# UTime 😊 by 404 Sadness Not Found
 ## ***"A digital Oasis"*** vs "Where smiles meet screens" // thoughts Megan??
 
 ## Intro
 
-To celebrate World Happiness Day, The Sadness Not Found app brings an opportunity for users to find their own on-screen happy place. A user can find a moment of calm by personalizing a visual and musical escape. Alternatively, they can re-energize their productivity by playing one of our happy games. Or, if it's out loud laughter they are looking for, a user can browse a hilarious selection of memes and then share that joy with their friends by email.
+To celebrate World Happiness Day, The UTime app brings an opportunity for users to find their own on-screen happy place. A user can find a moment of calm by personalizing a visual and musical escape. Alternatively, they can re-energize their productivity by playing one of our happy games. Or, if it's out loud laughter they are looking for, a user can browse a hilarious selection of memes and then share that joy with their friends by email.
 
 ------
 
@@ -25,7 +25,10 @@ In a busy world with many of us working from home, it can be difficult to take t
 
 ## Objectives
 
-To celebrate World Happiness Day, our objective was to create a harmonious space where users could navigate to content that would provide them with happiness. This meant creating content that would appeal to people looking for different things: 1. an online oasis (acheived through an visual and auditory experience), 2. joy (by playing a game), and 3. laughter (from viewing amusing content).
+To celebrate World Happiness Day, our objective was to create a harmonious space where users could navigate to content that would provide them with happiness. This meant creating content that would appeal to people looking for different things: 
+1. An online oasis - acheived through an visual and auditory experience.
+2. Joy - by playing a game.
+3. Laughter - from viewing amusing content.
 
 ### Target Audience
 
