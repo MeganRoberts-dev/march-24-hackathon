@@ -18,55 +18,38 @@
 </head>
 
 <body>
-    <div class="container-fluid navbar-container">
-        <div class="row justify-content-center mt-3">
-            <div class="col-12">
-                <div class="d-flex justify-content-between align-items-center">
-
-                    <!------ Logo div ------>
-                    <div class="logo-container">
-
-                        <!------ Logo Will be replaced with actual logo once done ------>
-                        <img src="assets/images/logo.png" alt="Logotyp" class="logo">
-                    </div>
-
-                    <!---- Links ---->
-                    <ul class="list-inline d-flex justify-content-center">
-                        <li class="list-inline-item mr-3 text-center nav-home">
-                            <a href="index.html" class="nav-links d-block">
-                                <i class="fa-solid fa-house-chimney nav-icons"></i>
-                                <div>Home</div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item mr-3 text-center nav-sounds">
-                            <a href="index.html" class="nav-links d-block ">
-                                <i class="fa-solid fa-headphones"></i>
-                                <div>Sounds</div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item mr-3 text-center nav-games">
-                            <a href="index.html" class="nav-links d-block">
-                                <i class="fa-solid fa-gamepad"></i>
-                                <div>Games</div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item mr-3 text-center nav-memes">
-                            <a href="index.html" class="nav-links d-block">
-                                <i class="fa-solid fa-face-laugh"></i>
-                                <div>Memes</div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item mr-3 text-center nav-about">
-                            <a href="index.html" class="nav-links d-block">
-                                <i class="fa-solid fa-circle-info nav-icons"></i>
-                                <div>About</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Navigation links -->
+	<header id="header">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">UTime<span>.</span></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<a class="nav-link active" href="index.html" aria-current="page" >Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="gallery.html">Gallery</a>
+						</li>
+                        <li class="nav-item">
+							<a class="nav-link" href="game.html">Games</a>
+						</li>
+                        <li class="nav-item">
+							<a class="nav-link" href="memes.html">Memes</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.html">About</a>
+						</li>
+                       
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
 
     <!--------- Page Content --------->
     <div class="row mb-3 description-home justify-content-center">
