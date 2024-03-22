@@ -63,9 +63,9 @@ document.getElementById('emojiSlider').addEventListener('input', function() {
   document.getElementById('emojiImage').src = newSrc;
 });
 
-// adjust the value of 12 if more emojis are added
+// adjust the value of 20 if more emojis are added
 document.getElementById('randomButton').addEventListener('click', function() {
-  var randomValue = Math.floor(Math.random() * 12) + 1;
+  var randomValue = Math.floor(Math.random() * 20) + 1;
   document.getElementById('emojiSlider').value = randomValue;
   var newSrc = `assets/images/emojis/emoji${randomValue}.png`;
   document.getElementById('emojiImage').src = newSrc;
