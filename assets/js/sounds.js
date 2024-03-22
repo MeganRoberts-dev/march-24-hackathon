@@ -88,80 +88,97 @@ function addPlayer(playerName, videoId) {
     var playerCount = Object.keys(players).length + 1;
     var playerId = 'player' + playerCount;
 
-    // Create player container
     var container = document.createElement('div');
     container.classList.add('player-container');
     container.classList.add('frosted-glass-effect');
-    container.setAttribute('id', 'container-' + playerId); // Set an ID for the container
+    container.setAttribute('id', 'container-' + playerId);
 
-    // Add player name label
     var nameLabel = document.createElement('p');
     nameLabel.textContent = playerName;
     nameLabel.classList.add("sound-name");
     container.appendChild(nameLabel);
 
-    // add player div
     var playerDiv = document.createElement('div');
     playerDiv.id = playerId;
     container.appendChild(playerDiv);
 
-    // add player controls div
     var controlsDiv = document.createElement('div');
     controlsDiv.classList.add('controls');
+
+    var playButton = document.createElement('button');
+    playButton.classList.add('playButton');
+    playButton.setAttribute('data-player', playerId);
+    playButton.innerHTML = '<i class="fas fa-play"></i>';
+    playButton.disabled = true;
+
+    var gearButton = document.createElement('button');
+    gearButton.classList.add('gearButton');
+    gearButton.setAttribute('data-player', playerId);
+    gearButton.innerHTML = '<i class="fas fa-cog"></i>';
+
+    var volumeSlider = document.createElement('input');
+    volumeSlider.type = 'range';
+    volumeSlider.classList.add('volume-slider');
+    volumeSlider.setAttribute('data-player', playerId);
+    volumeSlider.min = '0';
+    volumeSlider.max = '100';
+    volumeSlider.value = '100';
+    volumeSlider.style.width = '80px';
+
+    var colorSlider = document.createElement('input');
+    colorSlider.type = 'range';
+    colorSlider.classList.add('color-slider');
+    colorSlider.min = '0';
+    colorSlider.max = '255';
+    colorSlider.value = '0';
+    colorSlider.style.width = '80px';
+    colorSlider.style.display = 'none';
+    colorSlider.setAttribute('data-player', playerId);
+
+    colorSlider.addEventListener('input', function() {
+        var value = 255 - this.value;
+        container.style.backgroundColor = `rgba(${value}, ${value}, ${value}, 0.1)`;
     
-        var playButton = document.createElement('button');
-        playButton.classList.add('playButton');
-        playButton.setAttribute('data-player', playerId);
-        playButton.innerHTML = '<i class="fas fa-play"></i>';
-        playButton.disabled = true; // Enabled later when player is ready
+        // toggle dark mode for max slider value
+        var textColor = this.value == '255' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)';
+        container.style.color = textColor;
+    
+        // buttons to toggle
+        var playButton = container.querySelector('.playButton i');
+        var gearButton = container.querySelector('.gearButton i');
+        
+        // Set the color
+        if (playButton) playButton.style.color = textColor;
+        if (gearButton) gearButton.style.color = textColor;
+      
+    });
 
-        var volumeButton = document.createElement('button');
-        volumeButton.classList.add('volumeButton');
-        volumeButton.setAttribute('data-player', playerId);
-        volumeButton.innerHTML = '<i class="fas fa-cog"></i>';
+    var deleteButton = document.createElement('button');
+    deleteButton.classList.add('deleteButton');
+    deleteButton.setAttribute('data-player', playerId);
+    deleteButton.innerHTML = '<i class="fas fa-times-circle"></i>';
+    deleteButton.style.display = 'none';
+    deleteButton.onclick = function() {
+        document.getElementById('playersContainer').removeChild(container);
+        delete players[playerId];
+    };
 
-        var volumeSlider = document.createElement('input');
-        volumeSlider.type = 'range';
-        volumeSlider.classList.add('volume-slider');
-        volumeSlider.setAttribute('data-player', playerId);
-        volumeSlider.min = '0';
-        volumeSlider.max = '100';
-        volumeSlider.value = '100';
-
-        var deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.classList.add('deleteButton');
-        deleteButton.setAttribute('data-player', playerId); // Associate button with specific player
-        deleteButton.innerHTML = '<i class="fas fa-times-circle"></i>';
-        deleteButton.style.display = 'none';
-        deleteButton.onclick = function() {
-            // Remove player container from DOM
-            document.getElementById('playersContainer').removeChild(container);
-            // Delete player from players object
-            delete players[playerId];
-            savePlayersData();
-        };
-
-    // build controls for player
     controlsDiv.appendChild(playButton);
-    controlsDiv.appendChild(volumeButton);
+    controlsDiv.appendChild(gearButton);
     controlsDiv.appendChild(volumeSlider);
+    controlsDiv.appendChild(colorSlider);
     controlsDiv.appendChild(deleteButton);
     
-    // add player and controls together
     container.appendChild(playerDiv);
     container.appendChild(controlsDiv);
 
-    // add player to playersContainer div
     document.getElementById('playersContainer').appendChild(container);
 
-    // add drag and drop functionality to player
     makeDraggable(container);
 
-    // Store player name and videoId in the players object
     players[playerId] = { name: playerName, videoId: videoId, player: createPlayer(playerId, videoId) };
-
 }
+
 
 // create a new YT player
 function createPlayer(elementId, videoId) {
@@ -185,7 +202,7 @@ function createPlayer(elementId, videoId) {
 
 // only enable play pause buttons once YT player is ready
 function onPlayerReady(event) {
-    document.querySelectorAll('.playButton, .volumeButton').forEach(button => button.disabled = false);
+    document.querySelectorAll('.playButton, .gearButton').forEach(button => button.disabled = false);
 }
 
 // Event delegation for play and volume controls
@@ -194,16 +211,19 @@ document.addEventListener('click', function(event) {
         var button = event.target.closest('.playButton');
         var playerId = button.getAttribute('data-player');
         togglePlayPause(playerId);
-    } else if (event.target.closest('.volumeButton')) {
-        var volumeButton = event.target.closest('.volumeButton');
-        var playerId = volumeButton.getAttribute('data-player');
-        var slider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
-        var deleteButton = document.querySelector(`button[data-player="${playerId}"]:not(.playButton, .volumeButton)`);
-        // toggle volume slider and delete buttons 
-        slider.style.display = slider.style.display === 'block' ? 'none' : 'block';
+    } else if (event.target.closest('.gearButton')) {
+        var gearButton = event.target.closest('.gearButton');
+        var playerId = gearButton.getAttribute('data-player');
+        var colorSlider = document.querySelector(`.color-slider[data-player="${playerId}"]`);
+        var volumeSlider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
+        var deleteButton = document.querySelector(`button.deleteButton[data-player="${playerId}"]`);
+        // toggle visibility of buttons
+        colorSlider.style.display = colorSlider.style.display === 'block' ? 'none' : 'block';
+        volumeSlider.style.display = volumeSlider.style.display === 'block' ? 'none' : 'block';
         deleteButton.style.display = deleteButton.style.display === 'block' ? 'none' : 'block';
     }
 });
+
 
 // user changes volume slider
 document.addEventListener('input', function(event) {
@@ -342,7 +362,7 @@ function makeDraggable(element) {
 
     function dragMouseDown(e) {
         // dont drag when adjusting volume
-        if (e.target.closest('.volume-slider')) {
+        if (e.target.closest('.volume-slider, .color-slider')) {
             //  control -> don't drag
             e.stopPropagation();
         } else {
