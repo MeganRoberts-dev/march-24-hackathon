@@ -10,6 +10,8 @@ document.getElementById("email").addEventListener("submit", function(e) {
   const msg = document.getElementById("message").value;
   const temp = sendTo.split("@");
   const recipient = temp[0];
+  const happiness = document.getElementById("emojiSlider").value;
+  const max = 20;
 
   if (sendFrom && sendTo) {
     emailjs.send("service_skg63xk", "template_i8yav5k", {
@@ -18,6 +20,8 @@ document.getElementById("email").addEventListener("submit", function(e) {
       to_name: recipient,
       from_name: sendFrom,
       message: msg,
+      happiness_factor: happiness,
+      max_happiness: max,
     })
     .then(function(response) {
       // SUCCESS
@@ -59,18 +63,17 @@ const handleEnterKey = (e) => {
   }
 };
 
-
 // handle email form emojis
 document.getElementById('emojiSlider').addEventListener('input', function() {
   var value = this.value;
-  var newSrc = `assets/images/emojis/emoji${value}.png`;
+  var newSrc = `assets/images/emojis/e${value}.png`;
   document.getElementById('emojiImage').src = newSrc;
 });
 
-// adjust the value of 20 if more emojis are added
+// adjust the value of 21 if more emojis are added
 document.getElementById('randomButton').addEventListener('click', function() {
-  var randomValue = Math.floor(Math.random() * 20) + 1;
+  var randomValue = Math.floor(Math.random() * 21) + 1;
   document.getElementById('emojiSlider').value = randomValue;
-  var newSrc = `assets/images/emojis/emoji${randomValue}.png`;
+  var newSrc = `assets/images/emojis/e${randomValue}.png`;
   document.getElementById('emojiImage').src = newSrc;
 });
