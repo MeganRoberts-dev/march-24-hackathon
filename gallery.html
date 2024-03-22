@@ -128,31 +128,41 @@
         </div>
 
 		<!-- Add Player Modal -->
-		<div id="addPlayerModal" style="display:none">
-			<div class="frosted-glass-effect" style="margin: 100px auto; width: 300px;">
+		<div class="modal" id="addPlayerModal" tabindex="-1" aria-labelledby="addPlayerModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			<div class="modal-content  frosted-glass-modal">
+				<div class="modal-header">
+				<h5 class="modal-title" id="addPlayerModalLabel">Add Player</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
 				<div>
 					<label for="videoId">Select Preset Sound:</label>
-					<select id="videoDropdown" class="select-transparent mb-5">
-						<option value=""></option>
+					<select id="videoDropdown" class="form-select select-transparent mb-3">
+					<option value=""></option>
 					</select>
 				</div>
 				<div>
 					Or enter your own youtube ID below:
 				</div>
 				<div>
-					<input type="text" id="videoId" name="videoId" class="input-transparent my-3"  placeholder="YouTubeID">
+					<input type="text" id="videoId" name="videoId" class="form-control input-transparent my-3" placeholder="YouTubeID">
 				</div>
 				<div>
-					<input type="text" id="playerName" name="playerName" class="input-transparent"  placeholder="Enter Sound Name">
+					<input type="text" id="playerName" name="playerName" class="form-control input-transparent" placeholder="Enter Sound Name">
 				</div>
 				<div>
-					<input type="range" id="volumeControl" class="volume-slider" class="input-transparent">
+					<input type="range" id="volumeControl" class="form-range volume-slider" class="input-transparent">
 				</div>
-				<button id="addPlayerSubmit" class="icon-button"><i class="fas fa-check-circle"></i></button>
-				<button id="cancelAddPlayer" class="icon-button"><i class="fas fa-times-circle"></i></button>
-
+				</div>
+				<div class="modal-footer">
+				<button id="cancelAddPlayer" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times-circle"></i></button>
+				<button id="addPlayerSubmit" class="btn btn-primary"><i class="fas fa-check-circle"></i></button>
+				</div>
+			</div>
 			</div>
 		</div>
+  
 
 	</main>
 	<!-- Script -->
