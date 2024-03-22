@@ -1,6 +1,7 @@
 /* Quiet Space HTML */
 .carousel-container {
     padding: 0;
+    z-index: 100;
   }
   
   .carousel-item img {

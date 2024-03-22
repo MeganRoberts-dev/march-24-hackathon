@@ -52,6 +52,7 @@ const playerSpacing = 90; // Vertical spacing between players
 
 // ensure youtube api loaded before adding default player list
 function onYouTubeIframeAPIReady() {
+    console.log("YouTube API is ready.");
     let playersToPosition = []; 
     const storedPlayersData = localStorage.getItem('playersData');
     if (storedPlayersData) {
@@ -130,7 +131,7 @@ function addPlayer(playerName, videoId) {
     colorSlider.classList.add('color-slider');
     colorSlider.min = '0';
     colorSlider.max = '255';
-    colorSlider.value = '0';
+    colorSlider.value = '255';
     colorSlider.style.width = '80px';
     colorSlider.style.display = 'none';
     colorSlider.setAttribute('data-player', playerId);
@@ -224,6 +225,22 @@ document.addEventListener('click', function(event) {
     }
 });
 
+// closeall players controls at once
+document.getElementById('closeAllBtn').addEventListener('click', function() {
+    // Iterate over each gear button to simulate a click or directly toggle the visibility of associated controls.
+    document.querySelectorAll('.gearButton').forEach(gearButton => {
+        var playerId = gearButton.getAttribute('data-player');
+        
+        // set individual controls
+        var colorSlider = document.querySelector(`.color-slider[data-player="${playerId}"]`);
+        var volumeSlider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
+        var deleteButton = document.querySelector(`button.deleteButton[data-player="${playerId}"]`);
+        
+        colorSlider.style.display = 'none';
+        volumeSlider.style.display = 'none';
+        deleteButton.style.display = 'none';
+    });
+});
 
 // user changes volume slider
 document.addEventListener('input', function(event) {
@@ -239,29 +256,32 @@ document.addEventListener('input', function(event) {
 function togglePlayPause(playerId) {
     var player = players[playerId].player;
     var state = player.getPlayerState();
-    var button = document.querySelector(`button[data-player="${playerId}"]`);
+    var icon = document.querySelector(`button[data-player="${playerId}"] i`);
     if (state === YT.PlayerState.PLAYING || state === YT.PlayerState.BUFFERING) {
         player.pauseVideo();
-        button.innerHTML = '<i class="fas fa-play"></i>';
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
     } else {
         player.playVideo();
-        button.innerHTML = '<i class="fas fa-pause"></i>';
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
     }
 }
 
 // toggle display of play pause buttons
 function onPlayerStateChange(event) {
-    var playerElementId = event.target.getIframe().id;
     var playerKey = Object.keys(players).find(key => players[key].player === event.target);
-    var button = document.querySelector(`button[data-player="${playerKey}"]`);
+    var icon = document.querySelector(`button[data-player="${playerKey}"] i`);
     if (event.data === YT.PlayerState.PLAYING) {
-        button.innerHTML = '<i class="fas fa-pause"></i>';
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
     } else {
-        button.innerHTML = '<i class="fas fa-play"></i>';
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
     }
 }
 
-// detect click on add player button
+// detect click on add sound button
 document.getElementById('addPlayerBtn').addEventListener('click', function() {
     document.getElementById('addPlayerModal').style.display = 'block';
     populateDropdown(); // build dropdown
@@ -300,7 +320,6 @@ document.getElementById('videoDropdown').addEventListener('change', function() {
     document.getElementById('playerName').value = soundName;
     document.getElementById('videoId').value = videoId;
 });
-
 
 // detect click on cancel button in modal
 document.getElementById('cancelAddPlayer').addEventListener('click', function() {
