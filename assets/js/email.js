@@ -12,6 +12,8 @@ document.getElementById("email").addEventListener("submit", function(e) {
   const recipient = temp[0];
   const happiness = document.getElementById("emojiSlider").value;
   const max = 21;
+  const quote = document.getElementById("quote").value;
+  console.log(quote)
 
   if (sendFrom && sendTo) {
     emailjs.send("service_skg63xk", "template_i8yav5k", {
@@ -22,6 +24,7 @@ document.getElementById("email").addEventListener("submit", function(e) {
       message: msg,
       happiness_factor: happiness,
       max_happiness: max,
+      affirmation: quote,
     })
     .then(function(response) {
       // SUCCESS
@@ -77,3 +80,33 @@ document.getElementById('randomButton').addEventListener('click', function() {
   var newSrc = `assets/images/emojis/e${randomValue}.png`;
   document.getElementById('emojiImage').src = newSrc;
 });
+
+
+// get random ffirmation from API (type.fit)
+function fetchAffirmation() {
+  fetch('https://type.fit/api/quotes')
+      .then(function(response) {
+          return response.json();
+      })
+      .then(function(data) {
+          const randomQuote = data[Math.floor(Math.random() * data.length)];
+
+          // remove unneccss.'type.fit'
+          let quoteText = randomQuote.text.replace(', type.fit', '').trim();
+          let quoteHTML = `"${quoteText}"`;
+
+          // remove unneccss.'type.fit'
+          if (randomQuote.author) {
+              let authorText = randomQuote.author.replace(', type.fit', '').trim();
+              quoteHTML += ` - ${authorText}`;
+          }
+
+          document.getElementById('quote').innerHTML = quoteHTML;
+      })
+      .catch(function(error) {
+          console.log('Error:', error);
+          document.getElementById('quote').innerHTML = 'Sorry, could not fetch a quote. Try again!';
+      });
+}
+
+fetchAffirmation();
