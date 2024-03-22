@@ -153,17 +153,18 @@
     padding: 5px;
 }
 
-#addPlayerModal {
-    position: fixed;
-    top: 100px;
-    left: calc(50% - 150px);
-    width: 600px !important;
-    display: none;
-}
-
 input::placeholder {
     color: rgb(0, 0, 0);
   }
+
+#videoId::placeholder,
+#playerName::placeholder {
+    color: rgb(184, 184, 184);
+}
+
+#videoDropdown {
+    color: rgb(184, 184, 184);
+}
 
 /* timer styling */
 .draggable {
