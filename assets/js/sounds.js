@@ -131,7 +131,7 @@ function addPlayer(playerName, videoId) {
     colorSlider.classList.add('color-slider');
     colorSlider.min = '0';
     colorSlider.max = '255';
-    colorSlider.value = '0';
+    colorSlider.value = '255';
     colorSlider.style.width = '80px';
     colorSlider.style.display = 'none';
     colorSlider.setAttribute('data-player', playerId);
