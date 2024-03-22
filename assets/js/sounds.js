@@ -239,25 +239,28 @@ document.addEventListener('input', function(event) {
 function togglePlayPause(playerId) {
     var player = players[playerId].player;
     var state = player.getPlayerState();
-    var button = document.querySelector(`button[data-player="${playerId}"]`);
+    var icon = document.querySelector(`button[data-player="${playerId}"] i`);
     if (state === YT.PlayerState.PLAYING || state === YT.PlayerState.BUFFERING) {
         player.pauseVideo();
-        button.innerHTML = '<i class="fas fa-play"></i>';
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
     } else {
         player.playVideo();
-        button.innerHTML = '<i class="fas fa-pause"></i>';
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
     }
 }
 
 // toggle display of play pause buttons
 function onPlayerStateChange(event) {
-    var playerElementId = event.target.getIframe().id;
     var playerKey = Object.keys(players).find(key => players[key].player === event.target);
-    var button = document.querySelector(`button[data-player="${playerKey}"]`);
+    var icon = document.querySelector(`button[data-player="${playerKey}"] i`);
     if (event.data === YT.PlayerState.PLAYING) {
-        button.innerHTML = '<i class="fas fa-pause"></i>';
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
     } else {
-        button.innerHTML = '<i class="fas fa-play"></i>';
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
     }
 }
 
