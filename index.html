@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="container-fluid mb-3">
+    <div class="container-fluid navbar-container">
         <div class="row justify-content-center mt-3">
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
@@ -30,17 +30,35 @@
 
                     <!---- Links ---->
                     <ul class="list-inline d-flex justify-content-center">
-                        <li class="list-inline-item mr-3">
-                            <a href="index.html" class="nav-links d-block"><i
-                                    class="fa-solid fa-house-chimney nav-icons"></i> Home</a>
+                        <li class="list-inline-item mr-3 text-center nav-home">
+                            <a href="index.html" class="nav-links d-block">
+                                <i class="fa-solid fa-house-chimney nav-icons"></i>
+                                <div>Home</div>
+                            </a>
                         </li>
-                        <li class="list-inline-item mr-3">
-                            <a href="#" class="nav-links d-block"><i class="fa-solid fa-circle-info nav-icons"></i>
-                                About</a>
+                        <li class="list-inline-item mr-3 text-center nav-sounds">
+                            <a href="index.html" class="nav-links d-block ">
+                                <i class="fa-solid fa-headphones"></i>
+                                <div>Sounds</div>
+                            </a>
                         </li>
-                        <li class="list-inline-item mr-3">
-                            <a href="#" class="nav-links d-block"><i class="fa-solid fa-star nav-icons"></i>
-                                Favorites</a>
+                        <li class="list-inline-item mr-3 text-center nav-games">
+                            <a href="index.html" class="nav-links d-block">
+                                <i class="fa-solid fa-gamepad"></i>
+                                <div>Games</div>
+                            </a>
+                        </li>
+                        <li class="list-inline-item mr-3 text-center nav-memes">
+                            <a href="index.html" class="nav-links d-block">
+                                <i class="fa-solid fa-face-laugh"></i>
+                                <div>Memes</div>
+                            </a>
+                        </li>
+                        <li class="list-inline-item mr-3 text-center nav-about">
+                            <a href="index.html" class="nav-links d-block">
+                                <i class="fa-solid fa-circle-info nav-icons"></i>
+                                <div>About</div>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -50,14 +68,19 @@
 
     <!--------- Page Content --------->
     <div class="row mb-3 description-home justify-content-center">
-        <div class="col-10 text-center">
-            <h3 class="pt-5 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Proin fermentum leo vel orci porta. Rhoncus est
-                pellentesque elit ullamcorper dignissim. Dapibus ultrices in iaculis nunc sed augue. Adipiscing elit ut
-                aliquam purus.</h3>
-            <h4 class="pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Proin fermentum leo vel orci porta.</h4>
-        </div>
+        <div class="col-12">
+            <div class="row justify-content-center">
+                <div class="col-10 text-center">
+                    <h3 class="pt-5 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Proin fermentum leo vel orci porta. Rhoncus est
+                        pellentesque elit ullamcorper dignissim. Dapibus ultrices in iaculis nunc sed augue. Adipiscing elit ut
+                        aliquam purus.</h3>
+                    <h4 class="pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua. Proin fermentum leo vel orci porta.</h4>
+                </div>
+                </div>
+            </div>
+            
 
         <div class="col-12 text-center">
             <h2 class="pt-3 mb-3">Pick a theme</h2>
@@ -137,6 +160,10 @@
         </div>
     </footer>
 
+    <!----- Scripts ----->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
