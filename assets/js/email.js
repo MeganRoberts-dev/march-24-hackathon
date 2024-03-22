@@ -12,7 +12,7 @@ document.getElementById("email").addEventListener("submit", function(e) {
   const sendFrom = document.getElementById("nameInput").value;
   console.log(sendFrom);
   
-  const msg = "This is a test message. Hello World!";
+  const msg = document.getElementById("message").value;
   console.log(msg);
   
   if (sendFrom && sendTo) {
@@ -20,7 +20,7 @@ document.getElementById("email").addEventListener("submit", function(e) {
       to_email: sendTo,
       subject_from_name: sendFrom,
       to_name: sendTo,
-      user_name: sendFrom,
+      from_name: sendFrom,
       message: msg,
     })
     .then(function(response) {
