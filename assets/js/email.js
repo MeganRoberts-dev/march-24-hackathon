@@ -5,21 +5,17 @@ emailjs.init("PHl0QftQP_tfIeF6N");
 document.getElementById("email").addEventListener("submit", function(e) {
   e.preventDefault(); // Prevent the default form submission
   
-  console.log('Attempting to send email');
   const sendTo = document.getElementById("exampleInputEmail1").value;
-  console.log(sendTo);
-  
   const sendFrom = document.getElementById("nameInput").value;
-  console.log(sendFrom);
-  
   const msg = document.getElementById("message").value;
-  console.log(msg);
-  
+  const temp = sendTo.split("@");
+  const recipient = temp[0];
+
   if (sendFrom && sendTo) {
     emailjs.send("service_skg63xk", "template_i8yav5k", {
       to_email: sendTo,
       subject_from_name: sendFrom,
-      to_name: sendTo,
+      to_name: recipient,
       from_name: sendFrom,
       message: msg,
     })
