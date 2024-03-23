@@ -11,12 +11,12 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- Styles  -->
-  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="assets/css/style_affirmations.css">
   <!-- favicon -->
   <link rel="icon" type="image/x-icon" href="">
 </head>
 
-<body>
+<body class="bg">
   <!-- Navigation links -->
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -51,22 +51,43 @@
   </header>
 
 
-  <main>
+  <main class="content">
 
-    <div class="card" style="width: 18rem;">
-      <!--add a cool image here or even a mini carousell?-->
-      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Inspiring Affirmations</h5>
-        <p class="card-text">No affirmations have arrived yet. Please check back soon.</p>
-        <p class="card-author">Unkown.</p>
+
+
+    <div class="container glass-effect mt-5">
+      <!-- Title Row -->
+      <div class="row justify-content-center">
+          <div class="col">
+              <h1 class="text-center">Inspiring Affirmations</h1>
+          </div>
       </div>
-    </div>
-    <button id="new-quote" class="btn btn-primary">Need more inspiration?</button>
+      
+      <!-- Quote Row -->
+      <div class="row justify-content-center mt-3">
+          <div class="col text-center">
+              <p id="quote">No affirmations have arrived yet. Please check back soon.</p>
+          </div>
+      </div>
+      
+      <!-- Author Row -->
+      <div class="row justify-content-center mt-3">
+          <div class="col text-center">
+              <p id="author">Unknown</p>
+          </div>
+      </div>
+      
+      <!-- Button Row -->
+      <div class="row justify-content-center mt-3">
+          <div class="col text-center">
+              <button id="new-quote" class="btn btn-primary">Need more inspiration?</button>
+          </div>
+      </div>
+  </div>
 
   </main>
   <!------------ Footer ------------->
-  <footer>
+  <footer class="footer">
     <div class="row no-gutters">
       <div class="col-12 text-center">
         <h3>Footer Here</h3>
@@ -91,14 +112,14 @@ function fetchRandomAffirmation() {
             // set "Unknown" if the 'author' key is missing or empty
             const randomAuthor = affirmations[randomIndex].author || "Unknown";
 
-            document.querySelector('.card-text').textContent = randomAffirmation;
-            document.querySelector('.card-author').textContent = randomAuthor;
+            document.querySelector('#quote').textContent = randomAffirmation;
+            document.querySelector('#author').textContent = randomAuthor;
         })
         .catch(error => {
             console.error(error);
             // display a generic message and set author to "Unknown"
-            document.querySelector('.card-text').textContent = 'An inspiring affirmation will arrive soon. Please come back again.';
-            document.querySelector('.card-author').textContent = 'UTime.';
+            document.querySelector('#quote').textContent = 'An inspiring affirmation will arrive soon. Please come back again.';
+            document.querySelector('#author').textContent = 'UTime.';
         });
 }
 
