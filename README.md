@@ -223,3 +223,45 @@ rgba(255, 255, 255, 0)
 TO CHECK (and reqord):
 - [Balsamiq](https://balsamiq.com/wireframes/) - Used to create wireframes during project planning
 - [Google Fonts](https://fonts.google.com/specimen/Dosis) - used to generate a visually appealing font
+
+## Testing
+
+Testing information can be found in the separate [TESTING.md](TESTING.md) file. 
+
+## Deployment and Local Development
+
+### Deployment 
+
+The Utime deployed site can be found [here](https://meganroberts-dev.github.io/march-24-hackathon-utime/)
+
+It was deployed using GitHub pages with the following steps:
+
+1. Login (or signup) to Github.
+2. Navigate to the project repository.
+
+    Our project repository can be accessed from GitHub [here](https://github.com/MeganRoberts-dev/march-24-hackathon-utime)
+
+3. Navigate to the settings button at the top of the page.
+4. Select pages from the left hand menu.
+5. Under "Build and Deployment" click the branch dropdown menu and change it to "main". lick save.
+6. The site can then be found from the "Deployments" section in the repository.
+7. Under "All Environments" the page can be slected from the active deployments. 
+
+### Forking and Cloning the Github Repository
+
+The project can be forked or cloned to make a local copy on your system
+
+First follow steps 1. and 2. above
+
+Then to fork:
+
+1. Click on the fork button at the top of the page. 
+
+To clone:
+
+1. Under the "Local" tab, click on the code button and select how you would like to clone (HTTPS, SSH or GitHub CLI).
+2. Copy the link to your clipboard and use it to create a new workspace in your chosen IDE.
+
+??ZZ???W?W?? POSSIBLY SOME MORE WORK MAKING THIS MORE ADVANCED <<><><<>>>
+
+## Credits
