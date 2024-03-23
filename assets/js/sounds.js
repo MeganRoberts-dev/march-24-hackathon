@@ -97,52 +97,90 @@ function addPlayer(playerName, videoId) {
     var playerCount = Object.keys(players).length + 1;
     var playerId = 'player' + playerCount;
 
+    // create player container
     var container = document.createElement('div');
     container.classList.add('player-container', 'frosted-glass-effect', 'd-flex', 'flex-column', 'align-items-center', 'justify-content-center');
     container.setAttribute('id', 'container-' + playerId);
 
+    // add sound name label
     var nameLabel = document.createElement('p');
     nameLabel.textContent = playerName;
     nameLabel.classList.add("sound-name", "text-center");
     container.appendChild(nameLabel);
 
+    // add YT player div
     var playerDiv = document.createElement('div');
     playerDiv.id = playerId;
     playerDiv.classList.add('w-100');
     container.appendChild(playerDiv);
 
+    // add controls div
     var controlsDiv = document.createElement('div');
     controlsDiv.classList.add('controls', 'd-flex', 'justify-content-center', 'flex-wrap', 'w-100');
+    container.appendChild(controlsDiv);
 
+    // Add play button
     var playButton = document.createElement('button');
-    playButton.classList.add('playButton', 'btn', 'btn-primary', 'mx-1', 'flex-grow-1');
+    playButton.classList.add('playButton', 'btn', 'btn-primary', 'my-2');
     playButton.setAttribute('data-player', playerId);
     playButton.innerHTML = '<i class="fas fa-play"></i>';
-    playButton.disabled = true;
+    controlsDiv.appendChild(playButton);
 
+    // Add gear button
     var gearButton = document.createElement('button');
-    gearButton.classList.add('gearButton', 'btn', 'btn-secondary', 'mx-1', 'flex-grow-1');
+    gearButton.classList.add('gearButton', 'btn', 'btn-secondary', 'my-2');
     gearButton.setAttribute('data-player', playerId);
     gearButton.innerHTML = '<i class="fas fa-cog"></i>';
+    controlsDiv.appendChild(gearButton);
 
+    // add volume row
+    var volumeRow = document.createElement('div');
+    volumeRow.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'w-100', 'my-2','slider-row');
+    // add volume icon
+    var speakerIcon = document.createElement('i');
+    speakerIcon.classList.add('fas', 'fa-volume-up', 'mx-2');
+    speakerIcon.setAttribute('data-player', playerId);
+    speakerIcon.style.display = 'none';
+    volumeRow.appendChild(speakerIcon);
+
+    // Create and add the volume slider
     var volumeSlider = document.createElement('input');
     volumeSlider.type = 'range';
-    volumeSlider.classList.add('volume-slider', 'mx-1', 'flex-grow-1');
-    volumeSlider.style.flexBasis = '100%';
+    volumeSlider.classList.add('volume-slider', 'mx-2');
     volumeSlider.setAttribute('data-player', playerId);
     volumeSlider.min = '0';
     volumeSlider.max = '100';
     volumeSlider.value = '100';
+    volumeRow.appendChild(volumeSlider);
 
+    // Append row to the controlsDiv, under the play and gear buttons
+    controlsDiv.appendChild(volumeRow);
+    
+    // add color slider row
+    var colorRow = document.createElement('div');
+    colorRow.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'w-100','slider-row');
+    colorRow.style.display = 'none';
+
+    // add sun icon
+    var sunIcon = document.createElement('i');
+    sunIcon.classList.add('fas', 'fa-sun', 'mx-2');
+    sunIcon.setAttribute('data-player', playerId);
+    sunIcon.style.display = 'none';
+    colorRow.appendChild(sunIcon);
+
+    // Setup for colorSlider
     var colorSlider = document.createElement('input');
     colorSlider.type = 'range';
-    colorSlider.classList.add('color-slider', 'mx-1', 'flex-grow-1');
-    colorSlider.style.flexBasis = '100%';
+    colorSlider.classList.add('color-slider', 'mx-2');
     colorSlider.setAttribute('data-player', playerId);
     colorSlider.min = '0';
     colorSlider.max = '255';
     colorSlider.value = '255';
-    colorSlider.style.display = 'none';
+    colorRow.appendChild(colorSlider);
+
+    // add color slider row underneath
+    controlsDiv.appendChild(colorRow);
+    
     
     colorSlider.addEventListener('input', function () {
         var value = 255 - this.value;
@@ -161,6 +199,7 @@ function addPlayer(playerName, videoId) {
         if (gearButton) gearButton.style.color = textColor;
     });
 
+    // add delete button
     var deleteButton = document.createElement('button');
     deleteButton.classList.add('deleteButton', 'btn', 'btn-danger', 'mx-1');
     deleteButton.setAttribute('data-player', playerId);
@@ -170,20 +209,19 @@ function addPlayer(playerName, videoId) {
         document.getElementById('playersContainer').removeChild(container);
         delete players[playerId];
     };
-
-    controlsDiv.appendChild(playButton);
-    controlsDiv.appendChild(gearButton);
-    controlsDiv.appendChild(volumeSlider);
-    controlsDiv.appendChild(colorSlider);
     controlsDiv.appendChild(deleteButton);
 
+    // combine player and hidden controls
     container.appendChild(playerDiv);
     container.appendChild(controlsDiv);
 
+    // add player to DOM
     document.getElementById('playersContainer').appendChild(container);
 
+    // add drag attributes
     makeDraggable(container);
 
+    //store player data in players object
     players[playerId] = {
         name: playerName,
         videoId: videoId,
@@ -221,17 +259,23 @@ document.addEventListener('click', function (event) {
     if (event.target.closest('.playButton')) {
         var button = event.target.closest('.playButton');
         var playerId = button.getAttribute('data-player');
-        togglePlayPause(playerId);
+        togglePlayPause(playerId); // Assuming togglePlayPause is defined elsewhere
     } else if (event.target.closest('.gearButton')) {
         var gearButton = event.target.closest('.gearButton');
         var playerId = gearButton.getAttribute('data-player');
-        var colorSlider = document.querySelector(`.color-slider[data-player="${playerId}"]`);
-        var volumeSlider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
-        var deleteButton = document.querySelector(`button.deleteButton[data-player="${playerId}"]`);
-        // toggle visibility of buttons
-        colorSlider.style.display = colorSlider.style.display === 'block' ? 'none' : 'block';
-        volumeSlider.style.display = volumeSlider.style.display === 'block' ? 'none' : 'block';
-        deleteButton.style.display = deleteButton.style.display === 'block' ? 'none' : 'block';
+        var container = document.querySelector(`#container-${playerId}`); // Get the player container
+        
+        // Query for the controls within this player
+        var colorSlider = container.querySelector(`.color-slider`);
+        var volumeSlider = container.querySelector(`.volume-slider`);
+        var deleteButton = container.querySelector(`.deleteButton`);
+        var speakerIcon = container.querySelector(`.fa-volume-up`); // Query for the speaker icon
+        var sunIcon = container.querySelector(`.fa-sun`); // Query for the sun icon
+        
+        // Toggle visibility of controls and icons
+        [colorSlider, volumeSlider, deleteButton, speakerIcon, sunIcon].forEach(el => {
+            if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        });
     }
 });
 
@@ -406,10 +450,14 @@ document.getElementById('closeAllBtn').addEventListener('click', function () {
         var colorSlider = document.querySelector(`.color-slider[data-player="${playerId}"]`);
         var volumeSlider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
         var deleteButton = document.querySelector(`button.deleteButton[data-player="${playerId}"]`);
+        var speakerIcon = document.querySelector(`.fa-volume-up[data-player="${playerId}"]`);
+        var sunIcon = document.querySelector(`.fa-sun[data-player="${playerId}"]`);
 
         colorSlider.style.display = 'none';
         volumeSlider.style.display = 'none';
         deleteButton.style.display = 'none';
+        speakerIcon.style.display = 'none';
+        sunIcon.style.display = 'none';
     });
     //force hide the tooltop
     var tooltipInstance = bootstrap.Tooltip.getInstance(this);
