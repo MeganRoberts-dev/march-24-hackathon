@@ -2,208 +2,211 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Title -->
-	<title>UTime</title>
-	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-	<!-- Styles  -->
-	<link rel="stylesheet" href="assets/css/about.css">
-	<!-- favicon -->
-	<link rel="icon" type="image/x-icon" href="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Title -->
+  <title>UTime</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Styles  -->
+  <link rel="stylesheet" href="assets/css/about.css">
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="">
 </head>
 
 <body>
-	<!-- Navigation links -->
-	<header id="header">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div class="container">
-				<a class="navbar-brand" href="index.html">UTime<span>.</span></a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav ms-auto">
-						<li class="nav-item">
-							<a class="nav-link active" href="index.html" aria-current="page" >Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="gallery.html">Calm</a>
-						</li>
-                        <li class="nav-item">
-							<a class="nav-link" href="games.html">Energy</a>
-						</li>
-                        <li class="nav-item">
-							<a class="nav-link" href="affirmations.html">Inspire</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="about.html">Share</a>
-						</li>
-                       
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</header>
-    <main>
-        <!-- EMAIL FORM -->
-        <div class="container my-5">
-            <div class="card  shadow rounded-xl" style="max-width: 500px; margin: auto;">
-              <div class="card-body">
-        
-                <div class="alert alert-primary d-none" role="alert" id="alertSuccess">
-                  Your Email was sent! Have a happy day :)
+  <!-- Navigation links -->
+  <header id="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">UTime<span>.</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Calm</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="games.html">Energy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="affirmations.html">Inspire</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">Share</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <!-- EMAIL FORM -->
+    <div class="container my-5">
+      <div class="card  shadow rounded-xl" style="max-width: 500px; margin: auto;">
+        <div class="card-body">
+
+          <div class="alert alert-primary d-none" role="alert" id="alertSuccess">
+            Your Email was sent! Have a happy day :)
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="alertFail">
+            Something went wrong, sorry :(
+          </div>
+          <div class="alert alert-warning d-none" role="alert" id="alertValidate">
+            <p>Please fill out all the required fields!</p>
+            <p>Thanks and have a peachy day!</p>
+          </div>
+
+          <div class="row">
+            <!-- Form Fields: -->
+            <div class="col-md-8 ">
+              <form id="email">
+                <small id="emailHelp" class="form-text text-muted">Share some positivity today. Pass it forward.</small>
+
+                <div class="form-group mb-3">
+                  <label for="nameInput">Your Name</label>
+                  <input type="text" class="form-control" id="nameInput" placeholder="Enter name">
                 </div>
-                <div class="alert alert-danger d-none" role="alert" id="alertFail">
-                  Something went wrong, sorry :(
+
+                <div class="form-group mb-3">
+                  <label for="exampleInputEmail1">Send To</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email">
                 </div>
-                <div class="alert alert-warning d-none" role="alert" id="alertValidate">
-                  <p>Please fill out all the required fields!</p>
-                  <p>Thanks and have a peachy day!</p>
+
+                <div class="form-group mb-3">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" id="message" rows="3"
+                    placeholder="Share your happiness here..."></textarea>
                 </div>
-        
-                <div class="row">
-                  <!-- Form Fields: -->
-                  <div class="col-md-8 ">
-                    <form id="email">
-                      <small id="emailHelp" class="form-text text-muted">Share some positivity today. Pass it forward.</small>
-        
-                      <div class="form-group mb-3">
-                        <label for="nameInput">Your Name</label>
-                        <input type="text" class="form-control" id="nameInput" placeholder="Enter name">
-                      </div>
-        
-                      <div class="form-group mb-3">
-                        <label for="exampleInputEmail1">Send To</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                          placeholder="Enter email">
-                      </div>
-        
-                      <div class="form-group mb-3">
-                        <label for="message">Message</label>
-                        <textarea class="form-control" id="message" rows="3"
-                          placeholder="Share your happiness here..."></textarea>
-                      </div>
-        
-                      <div class="form-group mb-3">
-                        <label for="quote">Random Affirmation</label>
-                        <textarea class="form-control" id="quote" rows="3"
-                          placeholder="Random Affirmation..."  readonly></textarea>
-                      </div>
-        
-                      <div class="form-group mb-3 d-flex align-items-center">
-                        <label for="emojiSlider" class="me-2">Current happiness factor</label>
-                        <input type="range" class="form-control-range me-2" id="emojiSlider" min="1" max="21" value="11">
-                        <button type="button" class="btn btn-secondary" id="randomButton">PotLuck</button>
-                      </div>
-        
-                      <button type="submit" class="btn btn-primary" id="sendEmail">Submit</button>
-                    </form>
-                  </div>
-        
-                  <!-- Emoji Image  -->
-                  <div class="col-md-4 d-flex align-items-center justify-content-center">
-                    <img src="assets/images/emojis/e11.png" alt="Emoji" id="emojiImage" style="width: 100px; height: 100px;">
-                  </div>
+
+                <div class="form-group mb-3">
+                  <label for="quote">Random Affirmation</label>
+                  <textarea class="form-control" id="quote" rows="3" placeholder="Random Affirmation..."
+                    readonly></textarea>
                 </div>
-              </div>
+
+                <div class="form-group mb-3 d-flex align-items-center">
+                  <label for="emojiSlider" class="me-2">Current happiness factor</label>
+                  <input type="range" class="form-control-range me-2" id="emojiSlider" min="1" max="21" value="11">
+                  <button type="button" class="btn btn-secondary" id="randomButton">PotLuck</button>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="sendEmail">Submit</button>
+              </form>
+            </div>
+
+            <!-- Emoji Image  -->
+            <div class="col-md-4 d-flex align-items-center justify-content-center">
+              <img src="assets/images/emojis/e11.png" alt="Emoji" id="emojiImage" style="width: 100px; height: 100px;">
             </div>
           </div>
-        
-          <!-- EmailJS CDN  -->
-          <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-          <!-- Custom JS  -->
-          <script src="assets/js/email.js"></script>
-          <!-- END OF  EMAIL FORM -->
-
-
-
-        <h1 style="text-align: center;">About us</h1>
-    <div class="about-container">
-        <div class="contributors">
-            <div class="about-img">
-                <img src="https://ca.slack-edge.com/T0L30B202-U0622F1JN15-fd6241936f23-512" alt="Megan Roberts profile picture">
-                <div class="about-info">
-                    <h2>Megan Roberts</h2>
-                    <a target="_blank" href="https://github.com/MeganRoberts-dev"><i class="fa-brands fa-github"></i></a>
-                    <a target="_blank" href="https://www.linkedin.com/in/megan-roberts-5874b1205/"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
         </div>
-        <div class="contributors">
-            <div class="about-img">
-                <img src="https://ca.slack-edge.com/T0L30B202-U05B0GA3F9S-b6a2e376e340-512" alt="Colin Breakell profile picture">
-                <div class="about-info">
-                    <h2>Colin Breakell</h2>
-                    <a target="_blank" href="https://github.com/BreakellrZ"><i class="fa-brands fa-github"></i></a>
-                    <a target="_blank" href="#"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="contributors">
-            <div class="about-img">
-                <img src="https://ca.slack-edge.com/T0L30B202-U06144KN5PS-3c7adf755509-512" alt="Alex profile picture">
-                <div class="about-info">
-                    <h2>Alex</h2>
-                    <a target="_blank" href="https://github.com/A-Hoenig"><i class="fa-brands fa-github"></i></a>
-                    <a target="_blank" href="#"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="contributors">
-            <div class="about-img">
-                <img src="https://ca.slack-edge.com/T0L30B202-U05U18REHEH-8d6cea6da0d1-512" alt="Karen Samad profile picture">
-                <div class="about-info">
-                    <h2>Karen Samad</h2>
-                    <a target="_blank" href="https://github.com/kosamad"><i class="fa-brands fa-github"></i></a>
-                    <a target="_blank" href="#"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="contributors">
-            <div class="about-img">
-                <img src="https://ca.slack-edge.com/T0L30B202-U04DW9H9JP7-c098172c051b-512" alt="Soroush profile picture">
-                <div class="about-info">
-                    <h2>Soroush</h2>
-                    <a target="_blank" href="https://github.com/SoroushGReza"><i class="fa-brands fa-github"></i></a>
-                    <a target="_blank" href="https://www.linkedin.com/in/s-gholamreza/"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="contributors">
-            <div class="about-img">
-                <img src="https://ca.slack-edge.com/T0L30B202-U064HES6MFX-6b308375029a-512" alt="Ilyas Olgun profile picture">
-                <div class="about-info">
-                    <h2>Ilyas Olgun</h2>
-                    <a target="_blank" href="https://github.com/ilyasolgun11"><i class="fa-brands fa-github"></i></a>
-                    <a target="_blank" href="https://www.linkedin.com/in/ilyascan-olgun-455290182/"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    </main>
-    <!------------ Footer ------------->
-    <footer>
-        <div class="row no-gutters">
-            <div class="col-12 text-center">
-                <h3>Footer Here</h3>
-            </div>
+
+    <!-- EmailJS CDN  -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- Custom JS  -->
+    <script src="assets/js/email.js"></script>
+    <!-- END OF  EMAIL FORM -->
+
+
+
+    <h1 style="text-align: center;">About us</h1>
+    <div class="about-container">
+      <div class="contributors">
+        <div class="about-img">
+          <img src="https://ca.slack-edge.com/T0L30B202-U0622F1JN15-fd6241936f23-512"
+            alt="Megan Roberts profile picture">
+          <div class="about-info">
+            <h2>Megan Roberts</h2>
+            <a target="_blank" href="https://github.com/MeganRoberts-dev"><i class="fa-brands fa-github"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/megan-roberts-5874b1205/"><i
+                class="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
-    </footer>
-    <!---------- Scripts ---------->
-    <!-- Font awesome  -->
-    <script
-      src="https://kit.fontawesome.com/a4f987afa2.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="/assets/js/carousel.js"></script>
+      </div>
+      <div class="contributors">
+        <div class="about-img">
+          <img src="https://ca.slack-edge.com/T0L30B202-U05B0GA3F9S-b6a2e376e340-512"
+            alt="Colin Breakell profile picture">
+          <div class="about-info">
+            <h2>Colin Breakell</h2>
+            <a target="_blank" href="https://github.com/BreakellrZ"><i class="fa-brands fa-github"></i></a>
+            <a target="_blank" href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="contributors">
+        <div class="about-img">
+          <img src="https://ca.slack-edge.com/T0L30B202-U06144KN5PS-3c7adf755509-512" alt="Alex profile picture">
+          <div class="about-info">
+            <h2>Alex</h2>
+            <a target="_blank" href="https://github.com/A-Hoenig"><i class="fa-brands fa-github"></i></a>
+            <a target="_blank" href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="contributors">
+        <div class="about-img">
+          <img src="https://ca.slack-edge.com/T0L30B202-U05U18REHEH-8d6cea6da0d1-512" alt="Karen Samad profile picture">
+          <div class="about-info">
+            <h2>Karen Samad</h2>
+            <a target="_blank" href="https://github.com/kosamad"><i class="fa-brands fa-github"></i></a>
+            <a target="_blank" href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="contributors">
+        <div class="about-img">
+          <img src="https://ca.slack-edge.com/T0L30B202-U04DW9H9JP7-c098172c051b-512" alt="Soroush profile picture">
+          <div class="about-info">
+            <h2>Soroush</h2>
+            <a target="_blank" href="https://github.com/SoroushGReza"><i class="fa-brands fa-github"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/s-gholamreza/"><i
+                class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="contributors">
+        <div class="about-img">
+          <img src="https://ca.slack-edge.com/T0L30B202-U064HES6MFX-6b308375029a-512" alt="Ilyas Olgun profile picture">
+          <div class="about-info">
+            <h2>Ilyas Olgun</h2>
+            <a target="_blank" href="https://github.com/ilyasolgun11"><i class="fa-brands fa-github"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/ilyascan-olgun-455290182/"><i
+                class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!------------ Footer ------------->
+  <footer>
+    <div class="row no-gutters">
+      <div class="col-12 text-center">
+        <h3>Footer Here</h3>
+      </div>
+    </div>
+  </footer>
+  <!---------- Scripts ---------->
+  <!-- Font awesome  -->
+  <script src="https://kit.fontawesome.com/a4f987afa2.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="/assets/js/carousel.js"></script>
 
 </body>
+
 </html>
