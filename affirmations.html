@@ -52,7 +52,15 @@
 
 
   <main>
-      INSPIRATIONAL quote
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Inspiring Affirmations</h5>
+        <p class="card-text">No affirmations have arrived yet. Please check back soon.</p>
+      </div>
+    </div>
+
   </main>
   <!------------ Footer ------------->
   <footer>
@@ -68,7 +76,24 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <script src="/assets/js/carousel.js"></script>
+  <!-- Fetch random affirmation script -->
+  <script>
+    
+    function fetchRandomAffirmation() {
+        fetch('affirmations.json')
+            .then(response => response.json())
+            .then(affirmations => {
+                const randomIndex = Math.floor(Math.random() * affirmations.length);
+                const randomAffirmation = affirmations[randomIndex].text;
+                document.querySelector('.card-text').textContent = randomAffirmation;
+            })
+            .catch(error => {
+                document.querySelector('.card-text').textContent = 'An inspiring affirmation will arrive soon. Please come back again.';
+            });
+    }
+    fetchRandomAffirmation();
+
+</script>
 </body>
 
 </html>
