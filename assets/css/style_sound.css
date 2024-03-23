@@ -60,6 +60,7 @@
     border: none;
     background-color: transparent;
     font-size: 2em;
+    color:black;
 }
 
 /* custom css for responsiveness */
@@ -186,11 +187,11 @@ input::placeholder {
 
 #videoId::placeholder,
 #playerName::placeholder {
-    color: rgb(184, 184, 184);
+    color: rgb(65, 65, 65);
 }
 
 #videoDropdown {
-    color: rgb(184, 184, 184);
+    color: rgb(65, 65, 65);
 }
 
 /* timer styling */
@@ -243,9 +244,9 @@ input::placeholder {
     color: black;
 }
 
-.modal {
+/* .modal {
     color: black;
-}
+} */
 
 .slider-row {
     border-top: #000000;
@@ -256,31 +257,9 @@ input::placeholder {
 /*  test area  */
 
 
-/* Apply Bootstrap button styles */
-.custom-select {
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: transparent;
-    border: none;
-    /* Remove border */
-    color: #495057;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    /* Add rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Add drop shadow */
-    width: 50%;
-    /* Resize to 50% of the row */
-}
 
-.custom-select:focus,
-.custom-select:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #000;
-}
+
+
 
 /* Set dropdown menu background to transparent */
 .dropdown-menu {
@@ -291,7 +270,7 @@ input::placeholder {
     color: #000;
 }
 
-/* Adjust the background select modal content transparency */
+/* Adjust the select background modal content transparency */
 .modal-content {
     background-color: rgba(255, 255, 255, 0.9);
     color: rgb(0, 0, 0);
@@ -302,7 +281,6 @@ input::placeholder {
     background-color: rgba(165, 165, 165, 0.5);
     transition: background-color 0.3s ease;
     color:rgb(0, 0, 0);
-
 }
 
 /* Style for list items on hover */
@@ -317,7 +295,7 @@ input::placeholder {
 
 
 
-/* Media query for smaller screens */
+/* Media query for small screens */
 @media (max-width: 576px) {
 
     /* Adjusts for phones */
@@ -361,21 +339,17 @@ input::placeholder {
     .playButton,
     .gearButton {
         font-size: 1.5rem;
-        /* Makes the icon within the button larger */
         padding: 0;
-        /* Adjust padding to increase button size, tweak as needed */
     }
 
-    #imageDropdown {
+    /* only show background selector on phones*/
+    /* #imageDropdown {
         display: block !important;
-    }
+    } */
 
+    /* show change background nav bar*/
     #changeBgBtn {
         display: inline-block;
-        /* or 'block', depending on your layout */
     }
-
-
-
 
 }
