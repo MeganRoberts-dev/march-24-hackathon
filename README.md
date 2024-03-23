@@ -99,9 +99,11 @@ The following table outlines the content that should be implemented to make a fu
 
 ??ZZ???W?W??W  page on all devices <<><><<>>>
 
-- The home page explains to the user what the site is about and displays the different 'happy' activities users can choose from, including Games, Soundscape, or Funny. 
+- The home page explains to the user what the site is about and displays the different 'happy' activities users can choose from, including Games, Soundscape, or Memes. 
 
 - **Soundscape Page**
+
+??ZZ???W?W??W  page on all devices <<><><<>>>
 
 - This page opens with the slogan 'Create a happy place.' It is a page where users can choose from a preselected sound to accompany an image of their choice (selected using the carousel of images). They can then sit back and enjoy the page, creating their own moment of calm in a busy, screen-filled day.
 
@@ -113,12 +115,31 @@ The following table outlines the content that should be implemented to make a fu
 
      ![screenshot of soundscape navbar](documentation/screenshots/navbar_ss_options.png)
 
-    - There is also the option to add a timer, allowing a user to keep track of how long they have been in their curated space. The aim is that this could become part of a users daily routine to find some time for them and just sit in a calm space for say 5 minutes at a time.  
+    - There is also the option to add a timer, allowing a user to keep track of how long they have been in their curated space. The aim is that this could become part of a users daily routine to find some time for them and just sit in a calm space for say 5 minutes at a time. The timer play button toggles between a play, stop and reset icon to give the user control of this feature.
 
     ![screenshot of soundscape navbar timer](documentation/screenshots/navbar_ss_timer.png)
 
-   
+- **Game Page** 
+
+??ZZ???W?W??W  page on all devices <<><><<>>>
+
+??ZZ???W?W??W  content <<><><<>>>
+
+- **Memes Page**
+
+??ZZ???W?W??W  page on all devices <<><><<>>>
+
+??ZZ???W?W??W  content <<><><<>>>
+
+- **About Page**
+
+??ZZ???W?W??W  page on all devices <<><><<>>>
+
 
 
 
 ### Future Features
+
+
+
+
