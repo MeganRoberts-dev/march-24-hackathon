@@ -265,3 +265,17 @@ To clone:
 ??ZZ???W?W?? POSSIBLY SOME MORE WORK MAKING THIS MORE ADVANCED <<><><<>>>
 
 ## Credits
+
+??ZZ???W?W??W  content <<><><<>>>
+
+
+
+
+The 404 Sadness Not Found Team:
+
+- [Meghan Roberts](https://github.com/MeganRoberts-dev)
+- [Karen Samad](https://github.com/kosamad)
+- [Ilyas Olgun](https://github.com/ilyasolgun11)
+- [Alex](https://github.com/A-Hoenig)
+- [Colin Breakwell](https://github.com/BreakellrZ)
+- [Soroush](https://github.com/SoroushGReza)
