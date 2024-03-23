@@ -33,13 +33,37 @@ span {
     font-weight: 400;
   }
 
-  .player-container {
-    max-width: 250px;
-  }
+.footer-nav {
+  margin: 0px;
+  padding: 0px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-@media screen and (max-width: 400px) {
-  .player-container {
-    max-width: 250px;
+}
+
+.footer-nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-nav li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.footer-nav li a {
+  color: rgb(221, 47, 76);
+}
+
+@media screen and (max-width: 990px) {
+  .navbar-toggler {
+    display: none;
+  }
+  .footer-nav {
+    display: flex;
   }
 }
   
