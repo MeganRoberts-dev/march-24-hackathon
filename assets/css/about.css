@@ -1,6 +1,19 @@
 h1 {
     font-weight: 600;
-    margin: 40px 0px;
+    margin-top: 40px;
+}
+
+p {
+    padding: 0px 13px;
+    max-width: 1300px;
+    margin: 0px auto;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+p span {
+    color: rgb(210, 8, 42);
+    font-weight: 500;
 }
 
 .about-container {
@@ -77,4 +90,34 @@ h1 {
     font-size: 1.9rem;
     margin-right: 5px;
     color: rgb(221, 47, 76);
+}
+
+@media screen and (max-width: 769px) {
+    .contributors img {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .about-container {
+        border-radius: 12px;
+        gap: 0.8rem;
+        background: white;
+        padding: 15px;
+        max-width: 1300px;
+        margin: 0px auto;
+        display: flex; 
+        overflow-x: auto; 
+        white-space: nowrap; 
+        scrollbar-color: rgb(210, 8, 42) rgb(255, 207, 215);
+    }
+    .contributors img {
+        width: 250px;
+    }
+    .contributors h2 {
+        font-size: 1.2rem;
+    }
+    .fa-github, .fa-linkedin {
+        font-size: 1.6rem;
+    }
 }
