@@ -54,10 +54,12 @@
   <main>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src=".../100px180/" alt="Card image cap">    <!--add a cool image here or even a mini carousell?-->>
+      <!--add a cool image here or even a mini carousell?-->
+      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Inspiring Affirmations</h5>
         <p class="card-text">No affirmations have arrived yet. Please check back soon.</p>
+        <p class="card-author">Unkown.</p>
       </div>
     </div>
     <button id="new-quote" class="btn btn-primary">Need more inspiration?</button>
@@ -80,21 +82,29 @@
   <!-- Fetch random affirmation script -->
   <script>
 
-    function fetchRandomAffirmation() {
-        fetch('affirmations.json')
-            .then(response => response.json())
-            .then(affirmations => {
-                const randomIndex = Math.floor(Math.random() * affirmations.length);
-                const randomAffirmation = affirmations[randomIndex].text;
-                document.querySelector('.card-text').textContent = randomAffirmation;
-            })
-            .catch(error => {
-                document.querySelector('.card-text').textContent = 'An inspiring affirmation will arrive soon. Please come back again.';
-            });
-    }
-    fetchRandomAffirmation();
+function fetchRandomAffirmation() {
+    fetch('affirmations.json')
+        .then(response => response.json())
+        .then(affirmations => {
+            const randomIndex = Math.floor(Math.random() * affirmations.length);
+            const randomAffirmation = affirmations[randomIndex].text;
+            // set "Unknown" if the 'author' key is missing or empty
+            const randomAuthor = affirmations[randomIndex].author || "Unknown";
 
-    document.getElementById('new-quote').addEventListener('click', fetchRandomAffirmation);
+            document.querySelector('.card-text').textContent = randomAffirmation;
+            document.querySelector('.card-author').textContent = randomAuthor;
+        })
+        .catch(error => {
+            console.error(error);
+            // display a generic message and set author to "Unknown"
+            document.querySelector('.card-text').textContent = 'An inspiring affirmation will arrive soon. Please come back again.';
+            document.querySelector('.card-author').textContent = 'UTime.';
+        });
+}
+
+fetchRandomAffirmation();
+
+document.getElementById('new-quote').addEventListener('click', fetchRandomAffirmation);
 
 </script>
 </body>
