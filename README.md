@@ -114,17 +114,17 @@ The following table outlines the content that should be implemented to make a fu
 
 - The pre-loaded music options offer flexibility, allowing users to position them anywhere on the screen. Coupled with the ability to adjust their appearance using the contrast slider, users can seamlessly integrate them with the background image, minimising distractions and enhancing the visual experience. The other in built options allow a user to pause the music, change the volume or remove any music they don't want to appear on their page.
 
-- Users have the option of adding their own sounds into the space using the "+" button and 
+    ![screenshot of soundscape navbar](documentation/screenshots/calm_music_moved.png)
 
-- The navbar on this page has additional features, all of which are explained to a user when the hover over the feature:
+- The navbar on this page has additional features, all of which are explained to a user when the hover over the feature. 
 
-    - A user has another option for controlling the music and their space. They can add new music of thier choice, stop all music, close the music setting menu and mute the music.
+    - They have furhter options for controlling the music and their space. They can add new music of thier choice, stop all music, close the music setting menus and mute the music.
 
-     ![screenshot of soundscape navbar](documentation/screenshots/navbar_ss_options.png)
+         ![screenshot of soundscape navbar](documentation/screenshots/navbar_ss_options.png)
 
-    - There is also the option to add a timer, allowing a user to keep track of how long they have been in their curated space. The aim is that this could become part of a users daily routine to find some time for them and just sit in a calm space for say 5 minutes at a time. The timer play button toggles between a play, stop and reset icon to give the user control of this feature.
+    - Users also have the option to add a timer, allowing them to keep track of how long they have been in their personalised space. The aim is that this could become part of a users daily routine to find some time for them and just sit in a calm space for say, 5 minutes at a time. The timer play button toggles between a play, stop and reset icon to give the user control of this feature. Additionally, users have the flexibility to relocate this display to their preferred position on the screen.
 
-    ![screenshot of soundscape navbar timer](documentation/screenshots/navbar_ss_timer.png)
+        ![screenshot of soundscape navbar timer](documentation/screenshots/navbar_ss_timer.png)
 
 - **Energy Page** 
 
@@ -132,7 +132,7 @@ The following table outlines the content that should be implemented to make a fu
 
 ??ZZ???W?W??W  content <<><><<>>>
 
-- **Email **
+- **Inspire Page**
 
 ??ZZ???W?W??W  page on all devices <<><><<>>>
 
@@ -142,11 +142,14 @@ The following table outlines the content that should be implemented to make a fu
 
 ??ZZ???W?W??W  page on all devices <<><><<>>>
 
-
-
+??ZZ???W?W??W  content <<><><<>>>
 
 ### Future Features
 
+Due to time constraints the following features were not implementd at this time, but should be considered for future roll outs.
 
-
+1. Ability to search for pictures on a theme in the calm area.
+2. Page to remember soundscape profiles (for quick loading on return visits)
+3. To enhance the email feature to enable users to share their personalised space seamlessly, allowing recipients to open the shared space with pre-loaded settings. Currently, recipients need to recreate the space themselves, which was a deliberate decision made by the design team due to skill constraints. However, we recognize the importance of streamlining this process for a more user-friendly experience.
+4. To improve the selection of games avaiable to play
 
