@@ -7,10 +7,6 @@
 
 
 
-
-/* ---- Bold Text ---- */
-
-
 /*  ----  Navigation  ----  */
 
 span {
@@ -30,11 +26,11 @@ span {
 
 figure {
 	position: relative;
-	display: inline-block; /* Or 'block', depending on layout needs */
+	display: inline-block;
 	overflow: hidden;
 	border-radius: 1rem;
-	transition: transform .4s ease, box-shadow .4s ease; /* Smooth transitions for zoom and shadow */
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3); /* Drop shadow */
+	transition: transform .4s ease, box-shadow .4s ease;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3);
   }
   
   figure img {
