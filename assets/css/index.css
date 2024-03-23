@@ -109,7 +109,7 @@ h2 {
 	display: block;
 	width: 160px;
 	height: 160%;
-	background: linear-gradient(90deg, transparent, #ad3baa, #f177ff, #f490ff, #f8bdff, transparent);
+	background: linear-gradient(90deg, transparent, #240b23, #81038f, #c916dc, #cd25e0, transparent);
 	animation: rotation_481 5000ms infinite linear;
 }
 
@@ -117,13 +117,22 @@ h2 {
 	position: absolute;
 	width: 99%;
 	height: 99%;
-	background-color: #f4f4f4;
 	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 30px;
+}
+
+.calm-bg {
+	background: url(/assets/images/1.png) no-repeat center;
+	background-size: cover;
+}
+
+.inspire-bg {
+	background: url(/assets/images/2.png) no-repeat center;
+	background-size: cover;
 }
 
 .card:hover .content {
@@ -163,7 +172,7 @@ h2 {
 
 .card-frame {
 	width: 100%;
-	padding: 10px;
+	padding: 2px;
 	backdrop-filter: blur(5px);
 	border-radius: 5px;
 	color: #4b4b4b;
@@ -175,12 +184,10 @@ h2 {
 /* ---- Flipped side of the card ----*/
 
 .flipside-link {
-	background-image: linear-gradient(
-	  to right,
-	  #ea3737,
-	  #d68a54 50%,
-	  #000 50%
-	);
+	background-image: linear-gradient(to right,
+			#d78749,
+			#d78749 50%,
+			#b75c00 50%);
 	background-size: 200% 100%;
 	background-position: -100%;
 	display: inline-block;
@@ -190,28 +197,27 @@ h2 {
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	transition: all 0.3s ease-in-out;
-  }
-  
-  a:before {
+}
+
+a:before {
 	content: '';
-	background: #c45500;
+	background: #d78749;
 	display: block;
 	position: absolute;
-	bottom: 2px;
+	bottom: 10px;
 	left: 0;
 	width: 0;
 	height: 3px;
 	transition: all 0.3s ease-in-out;
-  }
-  
-  a:hover {
-   background-position: 0;
-  }
-  
-  a:hover::before {
-	width:100%;
-  }
+}
 
+a:hover {
+	background-position: 0;
+}
+
+a:hover::before {
+	width: 100%;
+}
 
 .title {
 	font-size: 11px;
