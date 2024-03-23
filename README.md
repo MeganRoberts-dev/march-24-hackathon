@@ -114,17 +114,17 @@ The following table outlines the content that should be implemented to make a fu
 
 - The pre-loaded music options offer flexibility, allowing users to position them anywhere on the screen. Coupled with the ability to adjust their appearance using the contrast slider, users can seamlessly integrate them with the background image, minimising distractions and enhancing the visual experience. The other in built options allow a user to pause the music, change the volume or remove any music they don't want to appear on their page.
 
-- Users have the option of adding their own sounds into the space using the "+" button and 
+    ![screenshot of soundscape navbar](documentation/screenshots/calm_music_moved.png)
 
-- The navbar on this page has additional features, all of which are explained to a user when the hover over the feature:
+- The navbar on this page has additional features, all of which are explained to a user when the hover over the feature. 
 
-    - A user has another option for controlling the music and their space. They can add new music of thier choice, stop all music, close the music setting menu and mute the music.
+    - They have furhter options for controlling the music and their space. They can add new music of thier choice, stop all music, close the music setting menus and mute the music.
 
-     ![screenshot of soundscape navbar](documentation/screenshots/navbar_ss_options.png)
+         ![screenshot of soundscape navbar](documentation/screenshots/navbar_ss_options.png)
 
-    - There is also the option to add a timer, allowing a user to keep track of how long they have been in their curated space. The aim is that this could become part of a users daily routine to find some time for them and just sit in a calm space for say 5 minutes at a time. The timer play button toggles between a play, stop and reset icon to give the user control of this feature.
+    - Users also have the option to add a timer, allowing them to keep track of how long they have been in their personalised space. The aim is that this could become part of a users daily routine to find some time for them and just sit in a calm space for say, 5 minutes at a time. The timer play button toggles between a play, stop and reset icon to give the user control of this feature. Additionally, users have the flexibility to relocate this display to their preferred position on the screen.
 
-    ![screenshot of soundscape navbar timer](documentation/screenshots/navbar_ss_timer.png)
+        ![screenshot of soundscape navbar timer](documentation/screenshots/navbar_ss_timer.png)
 
 - **Energy Page** 
 
@@ -132,7 +132,7 @@ The following table outlines the content that should be implemented to make a fu
 
 ??ZZ???W?W??W  content <<><><<>>>
 
-- **Email **
+- **Inspire Page**
 
 ??ZZ???W?W??W  page on all devices <<><><<>>>
 
@@ -142,11 +142,140 @@ The following table outlines the content that should be implemented to make a fu
 
 ??ZZ???W?W??W  page on all devices <<><><<>>>
 
-
-
+??ZZ???W?W??W  content <<><><<>>>
 
 ### Future Features
 
+Due to time constraints the following features were not implementd at this time, but should be considered for future roll outs.
+
+1. Ability to search for pictures on a theme in the calm area.
+2. Page to remember soundscape profiles (for quick loading on return visits)
+3. To enhance the email feature to enable users to share their personalised space seamlessly, allowing recipients to open the shared space with pre-loaded settings. Currently, recipients need to recreate the space themselves, which was a deliberate decision made by the design team due to skill constraints. However, we recognize the importance of streamlining this process for a more user-friendly experience.
+4. To improve the selection of games avaiable to play
+
+## Planning and Development
+
+### Wireframes
+
+Wireframes for the website were created using 
+
+### Game Development
+
+### Emails
+
+An [EmailJS](https://www.emailjs.com/) account was created...
+
+??ZZ???W?W??W  content <<><><<>>>
+
+### Agile Methodology
+
+Agile devlopment techniques were implemented throughout this project. A GitHub project board was utilised to keep a track of different tasks and asign them to different people. The board can be viewed [here](https://github.com/users/MeganRoberts-dev/projects/4)
+
+### Brand and Identity
+
+All decisions were decided as a team 
+
+- The brand name: **404 Sadness Not Found** 
+- The app name: **Utime.**
+- Our slogan: **A digital Oasis**?? vs This is your space, your soundtrack, your UTime.
+
+#### Logo image 
+
+??ZZ???W?W??W  content <<><><<>>>
+
+#### Colour Palette
+
+
+??ZZ???W?W??W  content <<><><<>>>
+
+imput colours for screenshot cooloors: 
+
+rgb(221, 47, 76)
+rgba(255, 255, 255, 0)
+
++??
+
+## Tools and Technologies
+
+
+- **HTML** - Used for structuring the content of the website.
+- **CSS** - Used to style the appearance of the app's content.
+- **Javascript** - Used to add dynamic behavior and allow user interaction with the web pages.
+- [JSON](https://www.json.org/json-en.html) - Used for transmitting data between the server and a client.
+- [GitHub and Github Pages](https://github.com/) - Used to store the code and host/deploy the live project.
+- [GitPod](https://www.gitpod.io/) - IDE for development
+- [Visual Studio Code](https://code.visualstudio.com/) - IDE for development
+- [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - For testing and troublshooting code.
+- [Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - To automatically test the performance, quality, and correctness of the web app.
+- [Coolors](https://coolors.co/) - To generate a colour palette for the website design.
+- [ChatGPT](https://chat.openai.com/) - Used to help research and problem solve general coding issues
+- [Canva](http://canva.com) - For the README banner
+- [EmailJS](https://www.emailjs.com) - An email framework used to send content from the site.
+- [Favicon](https://favicon.io/) - For converting the site's logo into a favicon.ico file.
+- [HTML Games](https://www.htmlgames.com/html5-games-for-your-site/) - To add game HTML and functionality to the app.
+- [JSHint](https://jshint.com/) - To validate JS code
+- [W3 HTML validator](https://validator.w3.org/nu/) - To validate HTML
+- [W3 Jigsaw](https://jigsaw.w3.org/css-validator/validator) - To validate CSS
+- [AmIResponsive?](https://ui.dev/amiresponsive) - To create a mockup of the website on different devices in a range of sizes.
+
+
+??ZZ???W?W??W  <<><><<>>>
+TO CHECK (and reqord):
+- [Balsamiq](https://balsamiq.com/wireframes/) - Used to create wireframes during project planning
+- [Google Fonts](https://fonts.google.com/specimen/Dosis) - used to generate a visually appealing font
+
+## Testing
+
+Testing information can be found in the separate [TESTING.md](TESTING.md) file. 
+
+## Deployment and Local Development
+
+### Deployment 
+
+The Utime deployed site can be found [here](https://meganroberts-dev.github.io/march-24-hackathon-utime/)
+
+It was deployed using GitHub pages with the following steps:
+
+1. Login (or signup) to Github.
+2. Navigate to the project repository.
+
+    Our project repository can be accessed from GitHub [here](https://github.com/MeganRoberts-dev/march-24-hackathon-utime)
+
+3. Navigate to the settings button at the top of the page.
+4. Select pages from the left hand menu.
+5. Under "Build and Deployment" click the branch dropdown menu and change it to "main". lick save.
+6. The site can then be found from the "Deployments" section in the repository.
+7. Under "All Environments" the page can be slected from the active deployments. 
+
+### Forking and Cloning the Github Repository
+
+The project can be forked or cloned to make a local copy on your system
+
+First follow steps 1. and 2. above
+
+Then to fork:
+
+1. Click on the fork button at the top of the page. 
+
+To clone:
+
+1. Under the "Local" tab, click on the code button and select how you would like to clone (HTTPS, SSH or GitHub CLI).
+2. Copy the link to your clipboard and use it to create a new workspace in your chosen IDE.
+
+??ZZ???W?W?? POSSIBLY SOME MORE WORK MAKING THIS MORE ADVANCED <<><><<>>>
+
+## Credits
+
+??ZZ???W?W??W  content <<><><<>>>
 
 
 
+
+The 404 Sadness Not Found Team:
+
+- [Meghan Roberts](https://github.com/MeganRoberts-dev)
+- [Karen Samad](https://github.com/kosamad)
+- [Ilyas Olgun](https://github.com/ilyasolgun11)
+- [Alex](https://github.com/A-Hoenig)
+- [Colin Breakwell](https://github.com/BreakellrZ)
+- [Soroush](https://github.com/SoroushGReza)
