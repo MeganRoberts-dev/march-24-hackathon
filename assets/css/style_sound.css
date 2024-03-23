@@ -277,4 +277,11 @@ input::placeholder {
     .player-container .controls {
         flex-wrap: wrap;
     }
+
+    /* increase Sound Name on full width player */
+    .sound-name {
+        font-size: 1.25rem;
+    }
+
+    
 }
