@@ -9,3 +9,18 @@ span {
   .navbar-light .navbar-nav .nav-link:hover {
 	color: rgb(221, 47, 76);
   }
+  body{
+    margin: 0;
+    padding: 0;
+    min-height:100vh;
+    background: url('../images/gaming_background.jpg') no-repeat center center/cover;
+    width:100%;
+    background-attachment:fixed;
+  }
+  
+#game{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

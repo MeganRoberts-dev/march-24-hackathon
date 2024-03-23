@@ -48,7 +48,7 @@ var dropDownData = {
 
 const initialX = 20; // X position offset for the first player
 const initialY = 70; // Y position offset for the first player
-const playerSpacing = 90; // Vertical spacing between players
+const playerSpacing = 110; // Vertical spacing between players
 
 // ensure youtube api loaded before adding default player list
 function onYouTubeIframeAPIReady() {
@@ -531,34 +531,37 @@ function makeDraggable(element) {
 
 // make add sound modal draggable
 document.addEventListener('DOMContentLoaded', (event) => {
-    const modal = document.getElementById('addPlayerModal');
-    let isDragging = false,
-        x = 0,
-        y = 0,
-        dx = 0,
-        dy = 0;
+    // only if the screen width is large
+    if (window.innerWidth > 576) { 
+        const modal = document.getElementById('addPlayerModal');
+        let isDragging = false,
+            x = 0,
+            y = 0,
+            dx = 0,
+            dy = 0;
 
-    modal.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        x = e.clientX;
-        y = e.clientY;
-        document.addEventListener('mousemove', mouseMove);
-        document.addEventListener('mouseup', () => {
-            document.removeEventListener('mousemove', mouseMove);
-            isDragging = false;
-        }, {
-            once: true
+        modal.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            x = e.clientX;
+            y = e.clientY;
+            document.addEventListener('mousemove', mouseMove);
+            document.addEventListener('mouseup', () => {
+                document.removeEventListener('mousemove', mouseMove);
+                isDragging = false;
+            }, {
+                once: true
+            });
         });
-    });
 
-    function mouseMove(e) {
-        if (!isDragging) return;
-        dx = e.clientX - x;
-        dy = e.clientY - y;
-        x = e.clientX;
-        y = e.clientY;
-        modal.style.top = (modal.offsetTop + dy) + 'px';
-        modal.style.left = (modal.offsetLeft + dx) + 'px';
+        function mouseMove(e) {
+            if (!isDragging) return;
+            dx = e.clientX - x;
+            dy = e.clientY - y;
+            x = e.clientX;
+            y = e.clientY;
+            modal.style.top = (modal.offsetTop + dy) + 'px';
+            modal.style.left = (modal.offsetLeft + dx) + 'px';
+        }
     }
 });
 
@@ -635,3 +638,18 @@ function setupTimerControl() {
         }
     });
 }
+
+  document.getElementById('changeBgBtn').addEventListener('click', function() {
+    var myModal = new bootstrap.Modal(document.getElementById('backgroundSelectionModal'));
+    myModal.show();
+  });
+
+  document.querySelectorAll('#backgroundSelectionModal .list-group-item').forEach(item => {
+    item.addEventListener('click', function() {
+      var selectedImage = this.getAttribute('data-bg');
+      document.body.style.backgroundImage = "url('" + selectedImage + "')";
+      var myModalEl = document.getElementById('backgroundSelectionModal');
+      var modal = bootstrap.Modal.getInstance(myModalEl);
+      modal.hide();
+    });
+  });
