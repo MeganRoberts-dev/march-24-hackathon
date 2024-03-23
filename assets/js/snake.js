@@ -17,11 +17,17 @@ const updateFoodPosition = () => {
     foodX = Math.floor(Math.random() * 30) + 1;
     foodY = Math.floor(Math.random() * 30) + 1;
 }
+
+
 const handleGameOver = () => {
+    setTimeout(() => {
+    location.reload();
+}, 5500);
     // Clearing the timer and reloading the page on game over
     clearInterval(setIntervalId);
     //alert("Game Over! Press OK to replay...");//
-    alertify.alert('Alert Title', 'Game over! Press OK to replay...!');
+    alertify.alert('UTime', 'Game over! Wait 10 seconds for the game to replay...');
+    setTimeout();
     location.reload();
 }
 const changeDirection = e => {
