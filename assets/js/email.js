@@ -82,31 +82,27 @@ document.getElementById('randomButton').addEventListener('click', function() {
 });
 
 
-// get random ffirmation from API (type.fit)
-function fetchAffirmation() {
-  fetch('https://type.fit/api/quotes')
-      .then(function(response) {
-          return response.json();
-      })
-      .then(function(data) {
-          const randomQuote = data[Math.floor(Math.random() * data.length)];
+// get random affirmation from JSON list
 
-          // remove unneccss.'type.fit'
-          let quoteText = randomQuote.text.replace(', type.fit', '').trim();
-          let quoteHTML = `"${quoteText}"`;
+function fetchRandomAffirmation() {
+  fetch('affirmations.json')
+    .then(response => response.json())
+    .then(affirmations => {
+        const randomIndex = Math.floor(Math.random() * affirmations.length);
+        const randomAffirmation = affirmations[randomIndex].text;
+        // set "Unknown" if the 'author' key is missing or empty
+        const randomAuthor = affirmations[randomIndex].author || "Unknown";
 
-          // remove unneccss.'type.fit'
-          if (randomQuote.author) {
-              let authorText = randomQuote.author.replace(', type.fit', '').trim();
-              quoteHTML += ` - ${authorText}`;
-          }
-
-          document.getElementById('quote').innerHTML = quoteHTML;
-      })
-      .catch(function(error) {
-          console.log('Error:', error);
-          document.getElementById('quote').innerHTML = 'Sorry, could not fetch a quote. Try again!';
-      });
+        // Combine affirmation and author into a single string
+        const quoteText = `"${randomAffirmation}" - ${randomAuthor}`;
+        document.querySelector('#quote').textContent = quoteText;
+    })
+    .catch(error => {
+        console.error(error);
+        // Update to correct selectors or element IDs as needed
+        document.getElementById('quote').textContent = 'An inspiring affirmation will arrive soon. Please come back again.';
+        // If you have a specific place for the author or an error message, update it here
+    });
 }
 
-fetchAffirmation();
+fetchRandomAffirmation();
