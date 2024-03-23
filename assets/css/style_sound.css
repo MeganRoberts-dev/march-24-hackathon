@@ -61,6 +61,7 @@
 }
 
 .controls {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -214,4 +215,14 @@ input::placeholder {
 
 .modal {
     color: black;
+}
+
+@media screen and (max-width: 400px) {
+  .player-container {
+    max-width: 250px;
+  }
+  .controls {
+    width: 100%;
+    gap: 0px;
+}
 }

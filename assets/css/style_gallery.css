@@ -32,3 +32,14 @@ span {
     color: #151515;
     font-weight: 400;
   }
+
+  .player-container {
+    max-width: 250px;
+  }
+
+@media screen and (max-width: 400px) {
+  .player-container {
+    max-width: 250px;
+  }
+}
+  
