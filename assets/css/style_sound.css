@@ -240,6 +240,10 @@ input::placeholder {
     color: black;
 }
 
+.slider-row {
+    border-top: #000000;
+}
+
 
 
 /*  test area  */
@@ -277,4 +281,18 @@ input::placeholder {
     .player-container .controls {
         flex-wrap: wrap;
     }
+
+    /* increase Sound Name on full width player */
+    .sound-name {
+        font-size: 1.25rem;
+    }
+
+    .playButton, .gearButton {
+        font-size: 1.5rem; /* Makes the icon within the button larger */
+        padding: 0; /* Adjust padding to increase button size, tweak as needed */
+    }
+
+
+
+    
 }
