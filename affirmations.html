@@ -104,7 +104,11 @@
   
   fetchRandomAffirmation();
   
-  document.getElementById('new-quote').addEventListener('click', fetchRandomAffirmation);
+  document.getElementById('new-quote').addEventListener('click', function() {
+    fetchRandomAffirmation();
+    //unfocus button
+    this.blur();
+});
   
   </script>
 
