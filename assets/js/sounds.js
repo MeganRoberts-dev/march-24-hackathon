@@ -53,26 +53,34 @@ const playerSpacing = 90; // Vertical spacing between players
 // ensure youtube api loaded before adding default player list
 function onYouTubeIframeAPIReady() {
     console.log("YouTube API is ready.");
-    let playersToPosition = []; 
+    let playersToPosition = [];
     const storedPlayersData = localStorage.getItem('playersData');
     if (storedPlayersData) {
         const loadedPlayers = JSON.parse(storedPlayersData);
         Object.values(loadedPlayers).forEach((player, index) => {
             addPlayer(player.name, player.videoId);
             // Prepare for positioning
-            playersToPosition.push({ position: player.position, index });
+            playersToPosition.push({
+                position: player.position,
+                index
+            });
         });
     } else {
         // build list of players from default list
         Object.entries(videoData).forEach(([playerName, videoId], index) => {
             addPlayer(playerName, videoId);
             // Default players
-            playersToPosition.push({ index });
+            playersToPosition.push({
+                index
+            });
         });
     }
 
     // Position players
-    playersToPosition.forEach(({ position, index }) => {
+    playersToPosition.forEach(({
+        position,
+        index
+    }) => {
         const container = document.getElementById('container-player' + (index + 1));
         if (position && position.top && position.left) {
             container.style.top = position.top;
@@ -80,7 +88,7 @@ function onYouTubeIframeAPIReady() {
         } else {
             // Position players in a column by default with initialX, initialY, and playerSpacing
             container.style.top = `${initialY + (index * playerSpacing)}px`;
-            container.style.left = `${initialX}px`; 
+            container.style.left = `${initialX}px`;
         }
     });
 }
@@ -89,97 +97,137 @@ function addPlayer(playerName, videoId) {
     var playerCount = Object.keys(players).length + 1;
     var playerId = 'player' + playerCount;
 
+    // create player container
     var container = document.createElement('div');
-    container.classList.add('player-container');
-    container.classList.add('frosted-glass-effect');
+    container.classList.add('player-container', 'frosted-glass-effect', 'd-flex', 'flex-column', 'align-items-center', 'justify-content-center');
     container.setAttribute('id', 'container-' + playerId);
 
+    // add sound name label
     var nameLabel = document.createElement('p');
     nameLabel.textContent = playerName;
-    nameLabel.classList.add("sound-name");
+    nameLabel.classList.add("sound-name", "text-center");
     container.appendChild(nameLabel);
 
+    // add YT player div
     var playerDiv = document.createElement('div');
     playerDiv.id = playerId;
+    playerDiv.classList.add('w-100');
     container.appendChild(playerDiv);
 
+    // add controls div
     var controlsDiv = document.createElement('div');
-    controlsDiv.classList.add('controls');
+    controlsDiv.classList.add('controls', 'd-flex', 'justify-content-center', 'flex-wrap', 'w-100');
+    container.appendChild(controlsDiv);
 
+    // Add play button
     var playButton = document.createElement('button');
-    playButton.classList.add('playButton');
+    playButton.classList.add('playButton', 'btn', 'btn-primary', 'my-2');
     playButton.setAttribute('data-player', playerId);
     playButton.innerHTML = '<i class="fas fa-play"></i>';
-    playButton.disabled = true;
+    controlsDiv.appendChild(playButton);
 
+    // Add gear button
     var gearButton = document.createElement('button');
-    gearButton.classList.add('gearButton');
+    gearButton.classList.add('gearButton', 'btn', 'btn-secondary', 'my-2');
     gearButton.setAttribute('data-player', playerId);
     gearButton.innerHTML = '<i class="fas fa-cog"></i>';
+    controlsDiv.appendChild(gearButton);
 
+    // add volume row
+    var volumeRow = document.createElement('div');
+    volumeRow.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'w-100', 'my-2','slider-row');
+    // add volume icon
+    var speakerIcon = document.createElement('i');
+    speakerIcon.classList.add('fas', 'fa-volume-up', 'mx-2');
+    speakerIcon.setAttribute('data-player', playerId);
+    speakerIcon.style.display = 'none';
+    volumeRow.appendChild(speakerIcon);
+
+    // Create and add the volume slider
     var volumeSlider = document.createElement('input');
     volumeSlider.type = 'range';
-    volumeSlider.classList.add('volume-slider');
+    volumeSlider.classList.add('volume-slider', 'mx-2');
     volumeSlider.setAttribute('data-player', playerId);
     volumeSlider.min = '0';
     volumeSlider.max = '100';
     volumeSlider.value = '100';
-    volumeSlider.style.width = '80px';
+    volumeRow.appendChild(volumeSlider);
 
+    // Append row to the controlsDiv, under the play and gear buttons
+    controlsDiv.appendChild(volumeRow);
+    
+    // add color slider row
+    var colorRow = document.createElement('div');
+    colorRow.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'w-100','slider-row');
+    colorRow.style.display = 'none';
+
+    // add sun icon
+    var sunIcon = document.createElement('i');
+    sunIcon.classList.add('fas', 'fa-sun', 'mx-2');
+    sunIcon.setAttribute('data-player', playerId);
+    sunIcon.style.display = 'none';
+    colorRow.appendChild(sunIcon);
+
+    // Setup for colorSlider
     var colorSlider = document.createElement('input');
     colorSlider.type = 'range';
-    colorSlider.classList.add('color-slider');
+    colorSlider.classList.add('color-slider', 'mx-2');
+    colorSlider.setAttribute('data-player', playerId);
     colorSlider.min = '0';
     colorSlider.max = '255';
     colorSlider.value = '255';
-    colorSlider.style.width = '80px';
-    colorSlider.style.display = 'none';
-    colorSlider.setAttribute('data-player', playerId);
+    colorRow.appendChild(colorSlider);
 
-    colorSlider.addEventListener('input', function() {
+    // add color slider row underneath
+    controlsDiv.appendChild(colorRow);
+    
+    
+    colorSlider.addEventListener('input', function () {
         var value = 255 - this.value;
         container.style.backgroundColor = `rgba(${value}, ${value}, ${value}, 0.1)`;
-    
+
         // toggle dark mode for max slider value
         var textColor = this.value == '255' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)';
         container.style.color = textColor;
-    
+
         // buttons to toggle
         var playButton = container.querySelector('.playButton i');
         var gearButton = container.querySelector('.gearButton i');
-        
+
         // Set the color
         if (playButton) playButton.style.color = textColor;
         if (gearButton) gearButton.style.color = textColor;
-      
     });
 
+    // add delete button
     var deleteButton = document.createElement('button');
-    deleteButton.classList.add('deleteButton');
+    deleteButton.classList.add('deleteButton', 'btn', 'btn-danger', 'mx-1');
     deleteButton.setAttribute('data-player', playerId);
     deleteButton.innerHTML = '<i class="fas fa-times-circle"></i>';
     deleteButton.style.display = 'none';
-    deleteButton.onclick = function() {
+    deleteButton.onclick = function () {
         document.getElementById('playersContainer').removeChild(container);
         delete players[playerId];
     };
-
-    controlsDiv.appendChild(playButton);
-    controlsDiv.appendChild(gearButton);
-    controlsDiv.appendChild(volumeSlider);
-    controlsDiv.appendChild(colorSlider);
     controlsDiv.appendChild(deleteButton);
-    
+
+    // combine player and hidden controls
     container.appendChild(playerDiv);
     container.appendChild(controlsDiv);
 
+    // add player to DOM
     document.getElementById('playersContainer').appendChild(container);
 
+    // add drag attributes
     makeDraggable(container);
 
-    players[playerId] = { name: playerName, videoId: videoId, player: createPlayer(playerId, videoId) };
+    //store player data in players object
+    players[playerId] = {
+        name: playerName,
+        videoId: videoId,
+        player: createPlayer(playerId, videoId)
+    };
 }
-
 
 // create a new YT player
 function createPlayer(elementId, videoId) {
@@ -207,43 +255,32 @@ function onPlayerReady(event) {
 }
 
 // Event delegation for play and volume controls
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     if (event.target.closest('.playButton')) {
         var button = event.target.closest('.playButton');
         var playerId = button.getAttribute('data-player');
-        togglePlayPause(playerId);
+        togglePlayPause(playerId); 
     } else if (event.target.closest('.gearButton')) {
         var gearButton = event.target.closest('.gearButton');
         var playerId = gearButton.getAttribute('data-player');
-        var colorSlider = document.querySelector(`.color-slider[data-player="${playerId}"]`);
-        var volumeSlider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
-        var deleteButton = document.querySelector(`button.deleteButton[data-player="${playerId}"]`);
-        // toggle visibility of buttons
-        colorSlider.style.display = colorSlider.style.display === 'block' ? 'none' : 'block';
-        volumeSlider.style.display = volumeSlider.style.display === 'block' ? 'none' : 'block';
-        deleteButton.style.display = deleteButton.style.display === 'block' ? 'none' : 'block';
+        var container = document.querySelector(`#container-${playerId}`);
+        
+        // Query for the controls within this player
+        var colorSlider = container.querySelector(`.color-slider`);
+        var volumeSlider = container.querySelector(`.volume-slider`);
+        var deleteButton = container.querySelector(`.deleteButton`);
+        var speakerIcon = container.querySelector(`.fa-volume-up`); 
+        var sunIcon = container.querySelector(`.fa-sun`); 
+        
+        // Toggle visibility of controls and icons
+        [colorSlider, volumeSlider, deleteButton, speakerIcon, sunIcon].forEach(el => {
+            if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        });
     }
 });
 
-// closeall players controls at once
-document.getElementById('closeAllBtn').addEventListener('click', function() {
-    // Iterate over each gear button to simulate a click or directly toggle the visibility of associated controls.
-    document.querySelectorAll('.gearButton').forEach(gearButton => {
-        var playerId = gearButton.getAttribute('data-player');
-        
-        // set individual controls
-        var colorSlider = document.querySelector(`.color-slider[data-player="${playerId}"]`);
-        var volumeSlider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
-        var deleteButton = document.querySelector(`button.deleteButton[data-player="${playerId}"]`);
-        
-        colorSlider.style.display = 'none';
-        volumeSlider.style.display = 'none';
-        deleteButton.style.display = 'none';
-    });
-});
-
 // user changes volume slider
-document.addEventListener('input', function(event) {
+document.addEventListener('input', function (event) {
     if (event.target.classList.contains('volume-slider')) {
         var slider = event.target;
         var playerId = slider.getAttribute('data-player');
@@ -282,15 +319,21 @@ function onPlayerStateChange(event) {
 }
 
 // detect click on add sound button
-document.getElementById('addPlayerBtn').addEventListener('click', function() {
+document.getElementById('addPlayerBtn').addEventListener('click', function () {
     document.getElementById('addPlayerModal').style.display = 'block';
     populateDropdown(); // build dropdown
-    });
+
+    //force hide the tooltop
+    var tooltipInstance = bootstrap.Tooltip.getInstance(this);
+    if (tooltipInstance) {
+        tooltipInstance.hide();
+    }
+});
 
 // Function to populate the dropdown
 function populateDropdown() {
     var dropdown = document.getElementById('videoDropdown');
-    
+
     // Clear existing options
     while (dropdown.firstChild) {
         dropdown.removeChild(dropdown.firstChild);
@@ -302,7 +345,7 @@ function populateDropdown() {
     dropdown.appendChild(defaultOption);
 
     // Populate with new options
-    Object.keys(dropDownData).forEach(function(key) {
+    Object.keys(dropDownData).forEach(function (key) {
         var option = document.createElement('option');
         option.text = key;
         option.value = dropDownData[key];
@@ -311,49 +354,66 @@ function populateDropdown() {
 }
 
 // populate modal sound name fields when drop down is selected
-document.getElementById('videoDropdown').addEventListener('change', function() {
+document.getElementById('videoDropdown').addEventListener('change', function () {
     // Get selected video ID and Sound Name
-    var videoId = this.value; 
+    var videoId = this.value;
     var soundName = this.options[this.selectedIndex].text;
-    
+
     // Populate the Sound Name and Video ID fields
     document.getElementById('playerName').value = soundName;
     document.getElementById('videoId').value = videoId;
 });
 
 // detect click on cancel button in modal
-document.getElementById('cancelAddPlayer').addEventListener('click', function() {
+document.getElementById('cancelAddPlayer').addEventListener('click', function () {
     document.getElementById('addPlayerModal').style.display = 'none';
 });
 
 // user clicked add sound button
-document.getElementById('addPlayerSubmit').addEventListener('click', function() {
+//calculate position of new player
+const screenX = window.innerWidth / 2;
+const screenY = window.innerHeight / 3;
+const newPlayerX = screenX; // X position for new sound (500 old value)
+const newPlayerY = screenY; // Y position for new sound
+
+document.getElementById('addPlayerSubmit').addEventListener('click', function () {
     var playerName = document.getElementById('playerName').value.trim();
     var videoId = document.getElementById('videoId').value.trim();
 
     if (playerName && videoId) {
         addPlayer(playerName, videoId);
         savePlayersData();
-        //reset and hide modal
+        // Reset and hide modal
         document.getElementById('addPlayerModal').style.display = 'none';
         document.getElementById('playerName').value = '';
         document.getElementById('videoId').value = '';
+
+        const newPlayerIndex = document.querySelectorAll('.player-container').length;
+        const container = document.getElementById('container-player' + newPlayerIndex);
+        if (container) {
+            container.style.left = `${newPlayerX}px`;
+            container.style.top = `${newPlayerY}px`;
+        }
     } else {
         alert('Please fill in both fields.');
     }
 });
 
-// add overall controls for all sounds
+// ##########  overall controls for all sounds in navbar   ################ 
 
 // stop all sound players
-document.getElementById('stopAllBtn').addEventListener('click', function() {
+document.getElementById('stopAllBtn').addEventListener('click', function () {
     Object.values(players).forEach(player => {
         player.player.pauseVideo();
     });
+    var tooltipInstance = bootstrap.Tooltip.getInstance(this);
+    if (tooltipInstance) {
+        tooltipInstance.hide();
+    }
 });
 
 // mute active players and toggle back on if needed.
-document.getElementById('muteAllBtn').addEventListener('click', function() {
+document.getElementById('muteAllBtn').addEventListener('click', function () {
     // toggel mute state for all players
     isMuted = !isMuted;
 
@@ -373,23 +433,63 @@ document.getElementById('muteAllBtn').addEventListener('click', function() {
             }, 100);
         }
     });
+    //force hide the tooltop
+    var tooltipInstance = bootstrap.Tooltip.getInstance(this);
+    if (tooltipInstance) {
+        tooltipInstance.hide();
+    }
+});
+
+// closeall players controls at once
+document.getElementById('closeAllBtn').addEventListener('click', function () {
+    // Iterate over each gear button to simulate a click or directly toggle the visibility of associated controls.
+    document.querySelectorAll('.gearButton').forEach(gearButton => {
+        var playerId = gearButton.getAttribute('data-player');
+
+        // set individual controls
+        var colorSlider = document.querySelector(`.color-slider[data-player="${playerId}"]`);
+        var volumeSlider = document.querySelector(`.volume-slider[data-player="${playerId}"]`);
+        var deleteButton = document.querySelector(`button.deleteButton[data-player="${playerId}"]`);
+        var speakerIcon = document.querySelector(`.fa-volume-up[data-player="${playerId}"]`);
+        var sunIcon = document.querySelector(`.fa-sun[data-player="${playerId}"]`);
+
+        colorSlider.style.display = 'none';
+        volumeSlider.style.display = 'none';
+        deleteButton.style.display = 'none';
+        speakerIcon.style.display = 'none';
+        sunIcon.style.display = 'none';
+    });
+    //force hide the tooltop
+    var tooltipInstance = bootstrap.Tooltip.getInstance(this);
+    if (tooltipInstance) {
+        tooltipInstance.hide();
+    }
 });
 
 // toggle timer on / off
-document.getElementById('timerBtn').addEventListener('click', function() {
+document.getElementById('timerBtn').addEventListener('click', function () {
     var timerDiv = document.getElementById('draggable-timer');
     var isVisible = !timerDiv.classList.contains('d-none');
-    
+
     if (isVisible) {
         timerDiv.classList.add('d-none');
     } else {
         timerDiv.classList.remove('d-none');
     }
+    //force hide the tooltop
+    var tooltipInstance = bootstrap.Tooltip.getInstance(this);
+    if (tooltipInstance) {
+        tooltipInstance.hide();
+    }
 });
+
 
 // make a player draggable
 function makeDraggable(element) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    var pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
 
     element.onmousedown = dragMouseDown;
 
@@ -411,7 +511,7 @@ function makeDraggable(element) {
     }
 
     function elementDrag(e) {
-        e.preventDefault(); 
+        e.preventDefault();
         // Calculate the new cursor position:
         pos1 = pos3 - e.clientX;
         pos2 = pos4 - e.clientY;
@@ -432,7 +532,11 @@ function makeDraggable(element) {
 // make add sound modal draggable
 document.addEventListener('DOMContentLoaded', (event) => {
     const modal = document.getElementById('addPlayerModal');
-    let isDragging = false, x = 0, y = 0, dx = 0, dy = 0;
+    let isDragging = false,
+        x = 0,
+        y = 0,
+        dx = 0,
+        dy = 0;
 
     modal.addEventListener('mousedown', (e) => {
         isDragging = true;
@@ -442,7 +546,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.addEventListener('mouseup', () => {
             document.removeEventListener('mousemove', mouseMove);
             isDragging = false;
-        }, { once: true });
+        }, {
+            once: true
+        });
     });
 
     function mouseMove(e) {
@@ -455,7 +561,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         modal.style.left = (modal.offsetLeft + dx) + 'px';
     }
 });
-
 
 // Make all player containers draggable
 document.querySelectorAll('.player-container').forEach(makeDraggable);
@@ -479,9 +584,8 @@ function savePlayersData() {
     localStorage.setItem('playersData', playersDataString);
 }
 
-
 // #########################  ADD TIMER TEST ####################
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let timerDiv = document.getElementById('draggable-timer');
     makeDraggable(timerDiv);
     setupTimerControl();
@@ -503,11 +607,11 @@ function setupTimerControl() {
         return `${minutes}:${seconds}`;
     }
 
-    startStopBtn.addEventListener('click', function() {
+    startStopBtn.addEventListener('click', function () {
         let icon = startStopBtn.querySelector('i');
         if (!timerRunning) {
             //start
-            timerInterval = setInterval(function() {
+            timerInterval = setInterval(function () {
                 seconds++;
                 timer.innerText = formatTime(seconds);
             }, 1000);

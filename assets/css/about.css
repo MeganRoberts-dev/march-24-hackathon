@@ -1,0 +1,85 @@
+h1 {
+    font-weight: 600;
+    margin: 40px 0px;
+}
+
+.about-container {
+    border-radius: 12px;
+    gap: 0.8rem;
+    background: linear-gradient( to top, rgba(146, 146, 146, 0.697), transparent);
+    padding: 15px;
+    max-width: 1300px;
+    margin: 0px auto;
+    display: flex; 
+    overflow-x: auto; 
+    white-space: nowrap; 
+    scrollbar-color: rgb(210, 8, 42) rgb(255, 207, 215);
+}
+
+.about-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.about-container::-webkit-scrollbar-track {
+    background: #ddd;
+}
+
+.about-container::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 5px;
+}
+
+.about-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(230, 18, 53);
+}
+
+.contributors {
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.contributors:hover {
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.7);
+    transform: scale(1.02);
+}
+
+.about-img {
+    object-fit: cover;
+    position: relative;
+}
+
+.contributors img {
+    border-radius: 12px;
+}
+
+.about-info {
+    border-radius: 12px;
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    position: absolute;
+    bottom: 0px;
+    background: linear-gradient(to top, white, transparent);
+    width: 100%;
+}
+
+.contributors h2 {
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.fa-github, .fa-linkedin {
+    font-size: 1.9rem;
+    margin-right: 5px;
+    color: rgb(221, 47, 76);
+}
+
+span {
+    color: rgb(221, 47, 76);
+    font-weight:900;
+  }
