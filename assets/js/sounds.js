@@ -259,18 +259,18 @@ document.addEventListener('click', function (event) {
     if (event.target.closest('.playButton')) {
         var button = event.target.closest('.playButton');
         var playerId = button.getAttribute('data-player');
-        togglePlayPause(playerId); // Assuming togglePlayPause is defined elsewhere
+        togglePlayPause(playerId); 
     } else if (event.target.closest('.gearButton')) {
         var gearButton = event.target.closest('.gearButton');
         var playerId = gearButton.getAttribute('data-player');
-        var container = document.querySelector(`#container-${playerId}`); // Get the player container
+        var container = document.querySelector(`#container-${playerId}`);
         
         // Query for the controls within this player
         var colorSlider = container.querySelector(`.color-slider`);
         var volumeSlider = container.querySelector(`.volume-slider`);
         var deleteButton = container.querySelector(`.deleteButton`);
-        var speakerIcon = container.querySelector(`.fa-volume-up`); // Query for the speaker icon
-        var sunIcon = container.querySelector(`.fa-sun`); // Query for the sun icon
+        var speakerIcon = container.querySelector(`.fa-volume-up`); 
+        var sunIcon = container.querySelector(`.fa-sun`); 
         
         // Toggle visibility of controls and icons
         [colorSlider, volumeSlider, deleteButton, speakerIcon, sunIcon].forEach(el => {
