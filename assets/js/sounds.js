@@ -3,12 +3,12 @@ var players = {};
 
 // default sounds to initialize webpage
 var videoData = {
-    'Music Lofi': 'Ah7i5EFVDqA',
-    'Soft Piano Music': 'cHKHv3ZHTkM',
-    'Birds': 'bKmmcKWMDfM',
-    'Fireplace': '3_gdxb7AyGo',
-    'Cat Purring': 'SR5L2BSYNuE',
-    'Lake Waters': 'zdGs4pvgR9M',
+    // 'Music Lofi': 'Ah7i5EFVDqA',
+    // 'Soft Piano Music': 'cHKHv3ZHTkM',
+    // 'Birds': 'bKmmcKWMDfM',
+    // 'Fireplace': '3_gdxb7AyGo',
+    // 'Cat Purring': 'SR5L2BSYNuE',
+    // 'Lake Waters': 'zdGs4pvgR9M',
 };
 
 var isMuted = false;
