@@ -208,6 +208,7 @@ function addPlayer(playerName, videoId) {
     deleteButton.onclick = function () {
         document.getElementById('playersContainer').removeChild(container);
         delete players[playerId];
+        savePlayersData();
     };
     controlsDiv.appendChild(deleteButton);
 
@@ -483,7 +484,6 @@ document.getElementById('timerBtn').addEventListener('click', function () {
     }
 });
 
-
 // make a player draggable
 function makeDraggable(element) {
     var pos1 = 0,
@@ -587,7 +587,7 @@ function savePlayersData() {
     localStorage.setItem('playersData', playersDataString);
 }
 
-// #########################  ADD TIMER TEST ####################
+// #########################  ADD TIMER  ####################
 document.addEventListener('DOMContentLoaded', function () {
     let timerDiv = document.getElementById('draggable-timer');
     makeDraggable(timerDiv);
