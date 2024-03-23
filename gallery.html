@@ -63,7 +63,55 @@
 	</header>
 	<main>
 		<!-- Container for Audio Players -->
-		<div id="playersContainer"></div>
+		<div id="playersContainer">
+
+
+			<div class="container-fluid p-0">
+				<div class="player-container frosted-glass-effect" id="container-player98">
+					<p class="sound-name text-center">Player 98</p>
+					<div id="player1" class="w-100">
+						<!-- The player will be initialized here by your JS -->
+					</div>
+					<div class="controls d-flex justify-content-center flex-wrap">
+						<button class="playButton btn btn-primary mx-1" data-player="player98">
+							<i class="fas fa-play"></i>
+						</button>
+						<button class="gearButton btn btn-secondary mx-1" data-player="player98">
+							<i class="fas fa-cog"></i>
+						</button>
+						<input type="range" class="volume-slider mx-1" data-player="player98" min="0" max="100" value="100">
+						<input type="range" class="color-slider mx-1" data-player="player98" min="0" max="255" value="255" style="display: none;">
+						<button class="deleteButton btn btn-danger mx-1" data-player="player98" style="display: none;">
+							<i class="fas fa-times-circle"></i>
+						</button>
+					</div>
+				</div>
+				<div class="player-container frosted-glass-effect" id="container-player99">
+					<p class="sound-name text-center">Player 99</p>
+					<div id="player2" class="w-100">
+						<!-- The player will be initialized here by your JS -->
+					</div>
+					<div class="controls d-flex justify-content-center flex-wrap">
+						<button class="playButton btn btn-primary mx-1" data-player="player99">
+							<i class="fas fa-play"></i>
+						</button>
+						<button class="gearButton btn btn-secondary mx-1" data-player="player99">
+							<i class="fas fa-cog"></i>
+						</button>
+						<input type="range" class="volume-slider mx-1" data-player="player99" min="0" max="100" value="100">
+						<input type="range" class="color-slider mx-1" data-player="player99" min="0" max="255" value="255" style="display: none;">
+						<button class="deleteButton btn btn-danger mx-1" data-player="player99" style="display: none;">
+							<i class="fas fa-times-circle"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+			
+
+
+
+
+		</div>
 		
 		
 		<!-- Image Carousel -->

@@ -22,8 +22,32 @@
         </div>
         
         <!-- sound player instances get added inside this div-->
-        <div id="playersContainer"></div>
+        <div id="playersContainer">
+
+
+            <div class="container mt-5">
+                <div id="container-player1" class="player-container">
+                    <p class="sound-name">Player Name</p>
+                    <div class="video-responsive">
+                        <!-- Your YouTube iframe player will be inserted here -->
+                        <iframe id="player1" src="https://www.youtube.com/embed/VIDEO_ID?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <!-- Dummy controls for styling. Actual functionality needs to be implemented with JS -->
+                    <div class="controls mt-2">
+                        <button class="btn btn-primary"><i class="fas fa-play"></i></button>
+                        <button class="btn btn-secondary"><i class="fas fa-cog"></i></button>
+                        <input type="range" class="volume-slider" min="0" max="100" value="100" style="width: 80px;">
+                        <!-- Additional dummy controls for visual completeness -->
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
         
+
+
+
 
         <div id="draggable-timer" class="draggable d-none">
             <button id="start-stop-btn" class="icon-button"><i class="fas fa-play"></i></button>
