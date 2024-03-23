@@ -83,3 +83,42 @@ The following table outlines the content that should be implemented to make a fu
 | User feedback after submitting the form                                    |     5      |            5            |       Y     |
 | Page to remember soundscape profiles (for quick loading on return visits)  |     3      |            3            |       N     |
 | Links to social media                                                      |     5      |            5            |       Y     |
+
+
+### Features
+
+- **All Pages**
+
+- All pages have a Navbar displaying the Utime logo and page title. It also includes navigation links to other pages, which condense into a burger menu on small screens.
+
+??ZZ???W?W??W image of navbar <<><><<>>>
+
+- Additionally, each page features a footer with links to social media sites.
+
+- **Home Page**
+
+??ZZ???W?W??W  page on all devices <<><><<>>>
+
+- The home page explains to the user what the site is about and displays the different 'happy' activities users can choose from, including Games, Soundscape, or Funny. 
+
+- **Soundscape Page**
+
+- This page opens with the slogan 'Create a happy place.' It is a page where users can choose from a preselected sound to accompany an image of their choice (selected using the carousel of images). They can then sit back and enjoy the page, creating their own moment of calm in a busy, screen-filled day.
+
+- The music has in-built settings which allow a user to control volume and the colour of the sound area, allowing it to blend into the background of their image. Additionaly, users can "x" any music they don't want to appear on their page.  
+
+- The navbar on this page has additional features, all of which are explained to a user when the hover over the feature:
+
+    - A user has another option for controlling the music and their space. They can stop all music, close the music setting menu and mute the music.
+
+     ![screenshot of soundscape navbar](documentation/screenshots/navbar_ss_options.png)
+
+    - There is also the option to add a timer, allowing a user to keep track of how long they have been in their curated space. The aim is that this could become part of a users daily routine to find some time for them and just sit in a calm space for say 5 minutes at a time.  
+
+    ![screenshot of soundscape navbar timer](documentation/screenshots/navbar_ss_timer.png)
+
+   
+
+
+
+### Future Features
