@@ -54,12 +54,13 @@
   <main>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+      <img class="card-img-top" src=".../100px180/" alt="Card image cap">    <!--add a cool image here or even a mini carousell?-->>
       <div class="card-body">
         <h5 class="card-title">Inspiring Affirmations</h5>
         <p class="card-text">No affirmations have arrived yet. Please check back soon.</p>
       </div>
     </div>
+    <button id="new-quote" class="btn btn-primary">Need more inspiration?</button>
 
   </main>
   <!------------ Footer ------------->
@@ -78,7 +79,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <!-- Fetch random affirmation script -->
   <script>
-    
+
     function fetchRandomAffirmation() {
         fetch('affirmations.json')
             .then(response => response.json())
@@ -92,6 +93,8 @@
             });
     }
     fetchRandomAffirmation();
+
+    document.getElementById('new-quote').addEventListener('click', fetchRandomAffirmation);
 
 </script>
 </body>
