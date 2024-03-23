@@ -153,3 +153,73 @@ Due to time constraints the following features were not implementd at this time,
 3. To enhance the email feature to enable users to share their personalised space seamlessly, allowing recipients to open the shared space with pre-loaded settings. Currently, recipients need to recreate the space themselves, which was a deliberate decision made by the design team due to skill constraints. However, we recognize the importance of streamlining this process for a more user-friendly experience.
 4. To improve the selection of games avaiable to play
 
+## Planning and Development
+
+### Wireframes
+
+Wireframes for the website were created using 
+
+### Game Development
+
+### Emails
+
+An [EmailJS](https://www.emailjs.com/) account was created...
+
+??ZZ???W?W??W  content <<><><<>>>
+
+### Agile Methodology
+
+Agile devlopment techniques were implemented throughout this project. A GitHub project board was utilised to keep a track of different tasks and asign them to different people. The board can be viewed [here](https://github.com/users/MeganRoberts-dev/projects/4)
+
+### Brand and Identity
+
+All decisions were decided as a team 
+
+- The brand name: **404 Sadness Not Found** 
+- The app name: **Utime.**
+- Our slogan: **A digital Oasis**?? vs This is your space, your soundtrack, your UTime.
+
+#### Logo image 
+
+??ZZ???W?W??W  content <<><><<>>>
+
+#### Colour Palette
+
+
+??ZZ???W?W??W  content <<><><<>>>
+
+imput colours for screenshot cooloors: 
+
+rgb(221, 47, 76)
+rgba(255, 255, 255, 0)
+
++??
+
+## Tools and Technologies
+
+
+- **HTML** - Used for structuring the content of the website.
+- **CSS** - Used to style the appearance of the app's content.
+- **Javascript** - Used to add dynamic behavior and allow user interaction with the web pages.
+- [JSON](https://www.json.org/json-en.html) - Used for transmitting data between the server and a client.
+- [GitHub and Github Pages](https://github.com/) - Used to store the code and host/deploy the live project.
+- [GitPod](https://www.gitpod.io/) - IDE for development
+- [Visual Studio Code](https://code.visualstudio.com/) - IDE for development
+- [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - For testing and troublshooting code.
+- [Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - To automatically test the performance, quality, and correctness of the web app.
+- [Coolors](https://coolors.co/) - To generate a colour palette for the website design.
+- [ChatGPT](https://chat.openai.com/) - Used to help research and problem solve general coding issues
+- [Canva](http://canva.com) - For the README banner
+- [EmailJS](https://www.emailjs.com) - An email framework used to send content from the site.
+- [Favicon](https://favicon.io/) - For converting the site's logo into a favicon.ico file.
+- [HTML Games](https://www.htmlgames.com/html5-games-for-your-site/) - To add game HTML and functionality to the app.
+- [JSHint](https://jshint.com/) - To validate JS code
+- [W3 HTML validator](https://validator.w3.org/nu/) - To validate HTML
+- [W3 Jigsaw](https://jigsaw.w3.org/css-validator/validator) - To validate CSS
+- [AmIResponsive?](https://ui.dev/amiresponsive) - To create a mockup of the website on different devices in a range of sizes.
+
+
+??ZZ???W?W??W  <<><><<>>>
+TO CHECK (and reqord):
+- [Balsamiq](https://balsamiq.com/wireframes/) - Used to create wireframes during project planning
+- [Google Fonts](https://fonts.google.com/specimen/Dosis) - used to generate a visually appealing font
