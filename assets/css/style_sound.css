@@ -1,5 +1,6 @@
 #playersContainer{
-    position: absolute;
+    position: relative;
+    z-index: 999;
 }
 
 .player-container {
@@ -59,12 +60,35 @@
     background-color: transparent;
     font-size: 2em;
 }
+/* custom css for responsiveness */
+.controls > :not(.deleteButton) {
+    flex: 1 1 auto; 
+    min-width: 50px;
+}
 
-.controls {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 10px;
+.controls > * {
+    flex: 1 1 auto;
+    min-width: 50px;
+}
+
+/* style sliders */
+.controls .volume-slider, 
+.controls .color-slider {
+    flex: 0 0 calc(100% - 40px);
+    display: none;
+    margin: 10px 10px;
+}
+
+/* Always show sliders on small screen full width  */
+.controls.expanded .volume-slider,
+.controls.expanded .color-slider {
+    display: block;
+}
+
+.deleteButton {
+    flex-basis: 100%;
+    order: 3;
+    margin: 10px 0px;
 }
 
 .volume-slider {
@@ -214,4 +238,61 @@ input::placeholder {
 
 .modal {
     color: black;
+}
+
+.slider-row {
+    border-top: #000000;
+}
+
+
+
+/*  test area  */
+
+
+/* Media query for smaller screens */
+@media (max-width: 576px) { /* Adjusts for phones */
+     /* Hide the carousel on smaller screens */
+     .carousel, #carouselExampleIndicators {
+        display: none;
+    }
+
+       /* Apply a standard background to the body */
+       body {
+        background: url('../images/boat.jpg') no-repeat center center fixed; 
+        background-size: cover;
+    }
+    
+    #playersContainer {
+        position: static;
+        width: auto;
+        margin-top: 20px;
+        z-index: 999;
+    }
+    
+    .player-container {
+        position: static;
+        max-width: none;
+        margin: 10px auto;
+        left: auto;
+        bottom: auto;
+        z-index: 999;
+    }
+
+    .player-container .controls {
+        flex-wrap: wrap;
+    }
+
+    /* increase Sound Name on full width player */
+    .sound-name {
+        font-size: 1.25rem;
+    }
+
+    .playButton, .gearButton {
+        font-size: 1.5rem; /* Makes the icon within the button larger */
+        padding: 0; /* Adjust padding to increase button size, tweak as needed */
+    }
+
+
+
+    
 }
