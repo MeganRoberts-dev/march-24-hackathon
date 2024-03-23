@@ -635,3 +635,18 @@ function setupTimerControl() {
         }
     });
 }
+
+  document.getElementById('changeBgBtn').addEventListener('click', function() {
+    var myModal = new bootstrap.Modal(document.getElementById('backgroundSelectionModal'));
+    myModal.show();
+  });
+
+  document.querySelectorAll('#backgroundSelectionModal .list-group-item').forEach(item => {
+    item.addEventListener('click', function() {
+      var selectedImage = this.getAttribute('data-bg');
+      document.body.style.backgroundImage = "url('" + selectedImage + "')";
+      var myModalEl = document.getElementById('backgroundSelectionModal');
+      var modal = bootstrap.Modal.getInstance(myModalEl);
+      modal.hide();
+    });
+  });
