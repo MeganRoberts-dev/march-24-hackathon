@@ -1,17 +1,22 @@
-** Banner **
+![UTime banner](documentation/rm_images/utime_banner.png)
+
+** if time update to have images that relate to our different areas **
 
 
 # UTime 😊 by 404 Sadness Not Found
 ## ***"A digital Oasis"*** 
 
+
 ## Introduction
 
-To celebrate World Happiness Day, The UTime app brings an opportunity for users to find their own on-screen happy place. A user can find a moment of calm by personalizing a visual and musical escape. Alternatively, they can re-energize their productivity by playing one of our happy games. Or, if it's out loud laughter they are looking for, a user can browse a hilarious selection of memes and then share that joy with their friends by email.
+To celebrate World Happiness Day, The UTime app brings an opportunity for users to find their own on-screen happy place. A user can find a moment of calm by personalizing a visual and musical escape. Alternatively, they can re-energize their productivity by playing one of our happy games. Then, to make the world an even happier place, a user can then share their curated spaces with friends using our built in email service.
 
 ------
 
 ## Showcase
 ** Content **
+** Am I responsive **
+** Deployed site **
 
 ------
 
@@ -26,9 +31,11 @@ In a busy world with many of us working from home, it can be difficult to take t
 ## Objectives
 
 To celebrate World Happiness Day, our objective was to create a harmonious space where users could navigate to content that would provide them with happiness. This meant creating content that would appeal to people looking for different things: 
-1. An online oasis - achieved through a visual and auditory experience.
-2. Joy - by playing a game.
-3. Laughter - from viewing amusing content.
+
+1. An online moment of calm - achieved through a visual and auditory experience.
+2. Reinvigorating energy - by playing a game with a soundtrack to match.
+
+We then wanted a user to be able to share their happiness with others by incorporating an email service.
 
 ### Target Audience
 
@@ -39,11 +46,11 @@ The target audience for this app is anyone looking to add happiness to their day
 - Explanation of what the site offers is easy to understand
 - Scenes and sounds work as expected
 - Game is intuitive and fun to play
-- Memes page contains humorous content and is sharable
 - All content is clear and accessible
 - Features and navigation work as expected
 - Option to learn more about Sadness Not Found and the app
 - Visually Attractive
+- Option to share what a user has found via email
 
 ### User Stories
 
@@ -54,7 +61,6 @@ As a first time user I would like:
 - To explore other areas of the site without having to navigate home
 - To be able to choose from a selection of predefined images and sounds
 - For the game to load quickly and contain smooth animations and features
-- To be able to browse meme content of my choice and share directly from the site
 - To enjoy using the site in part due to the pleasing aesthetics and affordances
 
 As a returning user I would like:
@@ -71,15 +77,14 @@ The following table outlines the content that should be implemented to make a fu
 | ---------------------------------------------------------------------------| :--------: | :---------------------: | :----------:|
 | Home page to showcase app features and link to each page                   |     5      |            5            |       Y     |
 | About page with more information about the 404 Sorry Not Found team        |     5      |            5            |       Y     |
-| Preset sounds loaded on Soundscape page for a user to chose                |     5      |            5            |       Y     |
+| Preset sounds loaded on Soundscape/game page for a user to chose           |     5      |            5            |       Y     |
 | Carousel of images for a user to veiw different visual opportunities       |     5      |            5            |       Y     |
 | Ability to search for pictures on a theme                                  |     3      |            5            |       N     |
-| Customizable sounds                                                        |     5      |            4            |       Y     |
-| Chosen/curated music to be available on meme/game pages                    |     3      |            2            |       N     |
+| Option to upload own music into the energy/calm spaces                     |     5      |            4            |       Y     |
+| Option to find an inspiring quote                                          |     3      |            5            |       Y     |
 | Info modal that tells the user how to play the game                        |     4      |            5            |       Y     |
 | Score incrementation with successful game elements                         |     5      |            5            |       Y     |
-| Ability to search for memes on a given theme                               |     3      |            4            |       N     |
-| Option to send a meme by email to a friend (via the built in form)         |     5      |            5            |       Y     |
+| Option to send curated spaces by email to a friend (via the built in form) |     5      |            5            |       Y     |
 | User feedback after submitting the form                                    |     5      |            5            |       Y     |
 | Page to remember soundscape profiles (for quick loading on return visits)  |     3      |            3            |       N     |
 | Links to social media                                                      |     5      |            5            |       Y     |
@@ -101,17 +106,19 @@ The following table outlines the content that should be implemented to make a fu
 
 - The home page explains to the user what the site is about and displays the different 'happy' activities users can choose from, including Games, Soundscape, or Memes. 
 
-- **Soundscape Page**
+- **Calm Page**
 
 ??ZZ???W?W??W  page on all devices <<><><<>>>
 
 - This page opens with the slogan 'Create a happy place.' It is a page where users can choose from a preselected sound to accompany an image of their choice (selected using the carousel of images). They can then sit back and enjoy the page, creating their own moment of calm in a busy, screen-filled day.
 
-- The music has in-built settings which allow a user to control volume and the colour of the sound area, allowing it to blend into the background of their image. Additionaly, users can "x" any music they don't want to appear on their page.  
+- The pre-loaded music options offer flexibility, allowing users to position them anywhere on the screen. Coupled with the ability to adjust their appearance using the contrast slider, users can seamlessly integrate them with the background image, minimising distractions and enhancing the visual experience. The other in built options allow a user to pause the music, change the volume or remove any music they don't want to appear on their page.
+
+- Users have the option of adding their own sounds into the space using the "+" button and 
 
 - The navbar on this page has additional features, all of which are explained to a user when the hover over the feature:
 
-    - A user has another option for controlling the music and their space. They can stop all music, close the music setting menu and mute the music.
+    - A user has another option for controlling the music and their space. They can add new music of thier choice, stop all music, close the music setting menu and mute the music.
 
      ![screenshot of soundscape navbar](documentation/screenshots/navbar_ss_options.png)
 
@@ -119,19 +126,19 @@ The following table outlines the content that should be implemented to make a fu
 
     ![screenshot of soundscape navbar timer](documentation/screenshots/navbar_ss_timer.png)
 
-- **Game Page** 
+- **Energy Page** 
 
 ??ZZ???W?W??W  page on all devices <<><><<>>>
 
 ??ZZ???W?W??W  content <<><><<>>>
 
-- **Memes Page**
+- **Email **
 
 ??ZZ???W?W??W  page on all devices <<><><<>>>
 
 ??ZZ???W?W??W  content <<><><<>>>
 
-- **About Page**
+- **Share Page**
 
 ??ZZ???W?W??W  page on all devices <<><><<>>>
 
