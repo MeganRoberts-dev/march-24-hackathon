@@ -289,14 +289,16 @@ function isIOS() {
 
 // Event delegation for play and volume controls
 document.addEventListener('click', function (event) {
+    var playerId; // Declare playerId at the top
+
     if (event.target.closest('.playButton')) {
         var button = event.target.closest('.playButton');
-        var playerId = button.getAttribute('data-player');
+        playerId = button.getAttribute('data-player');
         togglePlayPause(playerId);
         button.blur();
     } else if (event.target.closest('.gearButton')) {
         var gearButton = event.target.closest('.gearButton');
-        var playerId = gearButton.getAttribute('data-player');
+        playerId = gearButton.getAttribute('data-player');
         var container = document.querySelector(`#container-${playerId}`);
         
         // Query for the controls within this player
@@ -306,7 +308,7 @@ document.addEventListener('click', function (event) {
         var deleteButton = container.querySelector(`.deleteButton`);
         var sunIcon = container.querySelector(`.fa-sun`);
         
-         // Always Toggle these controls
+        // Always Toggle these controls
         [colorSlider, deleteButton, sunIcon].forEach(el => {
             if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
         });
@@ -318,10 +320,9 @@ document.addEventListener('click', function (event) {
             });
         }
         gearButton.blur();
-        //add skip button
     } else if (event.target.closest('.skipButton')) {
         var skipButton = event.target.closest('.skipButton');
-        var playerId = skipButton.getAttribute('data-player');
+        playerId = skipButton.getAttribute('data-player'); // And here
         var player = players[playerId].player;
         var skipSeconds = 30;
         if (player && player.seekTo) {
@@ -332,16 +333,6 @@ document.addEventListener('click', function (event) {
         skipButton.blur();
     }
 });
-
-
-
-
-
-
-
-
-
-
 // user changes volume slider
 document.addEventListener('input', function (event) {
     if (event.target.classList.contains('volume-slider')) {
@@ -606,6 +597,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
             dx = 0,
             dy = 0;
 
+        const mouseMove = function(e) { // Changed this to a function expression
+            if (!isDragging) return;
+            dx = e.clientX - x;
+            dy = e.clientY - y;
+            x = e.clientX;
+            y = e.clientY;
+            modal.style.top = (modal.offsetTop + dy) + 'px';
+            modal.style.left = (modal.offsetLeft + dx) + 'px';
+        };
+
         modal.addEventListener('mousedown', (e) => {
             isDragging = true;
             x = e.clientX;
@@ -614,20 +615,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             document.addEventListener('mouseup', () => {
                 document.removeEventListener('mousemove', mouseMove);
                 isDragging = false;
-            }, {
-                once: true
-            });
+            }, { once: true });
         });
-
-        function mouseMove(e) {
-            if (!isDragging) return;
-            dx = e.clientX - x;
-            dy = e.clientY - y;
-            x = e.clientX;
-            y = e.clientY;
-            modal.style.top = (modal.offsetTop + dy) + 'px';
-            modal.style.left = (modal.offsetLeft + dx) + 'px';
-        }
     }
 });
 
