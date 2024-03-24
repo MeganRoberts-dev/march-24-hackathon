@@ -120,7 +120,7 @@ The following table outlines the content that should be implemented to make a fu
 
     - They have furhter options for controlling the music and their space. They can add new music of thier choice, stop all music, close the music setting menus and mute the music.
 
-         ![screenshot of soundscape navbar](documentation/screenshots/navbar_ss_options.png)
+         ![screenshot of soundscape navbar](documentation/screenshots/navbar_options.PNG)
 
     - Users also have the option to add a timer, allowing them to keep track of how long they have been in their personalised space. The aim is that this could become part of a users daily routine to find some time for them and just sit in a calm space for say, 5 minutes at a time. The timer play button toggles between a play, stop and reset icon to give the user control of this feature. Additionally, users have the flexibility to relocate this display to their preferred position on the screen.
 
