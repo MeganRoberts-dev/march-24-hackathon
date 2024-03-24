@@ -93,7 +93,8 @@ The following table outlines the content that should be implemented to make a fu
 
 - All pages have a Navbar displaying the Utime logo and page title. It also includes navigation links to other pages, which condense into a burger menu on small screens.
 
-??ZZ???W?W??W image of navbar <<><><<>>>
+ ![navbar](documentation/rm_images/screenshots/navbar_main.png)
+ ![navbar](documentation/rm_images/screenshots/navbar_burger.png)
 
 - Additionally, each page features a footer with links to social media sites.
 
@@ -111,17 +112,17 @@ The following table outlines the content that should be implemented to make a fu
 
 - The pre-loaded music options offer flexibility, allowing users to position them anywhere on the screen. Coupled with the ability to adjust their appearance using the contrast slider, users can seamlessly integrate them with the background image, minimising distractions and enhancing the visual experience. The other in built options allow a user to pause the music, change the volume or remove any music they don't want to appear on their page.
 
-    ![screenshot of soundscape navbar](documentation/screenshots/calm_music_moved.png)
+    ![screenshot of soundscape navbar](documentation/rm_images/screenshots/calm_music_moved.png)
 
 - The navbar on this page has additional features, all of which are explained to a user when the hover over the feature. 
 
     - They have furhter options for controlling the music and their space. They can add new music of thier choice, stop all music, close the music setting menus and mute the music.
 
-         ![screenshot of soundscape navbar](documentation/screenshots/navbar_options.PNG)
+         ![screenshot of soundscape navbar](documentation/rm_images/screenshots/navbar_options.png)
 
     - Users also have the option to add a timer, allowing them to keep track of how long they have been in their personalised space. The aim is that this could become part of a users daily routine to find some time for them and just sit in a calm space for say, 5 minutes at a time. The timer play button toggles between a play, stop and reset icon to give the user control of this feature. Additionally, users have the flexibility to relocate this display to their preferred position on the screen.
 
-        ![screenshot of soundscape navbar timer](documentation/screenshots/navbar_ss_timer.png)
+        ![screenshot of soundscape navbar timer](documentation/rm_images/screenshots/navbar_ss_timer.png)
 
 - **Energy Page** 
 
@@ -137,9 +138,17 @@ The following table outlines the content that should be implemented to make a fu
 
 - **Share Page**
 
-??ZZ???W?W??W  page on all devices <<><><<>>>
+![about.html responsive pages](documentation/rm_images/screenshots/amiresponsive_about.png)
 
-??ZZ???W?W??W  content <<><><<>>>
+The Share page facilitates users in spreading positivity from the app. Users can input their name and the recipient's email, compose a personalised message, and opt to include a Random Affirmation. Additionally, users can convey their happiness level through an emoji face, adjustable via the slider or PotLuck button.
+
+![happy face one](documentation/rm_images/screenshots/happy_face_one.png)
+
+![happy face one](documentation/rm_images/screenshots/happy_face_two.png)
+
+The page transitions into an "About" section, offering a summary of the site's purpose and its design intentions. It introduces the team behind its creation—404 Sadness Not Found—displayed via a slider bar. Each team member is presented with a link to their preferred contact method.
+
+![404 sadness not found team](documentation/rm_images/screenshots/creators.png)
 
 ### Future Features
 
