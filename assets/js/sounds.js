@@ -73,7 +73,7 @@ function onYouTubeIframeAPIReady() {
             // Position players
             positionPlayers(playersToPosition);
             // set timing below:
-        }, 2000);
+        }, 8);
     } else {
         // build list of players from default list
         Object.entries(videoData).forEach(([playerName, videoId], index) => {
@@ -156,10 +156,9 @@ function addPlayer(playerName, videoId) {
     skipButton.classList.add('skipButton', 'btn', 'btn-primary');
     skipButton.setAttribute('data-player', playerId);
     skipButton.innerHTML = '<i class="fas fa-step-forward"></i>';
-     // add aria-label for accessibility
-     skipButton.setAttribute('aria-label', 'Skip on player ' + playerId);
-     skipButton.innerHTML = '<i class="fas fa-play"></i>';
-     controlsDiv.appendChild(skipButton);
+    // add aria-label for accessibility
+    skipButton.setAttribute('aria-label', 'Skip on player ' + playerId);
+    controlsDiv.appendChild(skipButton);
 
     // Add gear button
     var gearButton = document.createElement('button');
@@ -167,10 +166,9 @@ function addPlayer(playerName, videoId) {
     gearButton.setAttribute('data-player', playerId);
     gearButton.innerHTML = '<i class="fas fa-cog"></i>';
     controlsDiv.appendChild(gearButton);
-     // add aria-label for accessibility
-     gearButton.setAttribute('aria-label', 'Controls for player ' + playerId);
-     gearButton.innerHTML = '<i class="fas fa-play"></i>';
-     controlsDiv.appendChild(gearButton);
+    // add aria-label for accessibility
+    gearButton.setAttribute('aria-label', 'Controls for player ' + playerId);
+    controlsDiv.appendChild(gearButton);
 
     // add volume row
     var volumeRow = document.createElement('div');
@@ -219,8 +217,6 @@ function addPlayer(playerName, videoId) {
 
     // add color slider row underneath
     controlsDiv.appendChild(colorRow);
-
-
     colorSlider.addEventListener('input', function () {
         var value = 255 - this.value;
         container.style.backgroundColor = `rgba(${value}, ${value}, ${value}, 0.1)`;
