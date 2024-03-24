@@ -20,7 +20,7 @@ Whilst building the game, the Chrome developer Tools were used to test pages for
 | Calm | ![gallery.html]() | Pass. |
 | Energy | ![games.html]() | Pass.|
 | Inspire | ![affirmations.html]() | Pass. |
-| Share  | ![about.html]() | Pass.|
+| Share  | ![about.html](documentation/test_images/html-about.png) | Pass.|
 | 404 Page |  ![404.html]() | Pass. |
 
 
