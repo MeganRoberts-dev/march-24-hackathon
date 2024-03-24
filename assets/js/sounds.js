@@ -346,12 +346,16 @@ function togglePlayPause(playerId) {
 function onPlayerStateChange(event) {
     var playerKey = Object.keys(players).find(key => players[key].player === event.target);
     var icon = document.querySelector(`button[data-player="${playerKey}"] i`);
+    var playerContainer = document.querySelector(`div[data-player="${playerKey}"]`); 
+
     if (event.data === YT.PlayerState.PLAYING) {
         icon.classList.remove('fa-play');
         icon.classList.add('fa-pause');
+        playButton.style.backgroundColor = "#FF0000";
     } else {
         icon.classList.remove('fa-pause');
         icon.classList.add('fa-play');
+        playButton.style.backgroundColor = "transparent"; 
     }
 }
 
