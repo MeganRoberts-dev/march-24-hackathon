@@ -4,54 +4,63 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	display: flex;
+	flex-direction: column;
 }
 
+.content {
+	flex: 1;
+  }
+
 .navbar {
-    z-index: 2000;
+	z-index: 2000;
 }
 
 span {
-  color: rgb(221, 47, 76);
-  font-weight:900;
+	color: rgb(221, 47, 76);
+	font-weight: 900;
 }
 
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show>.nav-link,
 .navbar-light.navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
-  color: rgb(221, 47, 76);
+	color: rgb(221, 47, 76);
 }
+
 /* Quiet Space HTML */
 .carousel-container {
-    padding: 0;
-    z-index: 100;
-  }
-  
-  .carousel-item img {
-    min-height: 95vh;
-    max-height: 95vh;
-    object-fit: cover;
-  }
-  
-  .carousel-control-next, .carousel-control-prev {
-    background-color: rgba(255, 255, 255, 0);
-    transition: background-color 1s ease;
-  }
-  
-  .carousel-control-next:hover, .carousel-control-prev:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-  }
-  
-  .sr-only {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: larger;
-    color: #151515;
-    font-weight: 400;
-  }
+	padding: 0;
+	z-index: 100;
+}
 
-  /* reduce size of burger icon for small screens */
-  .navbar-toggler-icon {
-    font-size: 0.8rem;
+.carousel-item img {
+	min-height: 95vh;
+	max-height: 95vh;
+	object-fit: cover;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+	background-color: rgba(255, 255, 255, 0);
+	transition: background-color 1s ease;
+}
+
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.sr-only {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: larger;
+	color: #151515;
+	font-weight: 400;
+}
+
+/* reduce size of burger icon for small screens */
+.navbar-toggler-icon {
+	font-size: 0.8rem;
 }
 
 /* -------------- Footer --------------*/
