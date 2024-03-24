@@ -1,10 +1,7 @@
 ![UTime banner](documentation/rm_images/utime_banner.png)
 
-** if time update to have images that relate to our different areas **
-
-
 # UTime 😊 by 404 Sadness Not Found
-## ***"A digital Oasis"*** 
+## ***Your space, your soundtrack, your UTime.*** 
 
 
 ## Introduction
@@ -120,7 +117,7 @@ The following table outlines the content that should be implemented to make a fu
 
     - They have furhter options for controlling the music and their space. They can add new music of thier choice, stop all music, close the music setting menus and mute the music.
 
-         ![screenshot of soundscape navbar](documentation/screenshots/navbar_ss_options.png)
+         ![screenshot of soundscape navbar](documentation/screenshots/navbar_options.PNG)
 
     - Users also have the option to add a timer, allowing them to keep track of how long they have been in their personalised space. The aim is that this could become part of a users daily routine to find some time for them and just sit in a calm space for say, 5 minutes at a time. The timer play button toggles between a play, stop and reset icon to give the user control of this feature. Additionally, users have the flexibility to relocate this display to their preferred position on the screen.
 
@@ -161,6 +158,9 @@ Wireframes for the website were created using
 
 ### Game Development
 
+?????????????????????
+
+
 ### Emails
 
 An [EmailJS](https://www.emailjs.com/) account was created...
@@ -177,11 +177,13 @@ All decisions were decided as a team
 
 - The brand name: **404 Sadness Not Found** 
 - The app name: **Utime.**
-- Our slogan: **A digital Oasis**?? vs This is your space, your soundtrack, your UTime.
+- Our slogan: **Your space, your soundtrack, your UTime**
 
 #### Logo image 
 
-??ZZ???W?W??W  content <<><><<>>>
+Our logo was designed in-house with simplicity and sleekness in mind, ensuring it complements rather than distracts from the site's content. This conscious decision aims to keep users immersed in their own environment. Additionally, the design emphasises the words "i" and "me" within the word "Time," cleverly playing on the concept of a user's personal space.
+
+![Utime-logo](documentation/screenshots/utime_logo.png)
 
 #### Colour Palette
 
@@ -212,11 +214,14 @@ rgba(255, 255, 255, 0)
 - [Canva](http://canva.com) - For the README banner
 - [EmailJS](https://www.emailjs.com) - An email framework used to send content from the site.
 - [Favicon](https://favicon.io/) - For converting the site's logo into a favicon.ico file.
+- [Canva](https://www.canva.com/) - To create the README banner and images for index.html
+- [GoDaddy](https://www.godaddy.com/) - For Website Domain Name: www.utime.me (re-routes to github pages site).
 - [HTML Games](https://www.htmlgames.com/html5-games-for-your-site/) - To add game HTML and functionality to the app.
 - [JSHint](https://jshint.com/) - To validate JS code
 - [W3 HTML validator](https://validator.w3.org/nu/) - To validate HTML
 - [W3 Jigsaw](https://jigsaw.w3.org/css-validator/validator) - To validate CSS
 - [AmIResponsive?](https://ui.dev/amiresponsive) - To create a mockup of the website on different devices in a range of sizes.
+
 
 
 ??ZZ???W?W??W  <<><><<>>>
@@ -227,6 +232,15 @@ TO CHECK (and reqord):
 ## Testing
 
 Testing information can be found in the separate [TESTING.md](TESTING.md) file. 
+
+## Bugs
+
+The folowing bugs have been identified and due to time constraints, persist in the site. For future roll outs these would be addressed and fixed. 
+
+| Bug number | Description of Issue | "Fix" |
+| :--------: | :---------------------: | :---------------------: |
+| 1 | Iphone devices do not let you play more than one music track at a time | None at present. A user on an iphone can only select one sound at a time | 
+| 2 | Iphone devices do not let you change the individual volumes for sounds | The volume control feature is hidden from iOS users on a small screen. 
 
 ## Deployment and Local Development
 
@@ -266,7 +280,15 @@ To clone:
 
 ## Credits
 
-??ZZ???W?W??W  content <<><><<>>>
+Resources used on the site were taken from the following sources:
+
+- [Pexels.com](https://www.pexels.com/) - For share page image with specfic credit to Mavera zehra Çoşkun
+- [Gencraft](https://gencraft.com/generate) - For error 404 background
+- [YouTube](https://www.youtube.com/) - For music and sounds
+- [OpenMoji](https://openmoji.org/) - For email emojis
+- [indeed.com](https://uk.indeed.com/career-advice/career-development/historical-quotes-examples/) - For inspirational quotes
+- [Kevin Levron](https://codepen.io/soju22/pen/rNREwzr) - For Bokeh Effect on affirmations.html
+- [Megan Roberts](https://github.com/MeganRoberts-dev/feb-24-hackathon-love-riot) - For Email logic and functionality
 
 
 
@@ -275,7 +297,6 @@ The 404 Sadness Not Found Team:
 
 - [Meghan Roberts](https://github.com/MeganRoberts-dev)
 - [Karen Samad](https://github.com/kosamad)
-- [Ilyas Olgun](https://github.com/ilyasolgun11)
 - [Alex](https://github.com/A-Hoenig)
 - [Colin Breakwell](https://github.com/BreakellrZ)
 - [Soroush](https://github.com/SoroushGReza)
