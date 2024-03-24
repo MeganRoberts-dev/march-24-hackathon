@@ -9,7 +9,7 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background: url('/assets/images/index-bg.png') center / cover no-repeat fixed;
+	background: url('../images/index-bg.png') center / cover no-repeat fixed;
 }
 
 .row {
@@ -135,17 +135,17 @@ span {
 }
 
 .calm-bg {
-	background: url(/assets/images/calm.png) no-repeat center;
+	background: url(../images/calm.png) no-repeat center;
 	background-size: cover;
 }
 
 .inspire-bg {
-	background: url(/assets/images/inspire.png) no-repeat center center;
+	background: url(../images/inspire.png) no-repeat center center;
 	background-size: cover;
 }
 
 .energy-bg {
-	background: url(/assets/images/energy.png) no-repeat center center;
+	background: url(../images/energy.png) no-repeat center center;
 	background-size: cover;
 }
 

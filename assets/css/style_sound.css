@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -260,13 +260,7 @@ input::placeholder {
     border-top: #000000;
 }
 
-
-
 /*  test area  */
-
-
-
-
 
 
 /* Set dropdown menu background to transparent */
@@ -298,11 +292,6 @@ input::placeholder {
 }
 
 
-
-
-
-
-
 /* Media query for small screens */
 @media (max-width: 576px) {
 
@@ -322,14 +311,14 @@ input::placeholder {
     #playersContainer {
         position: static;
         width: auto;
-        margin-top: 20px;
+        /* margin-top: 20px; */
         z-index: 999;
     }
 
     .player-container {
         position: static;
         max-width: none;
-        margin: 10px auto;
+        margin: 5px auto;
         left: auto;
         bottom: auto;
         z-index: 999;
@@ -348,15 +337,13 @@ input::placeholder {
     .gearButton {
         font-size: 1.5rem;
         padding: 0;
+        margin:0;
     }
 
    
 
     /* only show background selector on phones*/
-    /* #imageDropdown {
-        display: block !important;
-    } */
-
+ 
     /* show change background nav bar*/
     #changeBgBtn {
         display: inline-block;

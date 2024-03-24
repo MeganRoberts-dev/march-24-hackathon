@@ -48,23 +48,32 @@ var dropDownData = {
 
 const initialX = 20; // X position offset for the first player
 const initialY = 70; // Y position offset for the first player
-const playerSpacing = 110; // Vertical spacing between players
+const playerSpacing = 5; // Vertical spacing between players
+
 
 // ensure youtube api loaded before adding default player list
 function onYouTubeIframeAPIReady() {
     console.log("YouTube API is ready.");
     let playersToPosition = [];
+    // check local storage to see if player list is saved
     const storedPlayersData = localStorage.getItem('playersData');
     if (storedPlayersData) {
         const loadedPlayers = JSON.parse(storedPlayersData);
-        Object.values(loadedPlayers).forEach((player, index) => {
-            addPlayer(player.name, player.videoId);
-            // Prepare for positioning
-            playersToPosition.push({
-                position: player.position,
-                index
+        
+        // Introduce a delay before adding players
+        setTimeout(() => {
+            Object.values(loadedPlayers).forEach((player, index) => {
+                addPlayer(player.name, player.videoId);
+                // Prepare for positioning
+                playersToPosition.push({
+                    position: player.position,
+                    index
+                });
             });
-        });
+
+            // Position players
+            positionPlayers(playersToPosition);
+        }, 1000);
     } else {
         // build list of players from default list
         Object.entries(videoData).forEach(([playerName, videoId], index) => {
@@ -74,24 +83,47 @@ function onYouTubeIframeAPIReady() {
                 index
             });
         });
-    }
 
-    // Position players
-    playersToPosition.forEach(({
-        position,
-        index
-    }) => {
+        // Position players
+        positionPlayersHorizontal(playersToPosition);
+    }
+}
+
+function positionPlayers(playersToPosition) {
+    // first player position
+    let previousBottom = initialY;
+    
+    playersToPosition.forEach(({ position, index }) => {
         const container = document.getElementById('container-player' + (index + 1));
         if (position && position.top && position.left) {
             container.style.top = position.top;
             container.style.left = position.left;
         } else {
-            // Position players in a column by default with initialX, initialY, and playerSpacing
-            container.style.top = `${initialY + (index * playerSpacing)}px`;
+            const containerHeight = container.clientHeight;
+            container.style.top = `${previousBottom}px`;
             container.style.left = `${initialX}px`;
+            previousBottom += containerHeight + playerSpacing;
         }
     });
 }
+
+function positionPlayersHorizontal(playersToPosition) {
+    let previousRight = initialX;
+    
+    playersToPosition.forEach(({ position, index }) => {
+        const container = document.getElementById('container-player' + (index + 1));
+        if (position && position.top && position.left) {
+            container.style.top = position.top;
+            container.style.left = position.left;
+        } else {
+            const containerWidth = container.clientWidth;
+            container.style.top = `${initialY}px`;
+            container.style.left = `${previousRight}px`;
+            previousRight += containerWidth + playerSpacing;
+        }
+    });
+}
+
 // main function to add a sound player to the page
 function addPlayer(playerName, videoId) {
     var playerCount = Object.keys(players).length + 1;
@@ -121,21 +153,21 @@ function addPlayer(playerName, videoId) {
 
     // Add play button
     var playButton = document.createElement('button');
-    playButton.classList.add('playButton', 'btn', 'btn-primary', 'my-2');
+    playButton.classList.add('playButton', 'btn', 'btn-primary');
     playButton.setAttribute('data-player', playerId);
     playButton.innerHTML = '<i class="fas fa-play"></i>';
     controlsDiv.appendChild(playButton);
 
     // Add gear button
     var gearButton = document.createElement('button');
-    gearButton.classList.add('gearButton', 'btn', 'btn-secondary', 'my-2');
+    gearButton.classList.add('gearButton', 'btn', 'btn-secondary');
     gearButton.setAttribute('data-player', playerId);
     gearButton.innerHTML = '<i class="fas fa-cog"></i>';
     controlsDiv.appendChild(gearButton);
 
     // add volume row
     var volumeRow = document.createElement('div');
-    volumeRow.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'w-100', 'my-2','slider-row');
+    volumeRow.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'w-100', 'my-1','slider-row');
     // add volume icon
     var speakerIcon = document.createElement('i');
     speakerIcon.classList.add('fas', 'fa-volume-up', 'mx-2');
