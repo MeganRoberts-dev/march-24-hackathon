@@ -135,17 +135,17 @@ span {
 }
 
 .calm-bg {
-	background: url(/assets/images/calm.png) no-repeat center;
+	background: url(../images/calm.png) no-repeat center;
 	background-size: cover;
 }
 
 .inspire-bg {
-	background: url(/assets/images/inspire.png) no-repeat center center;
+	background: url(../images/inspire.png) no-repeat center center;
 	background-size: cover;
 }
 
 .energy-bg {
-	background: url(/assets/images/energy.png) no-repeat center center;
+	background: url(../images/energy.png) no-repeat center center;
 	background-size: cover;
 }
 
