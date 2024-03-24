@@ -6,6 +6,13 @@
 .navbar{
     z-index: 2000;
 }
+
+/* increase tooltip distance below navbar */
+.bs-tooltip-bottom .tooltip-inner, .bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-inner {
+    margin-top: 10px;
+}
+
+
 .player-container {
     display: flex;
     flex-direction: column;
