@@ -211,6 +211,7 @@ rgba(255, 255, 255, 0)
 - [Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - To automatically test the performance, quality, and correctness of the web app.
 - [Coolors](https://coolors.co/) - To generate a colour palette for the website design.
 - [ChatGPT](https://chat.openai.com/) - Used to help research and problem solve general coding issues
+- [Cloud Convert](https://cloudconvert.com/) - For resising and converting image files to webp format
 - [Canva](http://canva.com) - For the README banner
 - [EmailJS](https://www.emailjs.com) - An email framework used to send content from the site.
 - [Favicon](https://favicon.io/) - For converting the site's logo into a favicon.ico file.
