@@ -9,7 +9,7 @@ var resetButton = document.getElementById("resetButton")
 
 //Play Game function - Some help provided by my mentor Brian O'Hare
 function playGame(userChoice) {
-  const possibleActions = ['accio', 'petrificus Totalus', 'stupefy', 'expelliarmus', 'confundo'];
+  const possibleActions = ['super charged', 'energised', 'calm', 'tired', 'snooze mode'];
   const computerChoice = possibleActions[Math.floor(Math.random() * possibleActions.length)];
 
   const result = document.getElementById('result');
@@ -20,16 +20,16 @@ function playGame(userChoice) {
     result.textContent += ' WOW, a tie!';
     result.style.color = "black";
 } else if (
-    (userChoice === 'expelliarmus' && computerChoice === 'confundo') ||
-    (userChoice === 'expelliarmus' && computerChoice === 'stupefy') ||
-    (userChoice === 'accio' && computerChoice === 'expelliarmus') ||
-    (userChoice === 'accio' && computerChoice === 'petrificus Totalus') ||
-    (userChoice === 'stupefy' && computerChoice === 'accio') ||
-    (userChoice === 'stupefy' && computerChoice === 'confundo') ||
-    (userChoice === 'confundo' && computerChoice === 'accio') ||
-    (userChoice === 'confundo' && computerChoice === 'petrificus Totalus') ||
-    (userChoice === 'petrificus Totalus' && computerChoice === 'stupefy') ||
-    (userChoice === 'petrificus Totalus' && computerChoice === 'expelliarmus')
+    (userChoice === 'tired' && computerChoice === 'snooze mode') ||
+    (userChoice === 'tired' && computerChoice === 'calm') ||
+    (userChoice === 'super charged' && computerChoice === 'tired') ||
+    (userChoice === 'super charged' && computerChoice === 'energised') ||
+    (userChoice === 'calm' && computerChoice === 'super charged') ||
+    (userChoice === 'calm' && computerChoice === 'snooze mode') ||
+    (userChoice === 'snooze mode' && computerChoice === 'super charged') ||
+    (userChoice === 'snooze mode' && computerChoice === 'energised') ||
+    (userChoice === 'energised' && computerChoice === 'calm') ||
+    (userChoice === 'energised' && computerChoice === 'tired')
     ) {
       result.textContent += ' YOU WIN THIS ROUND!';
       score++;
