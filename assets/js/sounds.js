@@ -90,7 +90,8 @@ function onYouTubeIframeAPIReady() {
 }
 
 function positionPlayers(playersToPosition) {
-    let previousBottom = initialY; // Initialize with the initial Y position
+    // first player position
+    let previousBottom = initialY;
     
     playersToPosition.forEach(({ position, index }) => {
         const container = document.getElementById('container-player' + (index + 1));
@@ -98,10 +99,27 @@ function positionPlayers(playersToPosition) {
             container.style.top = position.top;
             container.style.left = position.left;
         } else {
-            const containerHeight = container.clientHeight; // Get the height of the container
-            container.style.top = `${previousBottom}px`; // Set top position based on the previous bottom
-            container.style.left = `${initialX}px`; // Set left margin for all players
-            previousBottom += containerHeight + playerSpacing; // Update previous bottom for the next player
+            const containerHeight = container.clientHeight;
+            container.style.top = `${previousBottom}px`;
+            container.style.left = `${initialX}px`;
+            previousBottom += containerHeight + playerSpacing;
+        }
+    });
+}
+
+function positionPlayersHorizontal(playersToPosition) {
+    let previousRight = initialX;
+    
+    playersToPosition.forEach(({ position, index }) => {
+        const container = document.getElementById('container-player' + (index + 1));
+        if (position && position.top && position.left) {
+            container.style.top = position.top;
+            container.style.left = position.left;
+        } else {
+            const containerWidth = container.clientWidth;
+            container.style.top = `${initialY}px`;
+            container.style.left = `${previousRight}px`;
+            previousRight += containerWidth + playerSpacing;
         }
     });
 }
