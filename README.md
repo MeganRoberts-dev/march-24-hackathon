@@ -1,10 +1,7 @@
 ![UTime banner](documentation/rm_images/utime_banner.png)
 
-** if time update to have images that relate to our different areas **
-
-
 # UTime 😊 by 404 Sadness Not Found
-## ***"A digital Oasis"*** 
+## ***Your space, your soundtrack, your UTime.*** 
 
 
 ## Introduction
@@ -161,6 +158,9 @@ Wireframes for the website were created using
 
 ### Game Development
 
+?????????????????????
+
+
 ### Emails
 
 An [EmailJS](https://www.emailjs.com/) account was created...
@@ -216,14 +216,11 @@ rgba(255, 255, 255, 0)
 - [Favicon](https://favicon.io/) - For converting the site's logo into a favicon.ico file.
 - [Canva](https://www.canva.com/) - To create the README banner and images for index.html
 - [GoDaddy](https://www.godaddy.com/) - For Website Domain Name: www.utime.me (re-routes to github pages site).
-
-
 - [HTML Games](https://www.htmlgames.com/html5-games-for-your-site/) - To add game HTML and functionality to the app.
 - [JSHint](https://jshint.com/) - To validate JS code
 - [W3 HTML validator](https://validator.w3.org/nu/) - To validate HTML
 - [W3 Jigsaw](https://jigsaw.w3.org/css-validator/validator) - To validate CSS
 - [AmIResponsive?](https://ui.dev/amiresponsive) - To create a mockup of the website on different devices in a range of sizes.
-
 
 
 
@@ -235,6 +232,15 @@ TO CHECK (and reqord):
 ## Testing
 
 Testing information can be found in the separate [TESTING.md](TESTING.md) file. 
+
+## Bugs
+
+The folowing bugs have been identified and due to time constraints, persist in the site. For future roll outs these would be addressed and fixed. 
+
+| Bug number | Description of Issue | "Fix" |
+| :--------: | :---------------------: | :---------------------: |
+| 1 | Iphone devices do not let you play more than one music track at a time | None at present. A user on an iphone can only select one sound at a time | 
+| 2 | Iphone devices do not let you change the individual volumes for sounds | The volume control feature is hidden from iOS users on a small screen. 
 
 ## Deployment and Local Development
 

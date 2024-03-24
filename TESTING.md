@@ -57,15 +57,15 @@ Whilst building the game, the Chrome developer Tools were used to test pages for
 
 The Utime website has been tested on the following browsers:
 
-1. 
-2. 
-3. 
+1. MacOS Safari
+2. Windows Edge
+3. Google Chrome
 4. 
 
 It was also tested on multiple devices to ensure it was responsive and behaved as expected. Devices used for testing were:
 
-1. 
-2. 
+1. Pixel4a (Android 13)
+2. Iphone ??? - This identified some issues, please see [Known Bugs](./README.md#bugs) section of the README.md. 
 3. 
 4. 
 5. 
