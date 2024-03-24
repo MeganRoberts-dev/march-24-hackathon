@@ -53,6 +53,10 @@ body {
 	z-index: 1030;
 }
 
+h4 {
+	color: rgb(221, 47, 76);
+}
+
 span {
 	color: rgb(221, 47, 76);
 	font-weight: 900;

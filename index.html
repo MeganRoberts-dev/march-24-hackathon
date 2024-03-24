@@ -85,7 +85,7 @@
             <!----- CALM CARD ----->
 
             <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center"">
-              <div class="card">
+              <div class="card" id="calmCard">
                 <div class="content">
                   <div class="back">
                     <!------- Calm card background ------->
@@ -109,9 +109,7 @@
                           </strong>
                         </div>
                         <div class="text-center mt-3">
-                          <a href="gallery.html" class="card-link">
                             <h4 class="card-link-text"><strong>Take me there</strong></h4>
-                          </a>
                         </div>
                       </div>
                     </div>
@@ -119,49 +117,10 @@
                 </div>
               </div>
             </div>
+             <!----- ENERGY CARD ----->
 
-            <!----- INSPIRE CARD ----->
-
-            <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center"">
-              <div class="card">
-                <div class="content">
-                  <div class="back">
-                    <!------- Inspire card background ------->
-                    <div class="back-content inspire-bg"></div>
-                  </div>
-                  <div class="front">
-
-                    <div class="img">
-                      <div class="circle">
-                      </div>
-                      <div class="circle" id="right">
-                      </div>
-                      <div class="circle" id="bottom">
-                      </div>
-                    </div>
-
-                    <div class="front-content">
-                      <div class="card-frame justify-content-center text-center">
-                        <div class="card-text mt-4">
-                          <strong>Find your daily inspiration in quotes.
-                          </strong>
-                        </div>
-                        <div class="text-center mt-3">
-                          <a href="affirmations.html" class="card-link">
-                            <h4 class="card-link-text"><strong>Take me there</strong></h4>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!----- ENERGY CARD ----->
-
-            <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center"">
-              <div class="card">
+             <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center"">
+              <div class="card"  id="energyCard">
                 <div class="content">
                   <div class="back">
                     <!------- Energy card background ------->
@@ -185,9 +144,43 @@
                           </strong>
                         </div>
                         <div class="text-center mt-3">
-                          <a href="games.html" class="card-link">
                             <h4 class="card-link-text"><strong>Take me there</strong></h4>
-                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!----- INSPIRE CARD ----->
+
+            <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center"">
+              <div class="card" id="inspireCard">
+                <div class="content">
+                  <div class="back">
+                    <!------- Inspire card background ------->
+                    <div class="back-content inspire-bg"></div>
+                  </div>
+                  <div class="front">
+
+                    <div class="img">
+                      <div class="circle">
+                      </div>
+                      <div class="circle" id="right">
+                      </div>
+                      <div class="circle" id="bottom">
+                      </div>
+                    </div>
+
+                    <div class="front-content">
+                      <div class="card-frame justify-content-center text-center">
+                        <div class="card-text mt-4">
+                          <strong>Find your daily inspiration in quotes.
+                          </strong>
+                        </div>
+                        <div class="text-center mt-3">
+                            <h4 class="card-link-text"><strong>Take me there</strong></h4>
                         </div>
                       </div>
                     </div>
@@ -233,6 +226,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/carousel.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      
+      document.getElementById('calmCard').addEventListener('click', function() {
+        window.location.href = 'gallery.html';
+      });
+      document.getElementById('energyCard').addEventListener('click', function() {
+        window.location.href = 'games.html';
+      });
+      document.getElementById('inspireCard').addEventListener('click', function() {
+        window.location.href = 'affirmations.html';
+      });
+
+    });
+    </script>
+
 </body>
 
 </html>
