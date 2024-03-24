@@ -138,6 +138,8 @@ The following table outlines the content that should be implemented to make a fu
 
 - **Share Page**
 
+??ZZ???W?W??W THESE NEED UPDATING TO HAVE FOOTER TOO <<><><<>>>
+
 ![about.html responsive pages](documentation/rm_images/screenshots/amiresponsive_about.png)
 
 The Share page facilitates users in spreading positivity from the app. Users can input their name and the recipient's email, compose a personalised message, and opt to include a Random Affirmation. Additionally, users can convey their happiness level through an emoji face, adjustable via the slider or PotLuck button.
@@ -145,6 +147,13 @@ The Share page facilitates users in spreading positivity from the app. Users can
 ![happy face one](documentation/rm_images/screenshots/happy_face_one.png)
 
 ![happy face one](documentation/rm_images/screenshots/happy_face_two.png)
+
+A "Submit" button allows users to submit the form. Upon submission, a confirmation message is displayed to inform the user that their message has been sent.
+
+![submit buttons](documentation/rm_images/screenshots/submit_button.png)
+![submit buttons](documentation/rm_images/screenshots/submit_hover.png)
+
+![email confirmation](documentation/rm_images/screenshots/confirmation_message.png)
 
 The page transitions into an "About" section, offering a summary of the site's purpose and its design intentions. It introduces the team behind its creation—404 Sadness Not Found—displayed via a slider bar. Each team member is presented with a link to their preferred contact method.
 
@@ -172,9 +181,7 @@ Wireframes for the website were created using
 
 ### Emails
 
-An [EmailJS](https://www.emailjs.com/) account was created and used to create [this](documentation/rm_images/email_template.png) email template. 
-
-??ZZ???W?W??W  content <<><><<>>>
+An [EmailJS](https://www.emailjs.com/) account was created, linked to an email provider and used to create [this](documentation/rm_images/email_template.png) email template, including the email address, sender's name, and message. Upon submission of the form, the EmailJS API sends the message using the Gmail account based on the form values created. 
 
 ### Agile Methodology
 
