@@ -159,6 +159,13 @@ A "Submit" button allows users to submit the form. Upon submission, a confirmati
 
 ![email confirmation](documentation/rm_images/screenshots/confirmation_message.png)
 
+??????? explantation for recipient >??????
+
+![email confirmation](documentation/rm_images/screenshots/email_grab.png)
+
+![email confirmation](documentation/rm_images/screenshots/email_inside.PNG)
+
+
 The page transitions into an "About" section, offering a summary of the site's purpose and its design intentions. It introduces the team behind its creation—404 Sadness Not Found—displayed via a slider bar. Each team member is presented with a link to their preferred contact method.
 
 ![404 sadness not found team](documentation/rm_images/screenshots/creators.png)
