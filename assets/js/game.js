@@ -31,7 +31,9 @@ function playGame(userChoice) {
       result.textContent += ' YOU WIN THIS ROUND!';
       score++;
       if(score == maxScore) {
-        alert('Congrats you defeated Draco Well done !!');
+        swal('Congrats!!', 'you defeated Draco Well done !!','success' ,{
+        button:'WOOHOO'
+        });
         score = 0;
         scoreDraco = 0;
       }
@@ -45,7 +47,9 @@ function playGame(userChoice) {
       result.style.color = "red";
       scoreDraco++;
       if(scoreDraco == maxScore) {
-        alert('Unlucky! Draco defeated you, better luck next time!');
+        swal('Unlucky!', 'Draco defeated you, better luck next time!','error',{
+          button:'Hell nah...'
+        });
         scoreDraco = 0;
         score = 0;
       }
@@ -57,6 +61,7 @@ function playGame(userChoice) {
 }
 
 
+//Modal
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
