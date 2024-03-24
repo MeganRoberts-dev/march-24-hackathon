@@ -153,21 +153,21 @@ function addPlayer(playerName, videoId) {
 
     // Add play button
     var playButton = document.createElement('button');
-    playButton.classList.add('playButton', 'btn', 'btn-primary', 'my-2');
+    playButton.classList.add('playButton', 'btn', 'btn-primary');
     playButton.setAttribute('data-player', playerId);
     playButton.innerHTML = '<i class="fas fa-play"></i>';
     controlsDiv.appendChild(playButton);
 
     // Add gear button
     var gearButton = document.createElement('button');
-    gearButton.classList.add('gearButton', 'btn', 'btn-secondary', 'my-2');
+    gearButton.classList.add('gearButton', 'btn', 'btn-secondary');
     gearButton.setAttribute('data-player', playerId);
     gearButton.innerHTML = '<i class="fas fa-cog"></i>';
     controlsDiv.appendChild(gearButton);
 
     // add volume row
     var volumeRow = document.createElement('div');
-    volumeRow.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'w-100', 'my-2','slider-row');
+    volumeRow.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'w-100', 'my-1','slider-row');
     // add volume icon
     var speakerIcon = document.createElement('i');
     speakerIcon.classList.add('fas', 'fa-volume-up', 'mx-2');
