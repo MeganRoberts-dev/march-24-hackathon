@@ -17,12 +17,6 @@ body {
 	margin-left: 0;
 }
 
-
-.container {
-	max-width: 100%;
-}
-
-
 .container-fluid,
 .row,
 .no-gutters {
@@ -58,6 +52,18 @@ span {
 .slogan {
 	font-size: 40px;
 	padding-top: 5rem;
+}
+
+@media (max-width: 650px) {
+	.slogan {
+		font-size: 30px;
+	}
+}
+
+@media (max-width: 525px) {
+	.slogan {
+		font-size: 20px;
+	}
 }
 
 .mood-choices {
