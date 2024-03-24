@@ -2,6 +2,11 @@ html, body {
   height: 100%;
 }
 
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
 span {
   color: rgb(221, 47, 76);
   font-weight: 900;
@@ -16,13 +21,9 @@ span {
 
 body {
   background: url(../images/snake_background.png) rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
+  
 }
 
-.content {
-  flex: 1;
-}
 
 /* Heading */
 .hero {
@@ -53,57 +54,47 @@ body {
 
 }
 
-/*
-  .container_form{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  }
-
-  #energy{
-    text-decoration: underline;
-  }
-
-  .header_text{
-    margin-top:5%;
-  }
-
-  form{
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .label_form{
-    margin:10px;
-  }
-
-  form.border.rounded {
-    padding-bottom:15px;
-  }
-
-  .hide{
-    display:none;
-
-  } */
 /* Modal */
 .modal {
   background-color: blueviolet;
 }
 
 /* Reset button */
-#resetButton {
-  background-color: rgb(219, 32, 163);
-  margin: 20px;
-  border-radius: 15px;
-  border-width: 0;
+#resetButton, .info-btn {
+  
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.info-btn {
-  background-color: rgb(219, 32, 163);
-  margin: 20px;
-  border-radius: 10px;
-  border-width: 0;
+#resetButton:hover,
+#resetButton:focus,
+.info-btn:hover,
+.info-btn:focus{
+  background-color: #2e5b3d;
 }
+
 
 /* Footer */
 
@@ -113,7 +104,9 @@ body {
 }
 
 .footer-info h3 {
+  margin-top: 15px;
 	color: #000000;
+  margin-left: auto;
 }
 
 .footer-info p {
@@ -124,7 +117,7 @@ body {
 
 .social-links a {
 	color: #323232;
-	margin-right: 15px;
+	
 	font-size: 25px;
 }
 
@@ -136,39 +129,6 @@ body {
 .container-fluid {
 	padding-right: 0;
 	padding-left: 0;
-}
-
-#footer .row {
-	padding-right: 15px;
-	padding-left: 15px;
-}
-
-
-.main-content {
-	padding-bottom: 250px;
-}
-
-
-
-@media (max-width: 767px) {
-
-	.footer-info h3,
-	.footer-info p,
-	.social-links a {
-		display: block;
-		margin: 0 auto;
-		float: none;
-	}
-
-	.social-links {
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-
-	.footer-info,
-	.social-links {
-		text-align: center;
-	}
 }
 
 .team-name {

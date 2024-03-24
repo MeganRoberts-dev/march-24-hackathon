@@ -4,7 +4,8 @@ let score = 0;
 let scoreDraco = 0;
 let maxScore = 10;
 var resetButton = document.getElementById("resetButton")
-
+const gameTitle = document.getElementById("gameTitle");
+const gameBlurb = document.getElementById("gameBlurb");
    
 
 //Play Game function - Some help provided by my mentor Brian O'Hare
@@ -17,6 +18,7 @@ function playGame(userChoice) {
   const result = document.getElementById('result');
   result.textContent = `You chose ${userChoice}, computer chose ${computerChoice}.`;
   gameTitle.style.display = "none";
+  gameBlurb.style.display = "none";  
   
   if (userChoice === computerChoice) {
     result.textContent += ' WOW, a tie!';
@@ -76,6 +78,6 @@ resetButton.addEventListener("click", function() {
       score_Div.textContent = `${username} score is ${score}`;
        
 });
-const gameTitle = document.getElementById("gameTitle");
+
 
 
