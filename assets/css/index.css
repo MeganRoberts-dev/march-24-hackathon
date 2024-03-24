@@ -55,16 +55,14 @@ span {
 
 /* ------- Content -------*/
 
-.description-home {
-	background-color: rgba(212, 212, 212, 0.112);
+.slogan {
+	font-size: 40px;
+	padding-top: 5rem;
 }
 
-h2 {
-	color: rgb(68, 68, 68);
-}
-
-.custom-span {
-	color: white;
+.mood-choices {
+	color: rgba(0, 0, 0, 0.178);
+	padding-top: 15px;
 }
 
 
