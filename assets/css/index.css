@@ -4,13 +4,24 @@
 
 /*  ----  General  ----  */
 
+html,
 body {
-	background-image: url(/assets/images/index-bg.png);
+	height: 100%;
+	margin: 0;
 	padding: 0;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background: url('/assets/images/index-bg.png') center / cover no-repeat fixed;
 }
+
+.row {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+
+.container {
+	max-width: 100%;
+}
+
 
 .container-fluid,
 .row,
@@ -42,7 +53,6 @@ span {
 	color: rgb(221, 47, 76);
 }
 
-
 /* ------- Content -------*/
 
 .description-home {
@@ -68,7 +78,6 @@ h2 {
 
 
 /* Center cards in the container */
-
 .row.justify-content-center {
 	justify-content: center;
 }
@@ -109,15 +118,15 @@ h2 {
 	display: block;
 	width: 160px;
 	height: 160%;
-	background: linear-gradient(90deg, transparent, #ad3baa, #f177ff, #f490ff, #f8bdff, transparent);
+	background: linear-gradient(90deg, transparent, #684a0f, #795611, #896112, #9b6b0b, transparent);
 	animation: rotation_481 5000ms infinite linear;
 }
+
 
 .back-content {
 	position: absolute;
 	width: 99%;
 	height: 99%;
-	background-color: #f4f4f4;
 	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
@@ -125,6 +134,23 @@ h2 {
 	align-items: center;
 	gap: 30px;
 }
+
+.calm-bg {
+	background: url(/assets/images/calm.png) no-repeat center;
+	background-size: cover;
+}
+
+.inspire-bg {
+	background: url(/assets/images/inspire.png) no-repeat center center;
+	background-size: cover;
+}
+
+.energy-bg {
+	background: url(/assets/images/energy.png) no-repeat center center;
+	background-size: cover;
+}
+
+
 
 .card:hover .content {
 	transform: rotateY(180deg);
@@ -155,32 +181,34 @@ h2 {
 	justify-content: space-between;
 }
 
-.mood-title {
-	font-family: "Truculenta", sans-serif;
-	font-size: 25px;
-	color: #4b4b4b;
-}
-
 .card-frame {
 	width: 100%;
 	padding: 10px;
 	backdrop-filter: blur(5px);
 	border-radius: 5px;
-	color: #4b4b4b;
-	font-family: "Truculenta", sans-serif;
 	text-align: center;
-	font-size: 18px;
+}
+
+@media (max-width: 768px) {
+	.card-frame {
+		padding: 5px;
+	}
 }
 
 /* ---- Flipped side of the card ----*/
 
-.flipside-link {
-	background-image: linear-gradient(
-	  to right,
-	  #ea3737,
-	  #d68a54 50%,
-	  #000 50%
-	);
+.card-text {
+	color: #4b4b4b;
+	font-family: "Truculenta", sans-serif;
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+.card-link {
+	background-image: linear-gradient(to right,
+			#8b4a0c,
+			#a5570e 50%,
+			#bd6411 50%);
 	background-size: 200% 100%;
 	background-position: -100%;
 	display: inline-block;
@@ -190,28 +218,31 @@ h2 {
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	transition: all 0.3s ease-in-out;
-  }
-  
-  a:before {
+}
+
+.card-link-text {
+	font-size: 17px;
+}
+
+a:before {
 	content: '';
-	background: #c45500;
+	background: #b0790a;
 	display: block;
 	position: absolute;
-	bottom: 2px;
+	bottom: 10px;
 	left: 0;
 	width: 0;
 	height: 3px;
 	transition: all 0.3s ease-in-out;
-  }
-  
-  a:hover {
-   background-position: 0;
-  }
-  
-  a:hover::before {
-	width:100%;
-  }
+}
 
+a:hover {
+	background-position: 0;
+}
+
+a:hover::before {
+	width: 100%;
+}
 
 .title {
 	font-size: 11px;
@@ -222,12 +253,6 @@ h2 {
 
 .title p {
 	width: 50%;
-}
-
-.card-footer {
-	color: #ffffff88;
-	margin-top: 5px;
-	font-size: 8px;
 }
 
 .front .img {
@@ -278,12 +303,4 @@ h2 {
 	100% {
 		transform: translateY(0px);
 	}
-}
-
-
-/* ------------- Footer ------------- */
-
-footer {
-	background-color: grey;
-	min-height: 80px;
 }
