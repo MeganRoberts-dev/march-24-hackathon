@@ -177,11 +177,13 @@ All decisions were decided as a team
 
 - The brand name: **404 Sadness Not Found** 
 - The app name: **Utime.**
-- Our slogan: **A digital Oasis**?? vs This is your space, your soundtrack, your UTime.
+- Our slogan: **Your space, your soundtrack, your UTime**
 
 #### Logo image 
 
-??ZZ???W?W??W  content <<><><<>>>
+Our logo was designed in-house with simplicity and sleekness in mind, ensuring it complements rather than distracts from the site's content. This conscious decision aims to keep users immersed in their own environment. Additionally, the design emphasises the words "i" and "me" within the word "Time," cleverly playing on the concept of a user's personal space.
+
+![Utime-logo](documentation/screenshots/utime_logo.png)
 
 #### Colour Palette
 
