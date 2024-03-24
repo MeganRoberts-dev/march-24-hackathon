@@ -1,11 +1,11 @@
 // Global Variables
-let username = null;
+let username = "Your";
 let score = 0;
 let scoreDraco = 0;
 let maxScore = 10;
 
 
-//Play Game function 
+//Play Game function - Some help provided by my mentor Brian O'Hare
 function playGame(userChoice) {
   const possibleActions = ['accio', 'petrificus Totalus', 'stupefy', 'expelliarmus', 'confundo'];
   const computerChoice = possibleActions[Math.floor(Math.random() * possibleActions.length)];
@@ -36,7 +36,7 @@ function playGame(userChoice) {
         scoreDraco = 0;
       }
       const score_Div = document.getElementById('score');
-      score_Div.textContent = `${username}\'s score is ${score}`;
+      score_Div.textContent = `${username} score is ${score}`;
       const draco_score = document.getElementById('draco_score');
       draco_score.textContent = `Draco\'s score is ${scoreDraco}` ;
       result.style.color = "green";
@@ -52,6 +52,11 @@ function playGame(userChoice) {
       const draco_score = document.getElementById('draco_score');
       draco_score.textContent = `Draco\'s score is ${scoreDraco}` ;
       const score_Div = document.getElementById('score');
-      score_Div.textContent = `${username}\'s score is ${score}`;
+      score_Div.textContent = `${username} score is ${score}`;
   }
 }
+
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})

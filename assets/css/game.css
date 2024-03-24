@@ -9,6 +9,7 @@ span {
   .navbar-light .navbar-nav .nav-link:hover {
 	color: rgb(221, 47, 76);
   }
+
   body{
     margin: 0;
     padding: 0;
@@ -17,6 +18,21 @@ span {
     width:100%;
   }
 
+  /* Main game */
+
+
+#score {
+  color:rgb(14, 146, 58);
+  
+}
+
+
+#draco_score {
+  color:red;
+
+}
+
+  /*
   .container_form{
   position: fixed;
   top: 50%;
@@ -43,3 +59,8 @@ span {
   form.border.rounded {
     padding-bottom:15px;
   }
+
+  .hide{
+    display:none;
+
+  } */
