@@ -146,6 +146,13 @@ function addPlayer(playerName, videoId) {
     playButton.innerHTML = '<i class="fas fa-play"></i>';
     controlsDiv.appendChild(playButton);
 
+    // Add skip button
+    var skipButton = document.createElement('button');
+    skipButton.classList.add('skipButton', 'btn', 'btn-primary');
+    skipButton.setAttribute('data-player', playerId);
+    skipButton.innerHTML = '<i class="fas fa-step-forward"></i>';
+    controlsDiv.appendChild(skipButton);
+
     // Add gear button
     var gearButton = document.createElement('button');
     gearButton.classList.add('gearButton', 'btn', 'btn-secondary');
@@ -286,7 +293,7 @@ document.addEventListener('click', function (event) {
         var button = event.target.closest('.playButton');
         var playerId = button.getAttribute('data-player');
         togglePlayPause(playerId);
-        button.blur(); // Defocus the play button after click
+        button.blur();
     } else if (event.target.closest('.gearButton')) {
         var gearButton = event.target.closest('.gearButton');
         var playerId = gearButton.getAttribute('data-player');
@@ -298,22 +305,41 @@ document.addEventListener('click', function (event) {
         var volumeIcon = container.querySelector(`.fa-volume-up`);
         var deleteButton = container.querySelector(`.deleteButton`);
         var sunIcon = container.querySelector(`.fa-sun`);
-
-        // Always Toggle these controls
+        
+         // Always Toggle these controls
         [colorSlider, deleteButton, sunIcon].forEach(el => {
             if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
         });
-
+        
         // Only toggle the volumeSlider and volumeIcon if not on iOS
         if (!isIOS()) {
             [volumeSlider, volumeIcon].forEach(el => {
                 if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
             });
         }
-
-        gearButton.blur(); // Defocus the gear button after click
+        gearButton.blur();
+        //add skip button
+    } else if (event.target.closest('.skipButton')) {
+        var skipButton = event.target.closest('.skipButton');
+        var playerId = skipButton.getAttribute('data-player');
+        var player = players[playerId].player;
+        var skipSeconds = 30;
+        if (player && player.seekTo) {
+            var currentTime = player.getCurrentTime();
+            var newTime = currentTime + skipSeconds;
+            player.seekTo(newTime, true);
+        }
+        skipButton.blur();
     }
 });
+
+
+
+
+
+
+
+
 
 
 // user changes volume slider

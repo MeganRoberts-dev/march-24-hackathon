@@ -38,12 +38,32 @@
     padding: 5px;
 }
 
+/* custom css for responsiveness */
+.controls> :not(.deleteButton) {
+    flex: 1 1 auto;
+    min-width: 50px;
+}
+
+.controls>* {
+    flex: 1;
+    min-width: 50px;
+}
 
 .playButton {
     border: none;
     background-color: transparent;
     color: rgb(0, 0, 0);
     font-size: inherit;
+}
+
+.skipButton {
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-size: inherit;
+}
+.btn-primary.skipButton:hover{
+    background-color: rgba(221, 47, 76, 0.8);
 }
 
 .btn-primary.playButton:hover{
@@ -88,17 +108,6 @@
     color:black;
 }
 
-/* custom css for responsiveness */
-.controls> :not(.deleteButton) {
-    flex: 1 1 auto;
-    min-width: 50px;
-}
-
-.controls>* {
-    flex: 1 1 auto;
-    min-width: 50px;
-}
-
 /* style sliders */
 .controls .volume-slider,
 .controls .color-slider {
@@ -116,7 +125,6 @@
 .deleteButton {
     flex-basis: 100%;
     order: 3;
- 
 }
 
 .volume-slider {
@@ -229,7 +237,7 @@ input::placeholder {
     position: fixed;
     top: 0.5%;
     left: 30%;
-    z-index: 999;
+    z-index: 2100;
 }
 
 #timer {
@@ -258,10 +266,6 @@ input::placeholder {
 .draggable #start-stop-btn {
     color: black;
 }
-
-/* .modal {
-    color: black;
-} */
 
 .slider-row {
     border-top: #000000;
