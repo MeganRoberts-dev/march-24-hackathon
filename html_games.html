@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <!-- Styles  -->
         <link rel="stylesheet" href="assets/css/game.css">
-        <link rel="stylesheet" href="assets/css/style_sound.css">
+
     </head>
 <body>
     <body>
@@ -85,9 +85,27 @@
 			</div>
 			</div>
 		</div>
-        
-        <div id="game" class="d-flex justify-content-center""><script src="https://cdn.htmlgames.com/embed.js?game=Tetris1024&amp;bgcolor=white"></script>
+
+        <!--Header for game-->
+        <div class="container header_text text-center">
+            <h2>Welcome to Rock, Paper, Scissors, Lizard, Spock. <span id="energy">ENERGY STYLE</span></h2>
         </div>
+
+<!-- Form -->
+        <div class="container container_form d-flex justify-content-center align-items-center">
+            <form class="border rounded ">
+                <div class="form-group form-control-lg">
+                  <label class="label_form" for="exampleInputEmail1">Enter a Username to start the game</label>
+                  <!--<small id="emailHelp" class="form-text text-muted">Enter your energy name to start the game!</small>-->
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username123">
+                </div>
+                <div class="container d-flex justify-content-center align-items-center">
+                <button type="submit" class="btn btn-success">Start Game</button>
+              </form>
+            </div>
+          </div>
+        
+          
         
 
         <!-- Script -->
