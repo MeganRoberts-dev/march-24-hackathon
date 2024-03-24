@@ -3,7 +3,9 @@ let username = "Your";
 let score = 0;
 let scoreDraco = 0;
 let maxScore = 10;
+var resetButton = document.getElementById("resetButton")
 
+   
 
 //Play Game function - Some help provided by my mentor Brian O'Hare
 function playGame(userChoice) {
@@ -12,10 +14,11 @@ function playGame(userChoice) {
 
   const result = document.getElementById('result');
   result.textContent = `You chose ${userChoice}, computer chose ${computerChoice}.`;
-
+  gameTitle.style.display = "none";
+  
   if (userChoice === computerChoice) {
     result.textContent += ' WOW, a tie!';
-    result.style.color = "white";
+    result.style.color = "black";
 } else if (
     (userChoice === 'expelliarmus' && computerChoice === 'confundo') ||
     (userChoice === 'expelliarmus' && computerChoice === 'stupefy') ||
@@ -39,15 +42,15 @@ function playGame(userChoice) {
       }
       const score_Div = document.getElementById('score');
       score_Div.textContent = `${username} score is ${score}`;
-      const draco_score = document.getElementById('draco_score');
-      draco_score.textContent = `Draco\'s score is ${scoreDraco}` ;
+      const draco_score = document.getElementById('comp_score');
+      draco_score.textContent = `Computer\'s score is ${compScore}` ;
       result.style.color = "green";
   } else {
       result.textContent += ' You lose this round.';
-      result.style.color = "red";
+      result.style.color = "black";
       scoreDraco++;
       if(scoreDraco == maxScore) {
-        swal('Unlucky!', 'Draco defeated you, better luck next time!','error',{
+        swal('Unlucky!', 'The computer won, better luck next time!','error',{
           button:'Hell nah...'
         });
         scoreDraco = 0;
@@ -59,9 +62,12 @@ function playGame(userChoice) {
       score_Div.textContent = `${username} score is ${score}`;
   }
 }
+//* Reset button *//
+resetButton.addEventListener("click", function() {
+  result.innerText = "";
+  scoreDraco = 0;
+        score = 0;
+       
+});
+const gameTitle = document.getElementById("gameTitle");
 
-
-//Modal
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
