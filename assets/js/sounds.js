@@ -4,7 +4,7 @@ var players = {};
 // default sounds to initialize webpage
 var videoData = {
     'Music Lofi': 'Ah7i5EFVDqA',
-    'Soft Piano Music': 'cHKHv3ZHTkM',
+    'Smooth Jazz': '13jhFFYCWVU',
     'Birds': 'bKmmcKWMDfM',
     'Fireplace': '3_gdxb7AyGo',
     'Cat Purring': 'SR5L2BSYNuE',
@@ -60,7 +60,7 @@ function onYouTubeIframeAPIReady() {
     if (storedPlayersData) {
         const loadedPlayers = JSON.parse(storedPlayersData);
         
-        // Introduce a delay before adding players
+        // Introduce a delay before adding players (wait for gallery)
         setTimeout(() => {
             Object.values(loadedPlayers).forEach((player, index) => {
                 addPlayer(player.name, player.videoId);
@@ -70,10 +70,10 @@ function onYouTubeIframeAPIReady() {
                     index
                 });
             });
-
             // Position players
             positionPlayers(playersToPosition);
-        }, 1000);
+            // set timing below:
+        }, 2000);
     } else {
         // build list of players from default list
         Object.entries(videoData).forEach(([playerName, videoId], index) => {
@@ -85,41 +85,28 @@ function onYouTubeIframeAPIReady() {
         });
 
         // Position players
-        positionPlayersHorizontal(playersToPosition);
+        positionPlayers(playersToPosition);
     }
 }
 
 function positionPlayers(playersToPosition) {
     // first player position
     let previousBottom = initialY;
+    let zIndex = 3000;
     
     playersToPosition.forEach(({ position, index }) => {
         const container = document.getElementById('container-player' + (index + 1));
-        if (position && position.top && position.left) {
-            container.style.top = position.top;
-            container.style.left = position.left;
-        } else {
-            const containerHeight = container.clientHeight;
-            container.style.top = `${previousBottom}px`;
-            container.style.left = `${initialX}px`;
-            previousBottom += containerHeight + playerSpacing;
-        }
-    });
-}
-
-function positionPlayersHorizontal(playersToPosition) {
-    let previousRight = initialX;
-    
-    playersToPosition.forEach(({ position, index }) => {
-        const container = document.getElementById('container-player' + (index + 1));
-        if (position && position.top && position.left) {
-            container.style.top = position.top;
-            container.style.left = position.left;
-        } else {
-            const containerWidth = container.clientWidth;
-            container.style.top = `${initialY}px`;
-            container.style.left = `${previousRight}px`;
-            previousRight += containerWidth + playerSpacing;
+        if (container) {
+            if (position && position.top && position.left) {
+                container.style.top = position.top + 'px';
+                container.style.left = position.left + 'px';
+            } else {
+                const containerHeight = container.clientHeight;
+                container.style.top = `${previousBottom}px`;
+                container.style.left = `${initialX}px`;
+                previousBottom += containerHeight + playerSpacing;
+            }
+            container.style.zIndex = zIndex - index;
         }
     });
 }
