@@ -1,3 +1,58 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height:100vh;
+    background: pink;
+    width:100%;
+  }
+
+  .card {
+    border-radius: 30px; /* Adjust the value as needed */
+    box-shadow: none; /* Remove the box shadow */
+  }
+
+  .card-body {
+    position: relative;
+    z-index: 1;   
+  }
+  
+  .card-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/share_lady.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.7; 
+    z-index: -1;
+    border-radius: 30px;
+  }
+  
+  .email-body {
+    position: relative;
+    z-index: 1;   }
+
+    .form-text{
+        color: black;
+        font-weight: 600;        
+    }
+
+.btn-primary{
+    background-color:rgb(210, 8, 42);
+    border-color:rgb(210, 8, 42);
+}
+
+.btn-secondary {
+    background-color:rgb(255, 207, 215);
+    border-color: rgb(255, 207, 215);
+    color:black;
+}
+
+ 
 h1 {
     font-weight: 600;
     margin: 40px 0px;
@@ -5,8 +60,7 @@ h1 {
 
 .about-container {
     border-radius: 12px;
-    gap: 0.8rem;
-    background: linear-gradient( to top, rgba(146, 146, 146, 0.697), transparent);
+    gap: 0.8rem;    
     padding: 15px;
     max-width: 1300px;
     margin: 0px auto;
@@ -15,6 +69,14 @@ h1 {
     white-space: nowrap; 
     scrollbar-color: rgb(210, 8, 42) rgb(255, 207, 215);
 }
+
+.about-img img {
+    width: 300px; 
+    height: auto; 
+  }
+
+ .about-info h2{
+    font-size: calc(1rem + 0.5vw);}
 
 .about-container::-webkit-scrollbar {
     width: 10px;
@@ -61,12 +123,16 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
+    height: 100px;
     position: absolute;
     bottom: 0px;
     background: linear-gradient(to top, white, transparent);
     width: 100%;
 }
+
+.about-p{
+    text-align: justify;
+    margin: 0 auto 40px;}
 
 .contributors h2 {
     font-weight: 600;
