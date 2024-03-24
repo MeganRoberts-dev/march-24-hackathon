@@ -11,6 +11,8 @@ var resetButton = document.getElementById("resetButton")
 function playGame(userChoice) {
   const possibleActions = ['super charged', 'energised', 'calm', 'tired', 'snooze mode'];
   const computerChoice = possibleActions[Math.floor(Math.random() * possibleActions.length)];
+  const jsConfetti = new JSConfetti()
+
 
   const result = document.getElementById('result');
   result.textContent = `You chose ${userChoice}, computer chose ${computerChoice}.`;
@@ -34,6 +36,7 @@ function playGame(userChoice) {
       result.textContent += ' YOU WIN THIS ROUND!';
       score++;
       if(score == maxScore) {
+        jsConfetti.addConfetti()
         swal('Congrats!!', 'you defeated Draco Well done !!','success' ,{
         button:'WOOHOO'
         });
@@ -67,7 +70,12 @@ resetButton.addEventListener("click", function() {
   result.innerText = "";
   scoreDraco = 0;
         score = 0;
+      const draco_score = document.getElementById('draco_score');
+      draco_score.textContent = `Draco\'s score is ${scoreDraco}` ;
+      const score_Div = document.getElementById('score');
+      score_Div.textContent = `${username} score is ${score}`;
        
 });
 const gameTitle = document.getElementById("gameTitle");
+
 
