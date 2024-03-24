@@ -295,23 +295,27 @@ document.addEventListener('click', function (event) {
         // Query for the controls within this player
         var colorSlider = container.querySelector(`.color-slider`);
         var volumeSlider = container.querySelector(`.volume-slider`);
+        var volumeIcon = container.querySelector(`.fa-volume-up`);
         var deleteButton = container.querySelector(`.deleteButton`);
         var speakerIcon = container.querySelector(`.fa-volume-up`);
         var sunIcon = container.querySelector(`.fa-sun`);
 
-        // Always toggle these, regardless of iOS
+        // Always Toggle these controls
         [colorSlider, deleteButton, speakerIcon, sunIcon].forEach(el => {
             if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
         });
 
-        // Only toggle the volumeSlider if not on iOS
-        if (!isIOS() && volumeSlider) {
-            volumeSlider.style.display = volumeSlider.style.display === 'block' ? 'none' : 'block';
+        // Only toggle the volumeSlider and volumeIcon if not on iOS
+        if (!isIOS()) {
+            [volumeSlider, volumeIcon].forEach(el => {
+                if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
+            });
         }
 
         gearButton.blur(); // Defocus the gear button after click
     }
 });
+
 
 // user changes volume slider
 document.addEventListener('input', function (event) {
