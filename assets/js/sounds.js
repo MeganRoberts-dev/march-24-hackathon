@@ -297,7 +297,6 @@ document.addEventListener('click', function (event) {
         var volumeSlider = container.querySelector(`.volume-slider`);
         var volumeIcon = container.querySelector(`.fa-volume-up`);
         var deleteButton = container.querySelector(`.deleteButton`);
-        // var speakerIcon = container.querySelector(`.fa-volume-up`);
         var sunIcon = container.querySelector(`.fa-sun`);
 
         // Always Toggle these controls

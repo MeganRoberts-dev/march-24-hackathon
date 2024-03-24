@@ -3,6 +3,9 @@
     z-index: 999;
 }
 
+.navbar{
+    z-index: 2000;
+}
 .player-container {
     display: flex;
     flex-direction: column;
@@ -305,6 +308,7 @@ input::placeholder {
     body {
         background: url('../images/beach.jpg') no-repeat center center fixed;
         background-size: cover;
+        background-attachment: fixed;
     }
 
     #playersContainer {
