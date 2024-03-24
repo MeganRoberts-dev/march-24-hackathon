@@ -376,11 +376,9 @@ function onPlayerStateChange(event) {
     if (event.data === YT.PlayerState.PLAYING) {
         icon.classList.remove('fa-play');
         icon.classList.add('fa-pause');
-        playButton.style.backgroundColor = "#FF0000";
     } else {
         icon.classList.remove('fa-pause');
         icon.classList.add('fa-play');
-        playButton.style.backgroundColor = "transparent";
     }
 }
 
