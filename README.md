@@ -172,7 +172,7 @@ Wireframes for the website were created using
 
 ### Emails
 
-An [EmailJS](https://www.emailjs.com/) account was created...
+An [EmailJS](https://www.emailjs.com/) account was created and used to create [this](documentation/rm_images/email_template.png) email template. 
 
 ??ZZ???W?W??W  content <<><><<>>>
 
