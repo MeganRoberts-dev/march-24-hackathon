@@ -34,6 +34,8 @@ Whilst building the game, the Chrome developer Tools were used to test pages for
 
 ### Java Script
 
+[JSHint](https://jshint.com/) was used to validate the JS.
+
 | File | Screenshot | Notes |
 | --- | --- | --- |
 | email.js |  ![email.js ]() | Pass. |
