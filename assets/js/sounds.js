@@ -48,23 +48,32 @@ var dropDownData = {
 
 const initialX = 20; // X position offset for the first player
 const initialY = 70; // Y position offset for the first player
-const playerSpacing = 110; // Vertical spacing between players
+const playerSpacing = 5; // Vertical spacing between players
+
 
 // ensure youtube api loaded before adding default player list
 function onYouTubeIframeAPIReady() {
     console.log("YouTube API is ready.");
     let playersToPosition = [];
+    // check local storage to see if player list is saved
     const storedPlayersData = localStorage.getItem('playersData');
     if (storedPlayersData) {
         const loadedPlayers = JSON.parse(storedPlayersData);
-        Object.values(loadedPlayers).forEach((player, index) => {
-            addPlayer(player.name, player.videoId);
-            // Prepare for positioning
-            playersToPosition.push({
-                position: player.position,
-                index
+        
+        // Introduce a delay before adding players
+        setTimeout(() => {
+            Object.values(loadedPlayers).forEach((player, index) => {
+                addPlayer(player.name, player.videoId);
+                // Prepare for positioning
+                playersToPosition.push({
+                    position: player.position,
+                    index
+                });
             });
-        });
+
+            // Position players
+            positionPlayers(playersToPosition);
+        }, 1000);
     } else {
         // build list of players from default list
         Object.entries(videoData).forEach(([playerName, videoId], index) => {
@@ -74,24 +83,29 @@ function onYouTubeIframeAPIReady() {
                 index
             });
         });
-    }
 
-    // Position players
-    playersToPosition.forEach(({
-        position,
-        index
-    }) => {
+        // Position players
+        positionPlayers(playersToPosition);
+    }
+}
+
+function positionPlayers(playersToPosition) {
+    let previousBottom = initialY; // Initialize with the initial Y position
+    
+    playersToPosition.forEach(({ position, index }) => {
         const container = document.getElementById('container-player' + (index + 1));
         if (position && position.top && position.left) {
             container.style.top = position.top;
             container.style.left = position.left;
         } else {
-            // Position players in a column by default with initialX, initialY, and playerSpacing
-            container.style.top = `${initialY + (index * playerSpacing)}px`;
-            container.style.left = `${initialX}px`;
+            const containerHeight = container.clientHeight; // Get the height of the container
+            container.style.top = `${previousBottom}px`; // Set top position based on the previous bottom
+            container.style.left = `${initialX}px`; // Set left margin for all players
+            previousBottom += containerHeight + playerSpacing; // Update previous bottom for the next player
         }
     });
 }
+
 // main function to add a sound player to the page
 function addPlayer(playerName, videoId) {
     var playerCount = Object.keys(players).length + 1;
