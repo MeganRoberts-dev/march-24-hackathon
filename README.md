@@ -124,6 +124,9 @@ The following table outlines the content that should be implemented to make a fu
 
         ![screenshot of soundscape navbar timer](documentation/rm_images/screenshots/navbar_ss_timer.png)
 
+        
+??ZZ???W?W??W  add in what it looks like on small screens  <<><><<>>>
+
 - **Energy Page** 
 
 ??ZZ???W?W??W  page on all devices <<><><<>>>
@@ -161,11 +164,11 @@ The page transitions into an "About" section, offering a summary of the site's p
 
 ### Future Features
 
-Due to time constraints the following features were not implementd at this time, but should be considered for future roll outs.
+Due to time and skill constraints, the following features were not implemented at this time but should be considered for future rollouts:
 
 1. Ability to search for pictures on a theme in the calm area.
 2. Page to remember soundscape profiles (for quick loading on return visits)
-3. To enhance the email feature to enable users to share their personalised space seamlessly, allowing recipients to open the shared space with pre-loaded settings. Currently, recipients need to recreate the space themselves, which was a deliberate decision made by the design team due to skill constraints. However, we recognize the importance of streamlining this process for a more user-friendly experience.
+3. To improve the email feature, we envision allowing users to easily share their personalised space. Our idea involves integrating an email form accessible on each page, pre-filled with the current page settings. Recipients would then be able to open the shared space with all the pre-loaded settings, such as the chosen image or sound. Due to skill limitations within the team this was not feasible at this time. 
 4. To improve the selection of games avaiable to play
 
 ## Planning and Development
@@ -185,7 +188,7 @@ An [EmailJS](https://www.emailjs.com/) account was created, linked to an email p
 
 ### Agile Methodology
 
-Agile devlopment techniques were implemented throughout this project. A GitHub project board was utilised to keep a track of different tasks and asign them to different people. The board can be viewed [here](https://github.com/users/MeganRoberts-dev/projects/4)
+Agile devlopment techniques were implemented throughout this project. A GitHub Kanban board was utilised to keep a track of different tasks and asign them to different people. The board can be viewed [here](https://github.com/users/MeganRoberts-dev/projects/4)
 
 ### Brand and Identity
 
@@ -193,7 +196,7 @@ All decisions were decided as a team
 
 - The brand name: **404 Sadness Not Found** 
 - The app name: **Utime.**
-- Our slogan: **Your space, your soundtrack, your UTime**
+- Our slogan: **Your space, your soundtrack, your UTime.**
 
 #### Logo image 
 
