@@ -1,20 +1,33 @@
 /* ------- Fonts ------- */
 @import url('https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap');
 
-
 /*  ----  General  ----  */
 
-html,
-body {
+html {
 	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 	margin: 0;
-	padding: 0;
 	background: url('../images/index-bg.png') center / cover no-repeat fixed;
 }
 
+.content-wrap {
+	flex: 1;
+}
+
 .row {
+	display: flex;
+	justify-content: space-evenly;
 	margin-right: 0;
 	margin-left: 0;
+}
+
+.main-content {
+	padding-top: 70px;
 }
 
 .container-fluid,
@@ -27,13 +40,18 @@ body {
 
 
 /* ---- Bold Text ---- */
-
 .bold {
 	font-weight: bold;
 }
 
 
 /*  ----  Navigation  ----  */
+.navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1030;
+}
 
 span {
 	color: rgb(221, 47, 76);
@@ -76,8 +94,12 @@ span {
 
 .card {
 	overflow: visible;
-	height: 254px;
+	height: 300px;
 	margin: 10px;
+	min-width: 300px;
+	min-height: 300px;
+	margin: 10px;
+	max-width: 300px;
 }
 
 
@@ -287,9 +309,12 @@ span {
 
 /* -------------- Footer --------------*/
 
+/* Footer */
 #footer {
 	background-color: #fff9eb;
 	color: #333;
+	width: 100%;
+	bottom: 0;
 }
 
 .footer-info h3 {
