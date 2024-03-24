@@ -30,7 +30,12 @@ Whilst building the game, the Chrome developer Tools were used to test pages for
 
 | File | Screenshot | Notes |
 | --- | --- | --- |
-******** CONTENT ***********
+| Home | ![index.html]() | Pass.|
+| Calm | ![gallery.html]() | Pass. |
+| Energy | ![games.html]() | Pass.|
+| Inspire | ![affirmations.html]() | Pass. |
+| Share  | ![about.html](documentation/test_images/css-about.png) | Pass.|
+| 404 Page |  ![404.html]() | Pass. |
 
 ### Java Script
 
