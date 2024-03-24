@@ -29,6 +29,10 @@
     font-size: inherit;
 }
 
+.btn-primary.playButton:hover{
+    background-color: rgba(221, 47, 76, 0.8);
+}
+
 .gearButton {
     border: none;
     background-color: transparent;
@@ -36,10 +40,14 @@
     font-size: inherit;
 }
 
+.btn-secondary.gearButton:hover{
+    background-color: rgba(221, 47, 76, 0.8);
+}
+
 .deleteButton {
     border: none;
     background-color: transparent;
-    color: rgb(174, 0, 0);
+    color: rgb(221, 47, 76);
     font-size: inherit;
 }
 
@@ -341,6 +349,8 @@ input::placeholder {
         font-size: 1.5rem;
         padding: 0;
     }
+
+   
 
     /* only show background selector on phones*/
     /* #imageDropdown {
