@@ -1,4 +1,15 @@
 /* General styles */
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.navbar {
+    z-index: 2000;
+}
+
 span {
   color: rgb(221, 47, 76);
   font-weight:900;
