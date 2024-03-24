@@ -58,9 +58,12 @@ Whilst building the game, the Chrome developer Tools were used to test pages for
 
 ## Manual Testing
 
+
 ### Browser compatibility 
 
-The Utime website has been tested on the following browsers:
+During testing, we meticulously examined all clickable links, buttons, and interactive features to guarantee smooth functionality and a seamless user experience across different browser environments. 
+
+The web browsers used for testing are:
 
 1. MacOS Safari
 2. Windows Edge
@@ -74,6 +77,8 @@ It was also tested on multiple devices to ensure it was responsive and behaved a
 3. 
 4. 
 5. 
+
+
 
 ## User Story Testing
 
