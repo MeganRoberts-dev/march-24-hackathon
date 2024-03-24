@@ -212,11 +212,17 @@ rgba(255, 255, 255, 0)
 - [Canva](http://canva.com) - For the README banner
 - [EmailJS](https://www.emailjs.com) - An email framework used to send content from the site.
 - [Favicon](https://favicon.io/) - For converting the site's logo into a favicon.ico file.
+- [Canva](https://www.canva.com/) - To create the README banner and images for index.html
+- [GoDaddy](https://www.godaddy.com/) - For Website Domain Name: www.utime.me (re-routes to github pages site).
+
+
 - [HTML Games](https://www.htmlgames.com/html5-games-for-your-site/) - To add game HTML and functionality to the app.
 - [JSHint](https://jshint.com/) - To validate JS code
 - [W3 HTML validator](https://validator.w3.org/nu/) - To validate HTML
 - [W3 Jigsaw](https://jigsaw.w3.org/css-validator/validator) - To validate CSS
 - [AmIResponsive?](https://ui.dev/amiresponsive) - To create a mockup of the website on different devices in a range of sizes.
+
+
 
 
 ??ZZ???W?W??W  <<><><<>>>
@@ -266,7 +272,15 @@ To clone:
 
 ## Credits
 
-??ZZ???W?W??W  content <<><><<>>>
+Resources used on the site were taken from the following sources:
+
+- [Pexels.com](https://www.pexels.com/) - For share page image with specfic credit to Mavera zehra Çoşkun
+- [Gencraft](https://gencraft.com/generate) - For error 404 background
+- [YouTube](https://www.youtube.com/) - For music and sounds
+- [OpenMoji](https://openmoji.org/) - For email emojis
+- [indeed.com](https://uk.indeed.com/career-advice/career-development/historical-quotes-examples/) - For inspirational quotes
+- [Kevin Levron](https://codepen.io/soju22/pen/rNREwzr) - For Bokeh Effect on affirmations.html
+- [Megan Roberts](https://github.com/MeganRoberts-dev/feb-24-hackathon-love-riot) - For Email logic and functionality
 
 
 
@@ -275,7 +289,6 @@ The 404 Sadness Not Found Team:
 
 - [Meghan Roberts](https://github.com/MeganRoberts-dev)
 - [Karen Samad](https://github.com/kosamad)
-- [Ilyas Olgun](https://github.com/ilyasolgun11)
 - [Alex](https://github.com/A-Hoenig)
 - [Colin Breakwell](https://github.com/BreakellrZ)
 - [Soroush](https://github.com/SoroushGReza)
