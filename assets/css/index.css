@@ -66,7 +66,7 @@ span {
 }
 
 
-/* ------ Cards ------*/
+/* ---------------- Cards ----------------*/
 
 .card {
 	overflow: visible;
@@ -75,7 +75,7 @@ span {
 }
 
 
-/* Center cards in the container */
+/* ---- Center cards in the container ---- */
 
 .row.justify-content-center {
 	justify-content: center;
@@ -274,5 +274,72 @@ span {
 
 	100% {
 		transform: translateY(0px);
+	}
+}
+
+/* ---------------- End Of Cards ----------------*/
+
+
+/* -------------- Footer --------------*/
+
+#footer {
+	background-color: #fff9eb;
+	color: #333;
+}
+
+.footer-info h3 {
+	color: #000000;
+}
+
+.footer-info p {
+	color: #333;
+}
+
+.social-links a {
+	color: #d17a7a;
+	margin-right: 15px;
+	font-size: 20px;
+}
+
+.social-links a:hover {
+	color: #a36363;
+}
+
+
+.container-fluid {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+#footer .row {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+
+.main-content {
+	padding-bottom: 250px;
+}
+
+
+
+@media (max-width: 767px) {
+
+	.footer-info h3,
+	.footer-info p,
+	.social-links a {
+		display: block;
+		margin: 0 auto;
+		float: none;
+	}
+
+	.social-links {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.footer-info,
+	.social-links {
+		text-align: center;
 	}
 }
