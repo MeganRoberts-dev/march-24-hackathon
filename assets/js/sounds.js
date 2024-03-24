@@ -297,11 +297,11 @@ document.addEventListener('click', function (event) {
         var volumeSlider = container.querySelector(`.volume-slider`);
         var volumeIcon = container.querySelector(`.fa-volume-up`);
         var deleteButton = container.querySelector(`.deleteButton`);
-        var speakerIcon = container.querySelector(`.fa-volume-up`);
+        // var speakerIcon = container.querySelector(`.fa-volume-up`);
         var sunIcon = container.querySelector(`.fa-sun`);
 
         // Always Toggle these controls
-        [colorSlider, deleteButton, speakerIcon, sunIcon].forEach(el => {
+        [colorSlider, deleteButton, sunIcon].forEach(el => {
             if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
         });
 
