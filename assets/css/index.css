@@ -295,14 +295,16 @@ span {
 	color: #333;
 }
 
+/* ---- Social Links ---- */
+
 .social-links a {
-	color: #d17a7a;
+	color: #323232;
 	margin-right: 15px;
-	font-size: 20px;
+	font-size: 25px;
 }
 
 .social-links a:hover {
-	color: #a36363;
+	color: #700b0b;
 }
 
 
@@ -345,5 +347,13 @@ span {
 }
 
 .team-name {
-	color: #000000;
+	color: #8f0000;
+}
+
+.copyright {
+	font-size: 12px;
+}
+
+.custom-p {
+	font-size: 12px;
 }
