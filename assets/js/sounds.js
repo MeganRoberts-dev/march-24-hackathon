@@ -106,6 +106,7 @@ function positionPlayers(playersToPosition) {
                 container.style.left = `${initialX}px`;
                 previousBottom += containerHeight + playerSpacing;
             }
+            //ensure top players controls overlay lower one
             container.style.zIndex = zIndex - index;
         }
     });
@@ -274,12 +275,18 @@ function onPlayerReady(event) {
     document.querySelectorAll('.playButton, .gearButton').forEach(button => button.disabled = false);
 }
 
+// check if on an iOS device (SW volume control not allowed)
+function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  }
+
 // Event delegation for play and volume controls
 document.addEventListener('click', function (event) {
     if (event.target.closest('.playButton')) {
         var button = event.target.closest('.playButton');
         var playerId = button.getAttribute('data-player');
-        togglePlayPause(playerId); 
+        togglePlayPause(playerId);
+        button.blur(); // Defocus the play button after click
     } else if (event.target.closest('.gearButton')) {
         var gearButton = event.target.closest('.gearButton');
         var playerId = gearButton.getAttribute('data-player');
@@ -289,13 +296,20 @@ document.addEventListener('click', function (event) {
         var colorSlider = container.querySelector(`.color-slider`);
         var volumeSlider = container.querySelector(`.volume-slider`);
         var deleteButton = container.querySelector(`.deleteButton`);
-        var speakerIcon = container.querySelector(`.fa-volume-up`); 
-        var sunIcon = container.querySelector(`.fa-sun`); 
-        
-        // Toggle visibility of controls and icons
-        [colorSlider, volumeSlider, deleteButton, speakerIcon, sunIcon].forEach(el => {
+        var speakerIcon = container.querySelector(`.fa-volume-up`);
+        var sunIcon = container.querySelector(`.fa-sun`);
+
+        // Always toggle these, regardless of iOS
+        [colorSlider, deleteButton, speakerIcon, sunIcon].forEach(el => {
             if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
         });
+
+        // Only toggle the volumeSlider if not on iOS
+        if (!isIOS() && volumeSlider) {
+            volumeSlider.style.display = volumeSlider.style.display === 'block' ? 'none' : 'block';
+        }
+
+        gearButton.blur(); // Defocus the gear button after click
     }
 });
 
