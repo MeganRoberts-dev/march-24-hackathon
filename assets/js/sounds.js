@@ -275,6 +275,11 @@ function onPlayerReady(event) {
     document.querySelectorAll('.playButton, .gearButton').forEach(button => button.disabled = false);
 }
 
+// check if on an iOS device (SW volume control not allowed)
+function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  }
+
 // Event delegation for play and volume controls
 document.addEventListener('click', function (event) {
     if (event.target.closest('.playButton')) {
@@ -293,11 +298,16 @@ document.addEventListener('click', function (event) {
         var deleteButton = container.querySelector(`.deleteButton`);
         var speakerIcon = container.querySelector(`.fa-volume-up`);
         var sunIcon = container.querySelector(`.fa-sun`);
-        
-        // Toggle visibility of controls and icons
-        [colorSlider, volumeSlider, deleteButton, speakerIcon, sunIcon].forEach(el => {
+
+        // Always toggle these, regardless of iOS
+        [colorSlider, deleteButton, speakerIcon, sunIcon].forEach(el => {
             if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
         });
+
+        // Only toggle the volumeSlider if not on iOS
+        if (!isIOS() && volumeSlider) {
+            volumeSlider.style.display = volumeSlider.style.display === 'block' ? 'none' : 'block';
+        }
 
         gearButton.blur(); // Defocus the gear button after click
     }
