@@ -260,13 +260,7 @@ input::placeholder {
     border-top: #000000;
 }
 
-
-
 /*  test area  */
-
-
-
-
 
 
 /* Set dropdown menu background to transparent */
@@ -296,11 +290,6 @@ input::placeholder {
     background-color: rgba(240, 240, 240, 0.8);
     cursor: pointer;
 }
-
-
-
-
-
 
 
 /* Media query for small screens */
@@ -353,10 +342,7 @@ input::placeholder {
    
 
     /* only show background selector on phones*/
-    /* #imageDropdown {
-        display: block !important;
-    } */
-
+ 
     /* show change background nav bar*/
     #changeBgBtn {
         display: inline-block;

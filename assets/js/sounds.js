@@ -85,7 +85,7 @@ function onYouTubeIframeAPIReady() {
         });
 
         // Position players
-        positionPlayers(playersToPosition);
+        positionPlayersHorizontal(playersToPosition);
     }
 }
 

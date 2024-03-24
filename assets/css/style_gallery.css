@@ -37,3 +37,8 @@ span {
     color: #151515;
     font-weight: 400;
   }
+
+  /* reduce size of burger icon for small screens */
+  .navbar-toggler-icon {
+    font-size: 0.8rem;
+}
