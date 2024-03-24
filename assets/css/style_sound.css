@@ -3,12 +3,9 @@
     z-index: 999;
 }
 
-.navbar{
-    z-index: 2000;
-}
-
 /* increase tooltip distance below navbar */
-.bs-tooltip-bottom .tooltip-inner, .bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-inner {
+.bs-tooltip-bottom .tooltip-inner,
+.bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-inner {
     margin-top: 10px;
 }
 
@@ -29,7 +26,6 @@
     cursor: move;
     z-index: 9999;
 }
-
 
 .frosted-glass-effect {
     font-weight: 500;
@@ -62,11 +58,12 @@
     color: rgb(0, 0, 0);
     font-size: inherit;
 }
-.btn-primary.skipButton:hover{
+
+.btn-primary.skipButton:hover {
     background-color: rgba(221, 47, 76, 0.8);
 }
 
-.btn-primary.playButton:hover{
+.btn-primary.playButton:hover {
     background-color: rgba(221, 47, 76, 0.8);
 }
 
@@ -77,7 +74,7 @@
     font-size: inherit;
 }
 
-.btn-secondary.gearButton:hover{
+.btn-secondary.gearButton:hover {
     background-color: rgba(221, 47, 76, 0.8);
 }
 
@@ -105,7 +102,7 @@
     border: none;
     background-color: transparent;
     font-size: 2em;
-    color:black;
+    color: black;
 }
 
 /* style sliders */
@@ -137,7 +134,6 @@
     margin-bottom: 5px;
     margin-top: 2px;
 }
-
 
 .frosted-glass-modal {
     color: rgba(255, 255, 255, 0.9);
@@ -293,7 +289,7 @@ input::placeholder {
 .list-group-item {
     background-color: rgba(165, 165, 165, 0.5);
     transition: background-color 0.3s ease;
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
 }
 
 /* Style for list items on hover */
@@ -349,13 +345,11 @@ input::placeholder {
     .gearButton {
         font-size: 1.5rem;
         padding: 0;
-        margin:0;
+        margin: 0;
     }
 
-   
-
     /* only show background selector on phones*/
- 
+
     /* show change background nav bar*/
     #changeBgBtn {
         display: inline-block;
