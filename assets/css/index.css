@@ -17,12 +17,6 @@ body {
 	margin-left: 0;
 }
 
-
-.container {
-	max-width: 100%;
-}
-
-
 .container-fluid,
 .row,
 .no-gutters {
@@ -60,6 +54,18 @@ span {
 	padding-top: 5rem;
 }
 
+@media (max-width: 650px) {
+	.slogan {
+		font-size: 30px;
+	}
+}
+
+@media (max-width: 525px) {
+	.slogan {
+		font-size: 20px;
+	}
+}
+
 .mood-choices {
 	color: rgba(0, 0, 0, 0.178);
 	padding-top: 15px;
@@ -86,7 +92,6 @@ span {
 	height: 100%;
 	transform-style: preserve-3d;
 	transition: transform 300ms;
-	box-shadow: 0px 0px 10px 1px #000000ee;
 	border-radius: 5px;
 }
 
@@ -295,14 +300,16 @@ span {
 	color: #333;
 }
 
+/* ---- Social Links ---- */
+
 .social-links a {
-	color: #d17a7a;
+	color: #323232;
 	margin-right: 15px;
-	font-size: 20px;
+	font-size: 25px;
 }
 
 .social-links a:hover {
-	color: #a36363;
+	color: #700b0b;
 }
 
 
@@ -345,5 +352,13 @@ span {
 }
 
 .team-name {
-	color: #000000;
+	color: #8f0000;
+}
+
+.copyright {
+	font-size: 12px;
+}
+
+.custom-p {
+	font-size: 12px;
 }

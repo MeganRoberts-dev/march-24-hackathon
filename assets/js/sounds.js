@@ -59,7 +59,7 @@ function onYouTubeIframeAPIReady() {
     const storedPlayersData = localStorage.getItem('playersData');
     if (storedPlayersData) {
         const loadedPlayers = JSON.parse(storedPlayersData);
-        
+
         // Introduce a delay before adding players (wait for gallery)
         setTimeout(() => {
             Object.values(loadedPlayers).forEach((player, index) => {
@@ -73,7 +73,7 @@ function onYouTubeIframeAPIReady() {
             // Position players
             positionPlayers(playersToPosition);
             // set timing below:
-        }, 2000);
+        }, 8);
     } else {
         // build list of players from default list
         Object.entries(videoData).forEach(([playerName, videoId], index) => {
@@ -93,8 +93,11 @@ function positionPlayers(playersToPosition) {
     // first player position
     let previousBottom = initialY;
     let zIndex = 3000;
-    
-    playersToPosition.forEach(({ position, index }) => {
+
+    playersToPosition.forEach(({
+        position,
+        index
+    }) => {
         const container = document.getElementById('container-player' + (index + 1));
         if (container) {
             if (position && position.top && position.left) {
@@ -143,6 +146,8 @@ function addPlayer(playerName, videoId) {
     var playButton = document.createElement('button');
     playButton.classList.add('playButton', 'btn', 'btn-primary');
     playButton.setAttribute('data-player', playerId);
+    // add aria-label for accessibility
+    playButton.setAttribute('aria-label', 'Play player ' + playerId);
     playButton.innerHTML = '<i class="fas fa-play"></i>';
     controlsDiv.appendChild(playButton);
 
@@ -151,6 +156,8 @@ function addPlayer(playerName, videoId) {
     skipButton.classList.add('skipButton', 'btn', 'btn-primary');
     skipButton.setAttribute('data-player', playerId);
     skipButton.innerHTML = '<i class="fas fa-step-forward"></i>';
+    // add aria-label for accessibility
+    skipButton.setAttribute('aria-label', 'Skip on player ' + playerId);
     controlsDiv.appendChild(skipButton);
 
     // Add gear button
@@ -159,10 +166,13 @@ function addPlayer(playerName, videoId) {
     gearButton.setAttribute('data-player', playerId);
     gearButton.innerHTML = '<i class="fas fa-cog"></i>';
     controlsDiv.appendChild(gearButton);
+    // add aria-label for accessibility
+    gearButton.setAttribute('aria-label', 'Controls for player ' + playerId);
+    controlsDiv.appendChild(gearButton);
 
     // add volume row
     var volumeRow = document.createElement('div');
-    volumeRow.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'w-100', 'my-1','slider-row');
+    volumeRow.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'w-100', 'my-1', 'slider-row');
     // add volume icon
     var speakerIcon = document.createElement('i');
     speakerIcon.classList.add('fas', 'fa-volume-up', 'mx-2');
@@ -182,10 +192,10 @@ function addPlayer(playerName, videoId) {
 
     // Append row to the controlsDiv, under the play and gear buttons
     controlsDiv.appendChild(volumeRow);
-    
+
     // add color slider row
     var colorRow = document.createElement('div');
-    colorRow.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'w-100','slider-row');
+    colorRow.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'w-100', 'slider-row');
     colorRow.style.display = 'none';
 
     // add sun icon
@@ -207,8 +217,6 @@ function addPlayer(playerName, videoId) {
 
     // add color slider row underneath
     controlsDiv.appendChild(colorRow);
-    
-    
     colorSlider.addEventListener('input', function () {
         var value = 255 - this.value;
         container.style.backgroundColor = `rgba(${value}, ${value}, ${value}, 0.1)`;
@@ -285,32 +293,34 @@ function onPlayerReady(event) {
 // check if on an iOS device (SW volume control not allowed)
 function isIOS() {
     return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  }
+}
 
 // Event delegation for play and volume controls
 document.addEventListener('click', function (event) {
+    var playerId; // Declare playerId at the top
+
     if (event.target.closest('.playButton')) {
         var button = event.target.closest('.playButton');
-        var playerId = button.getAttribute('data-player');
+        playerId = button.getAttribute('data-player');
         togglePlayPause(playerId);
         button.blur();
     } else if (event.target.closest('.gearButton')) {
         var gearButton = event.target.closest('.gearButton');
-        var playerId = gearButton.getAttribute('data-player');
+        playerId = gearButton.getAttribute('data-player');
         var container = document.querySelector(`#container-${playerId}`);
-        
+
         // Query for the controls within this player
         var colorSlider = container.querySelector(`.color-slider`);
         var volumeSlider = container.querySelector(`.volume-slider`);
         var volumeIcon = container.querySelector(`.fa-volume-up`);
         var deleteButton = container.querySelector(`.deleteButton`);
         var sunIcon = container.querySelector(`.fa-sun`);
-        
-         // Always Toggle these controls
+
+        // Always Toggle these controls
         [colorSlider, deleteButton, sunIcon].forEach(el => {
             if (el) el.style.display = el.style.display === 'block' ? 'none' : 'block';
         });
-        
+
         // Only toggle the volumeSlider and volumeIcon if not on iOS
         if (!isIOS()) {
             [volumeSlider, volumeIcon].forEach(el => {
@@ -318,10 +328,9 @@ document.addEventListener('click', function (event) {
             });
         }
         gearButton.blur();
-        //add skip button
     } else if (event.target.closest('.skipButton')) {
         var skipButton = event.target.closest('.skipButton');
-        var playerId = skipButton.getAttribute('data-player');
+        playerId = skipButton.getAttribute('data-player'); // And here
         var player = players[playerId].player;
         var skipSeconds = 30;
         if (player && player.seekTo) {
@@ -332,16 +341,6 @@ document.addEventListener('click', function (event) {
         skipButton.blur();
     }
 });
-
-
-
-
-
-
-
-
-
-
 // user changes volume slider
 document.addEventListener('input', function (event) {
     if (event.target.classList.contains('volume-slider')) {
@@ -372,16 +371,14 @@ function togglePlayPause(playerId) {
 function onPlayerStateChange(event) {
     var playerKey = Object.keys(players).find(key => players[key].player === event.target);
     var icon = document.querySelector(`button[data-player="${playerKey}"] i`);
-    var playerContainer = document.querySelector(`div[data-player="${playerKey}"]`); 
+    var playerContainer = document.querySelector(`div[data-player="${playerKey}"]`);
 
     if (event.data === YT.PlayerState.PLAYING) {
         icon.classList.remove('fa-play');
         icon.classList.add('fa-pause');
-        playButton.style.backgroundColor = "#FF0000";
     } else {
         icon.classList.remove('fa-pause');
         icon.classList.add('fa-play');
-        playButton.style.backgroundColor = "transparent"; 
     }
 }
 
@@ -598,13 +595,23 @@ function makeDraggable(element) {
 // make add sound modal draggable
 document.addEventListener('DOMContentLoaded', (event) => {
     // only if the screen width is large
-    if (window.innerWidth > 576) { 
+    if (window.innerWidth > 576) {
         const modal = document.getElementById('addPlayerModal');
         let isDragging = false,
             x = 0,
             y = 0,
             dx = 0,
             dy = 0;
+
+        const mouseMove = function (e) { // Changed this to a function expression
+            if (!isDragging) return;
+            dx = e.clientX - x;
+            dy = e.clientY - y;
+            x = e.clientX;
+            y = e.clientY;
+            modal.style.top = (modal.offsetTop + dy) + 'px';
+            modal.style.left = (modal.offsetLeft + dx) + 'px';
+        };
 
         modal.addEventListener('mousedown', (e) => {
             isDragging = true;
@@ -618,16 +625,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 once: true
             });
         });
-
-        function mouseMove(e) {
-            if (!isDragging) return;
-            dx = e.clientX - x;
-            dy = e.clientY - y;
-            x = e.clientX;
-            y = e.clientY;
-            modal.style.top = (modal.offsetTop + dy) + 'px';
-            modal.style.left = (modal.offsetLeft + dx) + 'px';
-        }
     }
 });
 
@@ -705,17 +702,17 @@ function setupTimerControl() {
     });
 }
 
-  document.getElementById('changeBgBtn').addEventListener('click', function() {
+document.getElementById('changeBgBtn').addEventListener('click', function () {
     var myModal = new bootstrap.Modal(document.getElementById('backgroundSelectionModal'));
     myModal.show();
-  });
+});
 
-  document.querySelectorAll('#backgroundSelectionModal .list-group-item').forEach(item => {
-    item.addEventListener('click', function() {
-      var selectedImage = this.getAttribute('data-bg');
-      document.body.style.backgroundImage = "url('" + selectedImage + "')";
-      var myModalEl = document.getElementById('backgroundSelectionModal');
-      var modal = bootstrap.Modal.getInstance(myModalEl);
-      modal.hide();
+document.querySelectorAll('#backgroundSelectionModal .list-group-item').forEach(item => {
+    item.addEventListener('click', function () {
+        var selectedImage = this.getAttribute('data-bg');
+        document.body.style.backgroundImage = "url('" + selectedImage + "')";
+        var myModalEl = document.getElementById('backgroundSelectionModal');
+        var modal = bootstrap.Modal.getInstance(myModalEl);
+        modal.hide();
     });
-  });
+});

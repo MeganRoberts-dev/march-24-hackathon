@@ -4,6 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Discover a sanctuary of peace and tranquility to boost your mental health. Explore our resources for Calm, Energy and Inspiration. Welcome to UTime, your personal sanctuary.">
+  <meta name="keywords" content="mental health, relaxation, calmness, happiness, energize, UTime, self-care, mindfulness, soundscape, music canvas, sleep sounds, ">
+  <meta property="og:title" content="UTime | Your Space. Your Sountrack. Your UTime.">
+  <meta property="og:description"
+    content="Join us at UTime for a journey towards mental well-being, featuring expert advice on relaxation, calmness, and nurturing happiness.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.utime.me">
   <!-- Title -->
   <title>UTime</title>
   <!-- Bootstrap CSS -->
@@ -20,6 +28,7 @@
 <body>
 
   <body>
+    <div class="content">
     <!-- Navigation links -->
     <header id="header">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -66,11 +75,11 @@
                   some simple pleasure while you play against your computer.<cite title="Source Title"></cite>
                 </figcaption>
                 <div class="ml-1">
-        <button class="btn btn-outline-info" id="btn_1" onclick="playGame('accio')">Super charged</button>
-        <button class="btn btn-outline-info" id="btn_2" onclick="playGame('petrificus Totalus')">Energised</button>
-        <button class="btn btn-outline-info" id="btn_3" onclick="playGame('stupefy')">Calm</button>
-        <button class="btn btn-outline-info" id="btn_4" onclick="playGame('expelliarmus')">Tired</button>
-        <button class="btn btn-outline-info" id="btn_5" onclick="playGame('confundo')">Snooze mode</button>
+        <button class="btn btn-outline-info" id="btn_1" onclick="playGame('super charged')">Super charged</button>
+        <button class="btn btn-outline-info" id="btn_2" onclick="playGame('energised')">Energised</button>
+        <button class="btn btn-outline-info" id="btn_3" onclick="playGame('calm')">Calm</button>
+        <button class="btn btn-outline-info" id="btn_4" onclick="playGame('tired')">Tired</button>
+        <button class="btn btn-outline-info" id="btn_5" onclick="playGame('snooze mode')">Snooze mode</button>
                 </div>
       <!-- Result -->
       <p id="result"></p>
@@ -137,6 +146,33 @@
           </div>
         </div>
       </div>
+    </div>
+<!-- Footer -->
+      <footer id="footer" class="pt-4 pb-1 bg-light">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-12 col-md-6 footer-info text-center text-md-start mb-3 mb-md-0">
+              <h3>UT<span>i</span>me<span>.</span></h3>
+              <p class="custom-p">Elevates Your Happiness.</p>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-start">
+              <div class="social-links d-none d-md-block">
+                <a href="https://github.com/MeganRoberts-dev/march-24-hackathon-utime" class="me-2 social-link"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center mt-2 d-none d-md-block">
+              <div class="copyright">
+                &copy; Built by <span class="team-name">404 Sadness Not Found</span> <strong>During World Happiness Day
+                  Hackathon</strong>
+                March 2024
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
 
 
 
@@ -155,4 +191,5 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
   </body>
