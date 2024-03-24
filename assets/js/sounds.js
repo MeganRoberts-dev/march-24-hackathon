@@ -232,6 +232,7 @@ function addPlayer(playerName, videoId) {
         // Set the color
         if (playButton) playButton.style.color = textColor;
         if (gearButton) gearButton.style.color = textColor;
+        if (skipButton) skipButton.style.color = textColor;
     });
 
     // add delete button

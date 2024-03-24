@@ -45,9 +45,9 @@ function playGame(userChoice) {
       }
       const score_Div = document.getElementById('score');
       score_Div.textContent = `${username} score is ${score}`;
-      const draco_score = document.getElementById('draco_score');
-      draco_score.textContent = `Computer\'s score is ${scoreDraco}` ;
-      result.style.color = "black";
+      const draco_score = document.getElementById('comp_score');
+      // draco_score.textContent = `Computer\'s score is ${compScore}` ;
+      result.style.color = "green";
   } else {
       result.textContent += ' You lose this round.';
       result.style.color = "black";
