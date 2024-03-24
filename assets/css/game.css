@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 span {
   color: rgb(221, 47, 76);
   font-weight: 900;
@@ -12,7 +16,12 @@ span {
 
 body {
   background: url(../images/snake_background.png) rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
 
+.content {
+  flex: 1;
 }
 
 /* Heading */
