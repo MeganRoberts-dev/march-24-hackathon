@@ -229,7 +229,7 @@ input::placeholder {
     position: fixed;
     top: 0.5%;
     left: 30%;
-    z-index: 999;
+    z-index: 2100;
 }
 
 #timer {
