@@ -16,14 +16,14 @@ function playGame(userChoice) {
 
 
   const result = document.getElementById('result');
-  result.textContent = `You chose ${userChoice}, ${opponentName} chose ${computerChoice}.`;
+  result.innerHTML = `You chose <span class="user-choice">${userChoice}</span>, ${opponentName} chose <span class="opponent-choice">${computerChoice}</span>.`;
   gameTitle.style.display = "none";
-  gameBlurb.style.display = "none";  
-  
+  gameBlurb.style.display = "none";
+
   if (userChoice === computerChoice) {
-    result.textContent += ' WOW, a tie!';
+    result.innerHTML += '<br><br>WOW, A TIE!';
     result.style.color = "black";
-} else if (
+  } else if (
     // Snooze Mode beats Energised and Tired
     (userChoice === 'snooze mode' && (computerChoice === 'energised' || computerChoice === 'tired')) ||
     // Calm beats Snooze Mode and Super Charged
@@ -34,50 +34,47 @@ function playGame(userChoice) {
     (userChoice === 'energised' && (computerChoice === 'calm' || computerChoice === 'tired')) ||
     // Super Charged beats Energised and Snooze Mode
     (userChoice === 'super charged' && (computerChoice === 'energised' || computerChoice === 'snooze mode'))
-    ) {
-      result.textContent += ' YOU WIN THIS ROUND!';
-      score++;
-      if(score == maxScore) {
-        jsConfetti.addConfetti();
-        swal('Congrats!!', `You defeated ${opponentName}! Well done!!`, 'success', {
-            button: 'WOOHOO'
-        });
-        score = 0;
-        scoreDraco = 0;
+  ) {
+    result.innerHTML += '<br><br>YOU WIN THIS ROUND!';
+    score++;
+    if (score == maxScore) {
+      jsConfetti.addConfetti();
+      swal('Congrats!!', `You defeated ${opponentName}! Well done!!`, 'success', {
+        button: 'WOOHOO'
+      });
+      score = 0;
+      scoreDraco = 0;
     }
-      const score_Div = document.getElementById('score');
-      score_Div.textContent = `${username} score is ${score}`;
-      const draco_score = document.getElementById('draco_score');
-      draco_score.textContent = `${opponentName}'s score is ${scoreDraco}` ;
-      result.style.color = "green";
+    const score_Div = document.getElementById('score');
+    score_Div.textContent = `${username} score is ${score}`;
+    const draco_score = document.getElementById('draco_score');
+    draco_score.textContent = `${opponentName}'s score is ${scoreDraco}`;
+    result.style.color = "green";
   } else {
-      result.textContent += ' You lose this round.';
-      result.style.color = "black";
-      scoreDraco++;
-      if(scoreDraco == maxScore) {
-        swal('Unlucky!', `${opponentName} won, better luck next time!`,'error',{
-          button:'Hell nah...'
-        });
-        scoreDraco = 0;
-        score = 0;
-      }
-      const draco_score = document.getElementById('draco_score');
-      draco_score.textContent = `${opponentName}'s score is ${scoreDraco}` ;
-      const score_Div = document.getElementById('score');
-      score_Div.textContent = `${username} score is ${score}`;
+    result.innerHTML += '<br><br>YOU LOSE THIS ROUND!';
+    result.style.color = "black";
+    scoreDraco++;
+    if (scoreDraco == maxScore) {
+      swal('Unlucky!', `${opponentName} won, better luck next time!`, 'error', {
+        button: 'Hell nah...'
+      });
+      scoreDraco = 0;
+      score = 0;
+    }
+    const draco_score = document.getElementById('draco_score');
+    draco_score.textContent = `${opponentName}'s score is ${scoreDraco}`;
+    const score_Div = document.getElementById('score');
+    score_Div.textContent = `${username} score is ${score}`;
   }
 }
 //* Reset button *//
-resetButton.addEventListener("click", function() {
+resetButton.addEventListener("click", function () {
   result.innerText = "";
   scoreDraco = 0;
-        score = 0;
-      const draco_score = document.getElementById('draco_score');
-      draco_score.textContent = `${opponentName}'s score is ${scoreDraco}` ;
-      const score_Div = document.getElementById('score');
-      score_Div.textContent = `${username} score is ${score}`;
-       
+  score = 0;
+  const draco_score = document.getElementById('draco_score');
+  draco_score.textContent = `${opponentName}'s score is ${scoreDraco}`;
+  const score_Div = document.getElementById('score');
+  score_Div.textContent = `${username} score is ${score}`;
+
 });
-
-
-
