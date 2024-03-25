@@ -18,6 +18,7 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background: url('../images/mountains.jpg') center / cover no-repeat fixed;
+	font-family: "poppins", sans-serif;
 }
 
 .content-wrap {
