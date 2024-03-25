@@ -1,0 +1,147 @@
+html, body {
+  height: 100%;
+}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
+span {
+  color: rgb(221, 47, 76);
+  font-weight: 900;
+}
+
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link,
+.navbar-light.navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: rgb(221, 47, 76);
+}
+
+body {
+  background: url(../images/energy_game.png) rgba(0, 0, 0, 0.3) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+/* Heading */
+.hero {
+  margin: 80px;
+}
+#energy {
+  color: rgba(219, 32, 163);
+}
+.hero-container {
+  background-color: rgb(255, 255, 255, 0.8);
+  width: 100%;
+  padding: 20px 23px 20px 23px;
+  max-width: 650px;
+  max-height: max-content;
+  max-height: fit-content;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin: 80px;
+
+}
+
+/* Main game */
+#score {
+  color: rgb(14, 146, 58);
+
+}
+#draco_score {
+  color: red;
+
+}
+
+/* Modal */
+.modal {
+  background-color: blueviolet;
+}
+
+/* Reset button */
+#resetButton, .info-btn {
+  
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#resetButton:hover,
+#resetButton:focus,
+.info-btn:hover,
+.info-btn:focus{
+  background-color: #2e5b3d;
+}
+
+
+/* Footer */
+
+#footer {
+	background-color: #fff9eb;
+	color: #333;
+}
+
+.footer-info h3 {
+  margin-top: 15px;
+	color: #000000;
+  margin-left: auto;
+}
+
+.footer-info p {
+	color: #333;
+}
+
+/* ---- Social Links ---- */
+
+.social-links a {
+	color: #323232;
+	
+	font-size: 25px;
+}
+
+.social-links a:hover {
+	color: #700b0b;
+}
+
+
+.container-fluid {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.team-name {
+	color: #8f0000;
+}
+
+.copyright {
+	font-size: 12px;
+}
+
+.custom-p {
+	font-size: 12px;
+}

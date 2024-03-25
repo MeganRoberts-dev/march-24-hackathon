@@ -107,7 +107,7 @@ The following table outlines the content that should be implemented to make a fu
 
 - **Calm Page**
 
- ![gallery.html am I responsive image](documentation/rm_images/screenshots/amiresponsive_calm.png)
+ ![calm.html am I responsive image](documentation/rm_images/screenshots/amiresponsive_calm.png)
 
 - This page opens with the slogan 'Create a happy place.' It is a page where users can choose from a preselected sound to accompany an image of their choice (selected using the carousel of images). They can then sit back and enjoy the page, creating their own moment of calm in a busy, screen-filled day.
 
@@ -124,6 +124,9 @@ The following table outlines the content that should be implemented to make a fu
     - Users also have the option to add a timer, allowing them to keep track of how long they have been in their personalised space. The aim is that this could become part of a users daily routine to find some time for them and just sit in a calm space for say, 5 minutes at a time. The timer play button toggles between a play, stop and reset icon to give the user control of this feature. Additionally, users have the flexibility to relocate this display to their preferred position on the screen.
 
         ![screenshot of soundscape navbar timer](documentation/rm_images/screenshots/navbar_ss_timer.png)
+
+    - Demo of Calm page user experience and design (UXUI)
+   ![UIUX Demo](documentation/rm_images/calm_uxui.gif)
 
         
 ??ZZ???W?W??W  add in what it looks like on small screens  <<><><<>>>
@@ -230,13 +233,14 @@ rgba(255, 255, 255, 0)
 - **HTML** - Used for structuring the content of the website.
 - **CSS** - Used to style the appearance of the app's content.
 - **Javascript** - Used to add dynamic behavior and allow user interaction with the web pages.
-- [JSON](https://www.json.org/json-en.html) - Used for transmitting data between the server and a client.
+- [JSON](https://www.json.org/json-en.html) - Used for storing a disctionary of quotes and affirmations in a standard format.
 - [GitHub and Github Pages](https://github.com/) - Used to store the code and host/deploy the live project.
 - [GitPod](https://www.gitpod.io/) - IDE for development
 - [Visual Studio Code](https://code.visualstudio.com/) - IDE for development
 - [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - For testing and troublshooting code.
 - [Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - To automatically test the performance, quality, and correctness of the web app.
 - [Coolors](https://coolors.co/) - To generate a colour palette for the website design.
+- [MOV to GIF](https://cloudconvert.com/mov-to-gif) - To generate gif of screen recordings.
 - [ChatGPT](https://chat.openai.com/) - Used to help research and problem solve general coding issues
 - [Cloud Convert](https://cloudconvert.com/) - For resising and converting image files to webp format
 - [Canva](http://canva.com) - For the README banner
@@ -315,7 +319,7 @@ Resources used on the site were taken from the following sources:
 - [YouTube](https://www.youtube.com/) - For music and sounds
 - [OpenMoji](https://openmoji.org/) - For email emojis
 - [indeed.com](https://uk.indeed.com/career-advice/career-development/historical-quotes-examples/) - For inspirational quotes
-- [Kevin Levron](https://codepen.io/soju22/pen/rNREwzr) - For Bokeh Effect on affirmations.html
+- [Kevin Levron](https://codepen.io/soju22/pen/rNREwzr) - For Bokeh Effect on inspire.html
 - [Megan Roberts](https://github.com/MeganRoberts-dev/feb-24-hackathon-love-riot) - For Email logic and functionality
 
 
@@ -325,6 +329,6 @@ The 404 Sadness Not Found Team:
 
 - [Meghan Roberts](https://github.com/MeganRoberts-dev)
 - [Karen Samad](https://github.com/kosamad)
-- [Alex](https://github.com/A-Hoenig)
+- [Alex Hoenig](https://github.com/A-Hoenig)
 - [Colin Breakwell](https://github.com/BreakellrZ)
 - [Soroush](https://github.com/SoroushGReza)

@@ -4,8 +4,9 @@ let score = 0;
 let scoreDraco = 0;
 let maxScore = 10;
 var resetButton = document.getElementById("resetButton")
-
-   
+const gameTitle = document.getElementById("gameTitle");
+const gameBlurb = document.getElementById("gameBlurb");
+const opponentName = "The Universe";
 
 //Play Game function - Some help provided by my mentor Brian O'Hare
 function playGame(userChoice) {
@@ -15,52 +16,53 @@ function playGame(userChoice) {
 
 
   const result = document.getElementById('result');
-  result.textContent = `You chose ${userChoice}, computer chose ${computerChoice}.`;
+  result.textContent = `You chose ${userChoice}, ${opponentName} chose ${computerChoice}.`;
   gameTitle.style.display = "none";
+  gameBlurb.style.display = "none";  
   
   if (userChoice === computerChoice) {
     result.textContent += ' WOW, a tie!';
     result.style.color = "black";
 } else if (
-    (userChoice === 'tired' && computerChoice === 'snooze mode') ||
-    (userChoice === 'tired' && computerChoice === 'calm') ||
-    (userChoice === 'super charged' && computerChoice === 'tired') ||
-    (userChoice === 'super charged' && computerChoice === 'energised') ||
-    (userChoice === 'calm' && computerChoice === 'super charged') ||
-    (userChoice === 'calm' && computerChoice === 'snooze mode') ||
-    (userChoice === 'snooze mode' && computerChoice === 'super charged') ||
-    (userChoice === 'snooze mode' && computerChoice === 'energised') ||
-    (userChoice === 'energised' && computerChoice === 'calm') ||
-    (userChoice === 'energised' && computerChoice === 'tired')
+    // Snooze Mode beats Energised and Tired
+    (userChoice === 'snooze mode' && (computerChoice === 'energised' || computerChoice === 'tired')) ||
+    // Calm beats Snooze Mode and Super Charged
+    (userChoice === 'calm' && (computerChoice === 'snooze mode' || computerChoice === 'super charged')) ||
+    // Tired beats Calm and Super Charged
+    (userChoice === 'tired' && (computerChoice === 'calm' || computerChoice === 'super charged')) ||
+    // Energised beats Calm and Tired
+    (userChoice === 'energised' && (computerChoice === 'calm' || computerChoice === 'tired')) ||
+    // Super Charged beats Energised and Snooze Mode
+    (userChoice === 'super charged' && (computerChoice === 'energised' || computerChoice === 'snooze mode'))
     ) {
       result.textContent += ' YOU WIN THIS ROUND!';
       score++;
       if(score == maxScore) {
-        jsConfetti.addConfetti()
-        swal('Congrats!!', 'you defeated Draco Well done !!','success' ,{
-        button:'WOOHOO'
+        jsConfetti.addConfetti();
+        swal('Congrats!!', `You defeated ${opponentName}! Well done!!`, 'success', {
+            button: 'WOOHOO'
         });
         score = 0;
         scoreDraco = 0;
-      }
+    }
       const score_Div = document.getElementById('score');
       score_Div.textContent = `${username} score is ${score}`;
-      const draco_score = document.getElementById('comp_score');
-      // draco_score.textContent = `Computer\'s score is ${compScore}` ;
+      const draco_score = document.getElementById('draco_score');
+      draco_score.textContent = `${opponentName}'s score is ${scoreDraco}` ;
       result.style.color = "green";
   } else {
       result.textContent += ' You lose this round.';
       result.style.color = "black";
       scoreDraco++;
       if(scoreDraco == maxScore) {
-        swal('Unlucky!', 'The computer won, better luck next time!','error',{
+        swal('Unlucky!', `${opponentName} won, better luck next time!`,'error',{
           button:'Hell nah...'
         });
         scoreDraco = 0;
         score = 0;
       }
       const draco_score = document.getElementById('draco_score');
-      draco_score.textContent = `Draco\'s score is ${scoreDraco}` ;
+      draco_score.textContent = `${opponentName}'s score is ${scoreDraco}` ;
       const score_Div = document.getElementById('score');
       score_Div.textContent = `${username} score is ${score}`;
   }
@@ -71,11 +73,11 @@ resetButton.addEventListener("click", function() {
   scoreDraco = 0;
         score = 0;
       const draco_score = document.getElementById('draco_score');
-      draco_score.textContent = `Draco\'s score is ${scoreDraco}` ;
+      draco_score.textContent = `${opponentName}'s score is ${scoreDraco}` ;
       const score_Div = document.getElementById('score');
       score_Div.textContent = `${username} score is ${score}`;
        
 });
-const gameTitle = document.getElementById("gameTitle");
+
 
 
