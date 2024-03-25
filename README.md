@@ -230,7 +230,7 @@ rgba(255, 255, 255, 0)
 - **HTML** - Used for structuring the content of the website.
 - **CSS** - Used to style the appearance of the app's content.
 - **Javascript** - Used to add dynamic behavior and allow user interaction with the web pages.
-- [JSON](https://www.json.org/json-en.html) - Used for transmitting data between the server and a client.
+- [JSON](https://www.json.org/json-en.html) - Used for storing a disctionary of quotes and affirmations in a standard format.
 - [GitHub and Github Pages](https://github.com/) - Used to store the code and host/deploy the live project.
 - [GitPod](https://www.gitpod.io/) - IDE for development
 - [Visual Studio Code](https://code.visualstudio.com/) - IDE for development
@@ -315,7 +315,7 @@ Resources used on the site were taken from the following sources:
 - [YouTube](https://www.youtube.com/) - For music and sounds
 - [OpenMoji](https://openmoji.org/) - For email emojis
 - [indeed.com](https://uk.indeed.com/career-advice/career-development/historical-quotes-examples/) - For inspirational quotes
-- [Kevin Levron](https://codepen.io/soju22/pen/rNREwzr) - For Bokeh Effect on affirmations.html
+- [Kevin Levron](https://codepen.io/soju22/pen/rNREwzr) - For Bokeh Effect on inspire.html
 - [Megan Roberts](https://github.com/MeganRoberts-dev/feb-24-hackathon-love-riot) - For Email logic and functionality
 
 
@@ -325,6 +325,6 @@ The 404 Sadness Not Found Team:
 
 - [Meghan Roberts](https://github.com/MeganRoberts-dev)
 - [Karen Samad](https://github.com/kosamad)
-- [Alex](https://github.com/A-Hoenig)
+- [Alex Hoenig](https://github.com/A-Hoenig)
 - [Colin Breakwell](https://github.com/BreakellrZ)
 - [Soroush](https://github.com/SoroushGReza)
