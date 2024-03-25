@@ -85,7 +85,7 @@ document.getElementById('randomButton').addEventListener('click', function() {
 // get random affirmation from JSON list
 
 function fetchRandomAffirmation() {
-  fetch('affirmations.json')
+  fetch('inspire.json')
     .then(response => response.json())
     .then(affirmations => {
         const randomIndex = Math.floor(Math.random() * affirmations.length);
