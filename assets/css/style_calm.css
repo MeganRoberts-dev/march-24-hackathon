@@ -28,6 +28,19 @@ span {
 	color: rgb(221, 47, 76);
 }
 
+/* Welcome Modal */
+#welcomeModal {
+	z-index: 3000;
+	position: fixed;
+}
+.modal-content.rounded-pill {
+	background-color: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(10px);
+	border: 3px solid rgba(255, 255, 255, 0.3);
+	color:white;
+  }
+
+
 /* Quiet Space HTML */
 .carousel-container {
 	padding: 0;
