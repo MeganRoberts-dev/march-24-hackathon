@@ -278,7 +278,18 @@ The folowing bugs have been identified and due to time constraints, persist in t
 | Bug number | Description of Issue | "Fix" |
 | :--------: | :---------------------: | :---------------------: |
 | 1 | Iphone devices do not let you play more than one music track at a time | None at present. A user on an iphone can only select one sound at a time | 
-| 2 | Iphone devices do not let you change the individual volumes for sounds | The volume control feature is hidden from iOS users on a small screen. 
+| 2 | Iphone devices do not let you change the individual volumes for sounds | The volume control feature is hidden from iOS users on a small screen. | 
+| 3 | On Iphone devices the Play button require 2 taps to start sound, one to select end then start (Calm Page) | None at present. | 
+| 4 | On Iphone devices individual volume sliders have no effect - this is an Apple policy issue as they dont want apps to be able to override the phones volume controls. (Calm Page) | None at present. The only workaround is server side audio manipulation. | 
+| 5 | On Iphone devices the timer cannot be dragged and appears in nav bar. (Calm Page) | None at present. Will stay known bug for iOS only. (Inspire Page) | 
+| 6 | On Ipads the index page slogan shows, but cards do not work at all. Flip side is not shown | None at present. | 
+| 7 | Iphone devices make the expanding controls on a player zoom the background | Fixed. | 
+| 8 | Button mouse over logic does not work and button stays highlighted after first press. | None at present. | 
+| 9 | Burger menu expands UNDER top sound players (Ipad) | Fixed. | 
+| 10 | Timer displays over nav controls and is not draggable (Ipad) | None at present. iOS limitation | 
+| 11 | Play buttons only work with long press, short press ignored (Ipad) | None at present. | 
+<br>
+
 
 ## Deployment and Local Development
 
