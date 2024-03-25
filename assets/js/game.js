@@ -16,7 +16,7 @@ function playGame(userChoice) {
 
 
   const result = document.getElementById('result');
-  result.textContent = `You chose ${userChoice}, computer chose ${computerChoice}.`;
+  result.textContent = `You chose ${userChoice}, ${opponentName} chose ${computerChoice}.`;
   gameTitle.style.display = "none";
   gameBlurb.style.display = "none";  
   
@@ -24,16 +24,16 @@ function playGame(userChoice) {
     result.textContent += ' WOW, a tie!';
     result.style.color = "black";
 } else if (
-    (userChoice === 'tired' && computerChoice === 'snooze mode') ||
-    (userChoice === 'tired' && computerChoice === 'calm') ||
-    (userChoice === 'super charged' && computerChoice === 'tired') ||
-    (userChoice === 'super charged' && computerChoice === 'energised') ||
-    (userChoice === 'calm' && computerChoice === 'super charged') ||
-    (userChoice === 'calm' && computerChoice === 'snooze mode') ||
-    (userChoice === 'snooze mode' && computerChoice === 'super charged') ||
-    (userChoice === 'snooze mode' && computerChoice === 'energised') ||
-    (userChoice === 'energised' && computerChoice === 'calm') ||
-    (userChoice === 'energised' && computerChoice === 'tired')
+    // Snooze Mode beats Energised and Tired
+    (userChoice === 'snooze mode' && (computerChoice === 'energised' || computerChoice === 'tired')) ||
+    // Calm beats Snooze Mode and Super Charged
+    (userChoice === 'calm' && (computerChoice === 'snooze mode' || computerChoice === 'super charged')) ||
+    // Tired beats Calm and Super Charged
+    (userChoice === 'tired' && (computerChoice === 'calm' || computerChoice === 'super charged')) ||
+    // Energised beats Calm and Tired
+    (userChoice === 'energised' && (computerChoice === 'calm' || computerChoice === 'tired')) ||
+    // Super Charged beats Energised and Snooze Mode
+    (userChoice === 'super charged' && (computerChoice === 'energised' || computerChoice === 'snooze mode'))
     ) {
       result.textContent += ' YOU WIN THIS ROUND!';
       score++;
