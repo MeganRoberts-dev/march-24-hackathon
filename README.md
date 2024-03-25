@@ -239,6 +239,7 @@ Colours were generated using the colour palette tool by Coolors. The original co
 - **HTML** - Used for structuring the content of the website.
 - **CSS** - Used to style the appearance of the app's content.
 - **Javascript** - Used to add dynamic behavior and allow user interaction with the web pages.
+- [Bootstrap](https://getbootstrap.com/) - CSS framework for responsive mobile first web design.
 - [JSON](https://www.json.org/json-en.html) - Used for storing a disctionary of quotes and affirmations in a standard format.
 - [GitHub and Github Pages](https://github.com/) - Used to store the code and host/deploy the live project.
 - [GitPod](https://www.gitpod.io/) - IDE for development
@@ -248,6 +249,7 @@ Colours were generated using the colour palette tool by Coolors. The original co
 - [Coolors](https://coolors.co/) - To generate a colour palette for the website design.
 - [MOV to GIF](https://cloudconvert.com/mov-to-gif) - To generate gif of screen recordings.
 - [ChatGPT](https://chat.openai.com/) - Used to help research and problem solve general coding issues
+- [GenCraft](https://gencraft.com/generate) - AI Image generator used to create game backgrounds
 - [Cloud Convert](https://cloudconvert.com/) - For resising and converting image files to webp format
 - [Canva](http://canva.com) - For the README banner
 - [EmailJS](https://www.emailjs.com) - An email framework used to send content from the site.
@@ -259,13 +261,9 @@ Colours were generated using the colour palette tool by Coolors. The original co
 - [W3 HTML validator](https://validator.w3.org/nu/) - To validate HTML
 - [W3 Jigsaw](https://jigsaw.w3.org/css-validator/validator) - To validate CSS
 - [AmIResponsive?](https://ui.dev/amiresponsive) - To create a mockup of the website on different devices in a range of sizes.
-
-
-
-??ZZ???W?W??W  <<><><<>>>
-TO CHECK (and reqord):
 - [Balsamiq](https://balsamiq.com/wireframes/) - Used to create wireframes during project planning
 - [Google Fonts](https://fonts.google.com/specimen/Dosis) - used to generate a visually appealing font
+- [Font Awesome](https://fontawesome.com) - icon library for Calm page player buttons and controls
 
 ## Testing
 
@@ -338,6 +336,10 @@ Resources used on the site were taken from the following sources:
 - [indeed.com](https://uk.indeed.com/career-advice/career-development/historical-quotes-examples/) - For inspirational quotes
 - [Kevin Levron](https://codepen.io/soju22/pen/rNREwzr) - For Bokeh Effect on inspire.html
 - [Megan Roberts](https://github.com/MeganRoberts-dev/feb-24-hackathon-love-riot) - For Email logic and functionality
+- [JS Confetti](https://www.npmjs.com/package/js-confetti) - For Game winning confetti animation
+- [Sweet Alert](https://sweetalert.js.org/) - For Game Popup alerts
+- [Colin Breakell](https://github.com/BreakellrZ/Harry_Potter_Quiz) - For game logic engine
+- [ElSombrero2](https://uiverse.io/ElSombrero2/tricky-robin-67) - CSS design for Index Page Cards
 
 
 
