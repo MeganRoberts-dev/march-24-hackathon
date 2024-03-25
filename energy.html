@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Discover a sanctuary of peace and tranquility to boost your mental health. Explore our resources for Calm, Energy and Inspiration. Welcome to UTime, your personal sanctuary.">
+  <meta name="keywords"
+    content="mental health, relaxation, calmness, happiness, energize, UTime, self-care, mindfulness, soundscape, music canvas, sleep sounds, ">
+  <meta property="og:title" content="UTime | Your Space. Your Sountrack. Your UTime.">
+  <meta property="og:description"
+    content="Join us at UTime for a journey towards mental well-being, featuring expert advice on relaxation, calmness, and nurturing happiness.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://www.utime.me">
+  <!-- Title -->
+  <title>UTime</title>
+  <!--Favicon to identify UTime in the browser -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x1512" href="assets/images/favicon/android-chrome-512x512.png">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!-- Styles  -->
+  <link rel="stylesheet" href="assets/css/style_energy.css">
+
+</head>
+
+<body>
+
+  <body>
+    <div class="content">
+      <!-- Navigation links -->
+      <header id="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">UT<span>i</span>me<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="calm.html">Calm</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="energy.html" aria-current="page">Energy</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="inspire.html">Inspire</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="share.html">Share</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!--Header for game-->
+      <figure>
+        <div class="hero-container mx-auto">
+          <div class="row">
+            <div class="col-lg-7 mx-auto text-center bg-transparent bg-gradient text-dark rounded p-4">
+              <h4 id="gameTitle">Welcome to Rock, Paper, Scissors, Lizard, Spock.</h4>
+              <h1><i><span class="display-2" id="energy">ENERGY STYLE</span></i></h1>
+              <p>
+                <figcaption class="blockquote-footer">
+                  <div id="gameBlurb">
+                    This game is desgined to engage your brain, but in a relaxed way. Don't think too much and enjoy
+                    some simple pleasure while you play against your computer.<cite title="Source Title"></cite>
+                  </div>
+                </figcaption>
+                <div class="ml-1">
+                  <button class="btn btn-outline-info" id="btn_1" onclick="playGame('super charged')">Super
+                    charged</button>
+                  <button class="btn btn-outline-info" id="btn_2" onclick="playGame('energised')">Energised</button>
+                  <button class="btn btn-outline-info" id="btn_3" onclick="playGame('calm')">Calm</button>
+                  <button class="btn btn-outline-info" id="btn_4" onclick="playGame('tired')">Tired</button>
+                  <button class="btn btn-outline-info" id="btn_5" onclick="playGame('snooze mode')">Snooze mode</button>
+                </div>
+                <!-- Result -->
+                <p id="result"></p>
+                <!-- Scores -->
+                <div class="" id="all_scores">
+                  <p id="score" class="score_background"> </p>
+                  <p id="draco_score" class="score_background"> </p>
+                </div>
+                <!-- Button trigger modal -->
+                <button id="resetButton">Reset</button>
+                <button type="button" class="info-btn" data-toggle="modal" data-target="#exampleModal">
+                  <i class="bi bi-info-circle"></i>
+                </button>
+      </figure>
+    </div>
+    <!-- Form
+        <div class="container container_form d-flex justify-content-center align-items-center" id="start_screen">
+            <form class="border rounded ">
+                <div class="form-group form-control-lg">
+                  <label class="label_form" for="exampleInputEmail1">Enter a Username to start the game</label>
+                  <small id="emailHelp" class="form-text text-muted">Enter your energy name to start the game!</small>
+                  <input type="text" class="form-control fname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username123">
+                </div>
+                <div class="container d-flex justify-content-center align-items-center">
+                    <input type="button" name="submit" value="Start" id="start_game">
+              </form>
+            </div>
+          </div>
+
+          <div id="main" class="hide">
+           <h1>game</h1>
+           </div> -->
+
+
+    <!-- Game Buttons -->
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Game Instructions</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p> -- First to 10 points wins the battle -- </p>
+            <p> -- Based on Rock, Paper, Scissors concept -- </p>
+            <p> -- Expelliarmus beats Stupefy & Confundo -- </p>
+            <p> -- Accio beats Expelliarmus & Petrificus Totalus -- </p>
+            <p> -- Stupefy beats Accio & Confundo -- </p>
+            <p> -- Confundo beats Accio & Petrificus Totalus -- </p>
+            <p> -- Petrificus beats Expelliarmus & Stupefy -- </p>
+            <p> -- Accio beats Expelliarmus & Petrificus Totalus -- </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div class="footer-info">
+                <h3>UT<span>i</span>me<span>.</span></h3>
+                <p class="custom-p">Elevates Your Happiness.</p>
+              </div>
+              <div class="col-12 col-md-6 text-center text-md-start">
+                <div class="social-links d-none d-md-block">
+                  <a href="https://github.com/MeganRoberts-dev/march-24-hackathon-utime" class="me-2 social-link"><i
+                      class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 text-center mt-2 d-none d-md-block">
+                <div class="copyright">
+                  &copy; Built by <span class="team-name">404 Sadness Not Found</span> <strong>During World Happiness
+                    Day
+                    Hackathon</strong>
+                  March 2024
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+    <!-- Scripts -->
+    <script src="assets/js/game.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  </body>

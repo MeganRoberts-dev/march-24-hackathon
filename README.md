@@ -3,6 +3,7 @@
 # UTime 😊 by 404 Sadness Not Found
 ## ***Your space, your soundtrack, your UTime.*** 
 
+![about.html responsive pages](documentation/rm_images/screenshots/amiresponsive_all.PNG)
 
 ## Introduction
 
@@ -100,13 +101,13 @@ The following table outlines the content that should be implemented to make a fu
 
 - **Home Page**
 
-??ZZ???W?W??W  page on all devices <<><><<>>>
+ ![index.html am I responsive image](documentation/rm_images/screenshots/amiresponsive_home.png)
 
 - The home page explains to the user what the site is about and displays the different 'happy' activities users can choose from, including Games, Soundscape, or Memes. 
 
 - **Calm Page**
 
-??ZZ???W?W??W  page on all devices <<><><<>>>
+ ![gallery.html am I responsive image](documentation/rm_images/screenshots/amiresponsive_calm.png)
 
 - This page opens with the slogan 'Create a happy place.' It is a page where users can choose from a preselected sound to accompany an image of their choice (selected using the carousel of images). They can then sit back and enjoy the page, creating their own moment of calm in a busy, screen-filled day.
 
@@ -129,13 +130,13 @@ The following table outlines the content that should be implemented to make a fu
 
 - **Energy Page** 
 
-??ZZ???W?W??W  page on all devices <<><><<>>>
+ ![game.html am I responsive image](documentation/rm_images/screenshots/amiresponsive_energy.png)
 
 ??ZZ???W?W??W  content <<><><<>>>
 
 - **Inspire Page**
 
-??ZZ???W?W??W  page on all devices <<><><<>>>
+ ![affirmations.html am I responsive image](documentation/rm_images/screenshots/amiresponsive_inspire.png)
 
 ??ZZ???W?W??W  content <<><><<>>>
 
@@ -157,6 +158,13 @@ A "Submit" button allows users to submit the form. Upon submission, a confirmati
 ![submit buttons](documentation/rm_images/screenshots/submit_hover.png)
 
 ![email confirmation](documentation/rm_images/screenshots/confirmation_message.png)
+
+??????? explantation for recipient >??????
+
+![email confirmation](documentation/rm_images/screenshots/email_grab.png)
+
+![email confirmation](documentation/rm_images/screenshots/email_inside.PNG)
+
 
 The page transitions into an "About" section, offering a summary of the site's purpose and its design intentions. It introduces the team behind its creation—404 Sadness Not Found—displayed via a slider bar. Each team member is presented with a link to their preferred contact method.
 

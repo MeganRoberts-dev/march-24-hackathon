@@ -1,15 +1,17 @@
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
+html, body {
     width: 100%;
-}
+  }
+  
+  body > footer {
+    position: sticky;
+    top: 100vh;
+  }
+  
 
 .container-image {
     background-image: url('../images/leaf_friends.webp');
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 5%;
     background-position: center;
 }
 
@@ -162,80 +164,49 @@ span {
     color: rgb(221, 47, 76);
 }
 
-/* -- Footer --*/
+/* Footer */
 
 #footer {
-    background-color: #fff9eb;
-    color: #333;
+	background-color: #fff9eb;
+	color: #333;
 }
 
 .footer-info h3 {
-    color: #000000;
+  margin-top: 15px;
+	color: #000000;
+  margin-left: auto;
 }
 
 .footer-info p {
-    color: #333;
+	color: #333;
 }
 
-/* -- Social Links -- */
+/* ---- Social Links ---- */
 
 .social-links a {
-    color: #323232;
-    margin-right: 15px;
-    font-size: 25px;
+	color: #323232;
+	
+	font-size: 25px;
 }
 
 .social-links a:hover {
-    color: #700b0b;
+	color: #700b0b;
 }
 
 
 .container-fluid {
-    padding-right: 0;
-    padding-left: 0;
-}
-
-#footer .row {
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-
-.main-content {
-    padding-bottom: 250px;
-}
-
-
-
-@media (max-width: 767px) {
-
-    .footer-info h3,
-    .footer-info p,
-    .social-links a {
-        display: block;
-        margin: 0 auto;
-        float: none;
-    }
-
-    .social-links {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .footer-info,
-    .social-links {
-        text-align: center;
-    }
+	padding-right: 0;
+	padding-left: 0;
 }
 
 .team-name {
-    color: #8f0000;
+	color: #8f0000;
 }
 
 .copyright {
-    font-size: 12px;
+	font-size: 12px;
 }
 
 .custom-p {
-    font-size: 12px;
+	font-size: 12px;
 }
