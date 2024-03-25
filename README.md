@@ -240,6 +240,7 @@ rgba(255, 255, 255, 0)
 - [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - For testing and troublshooting code.
 - [Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - To automatically test the performance, quality, and correctness of the web app.
 - [Coolors](https://coolors.co/) - To generate a colour palette for the website design.
+- [MOV to GIF](https://cloudconvert.com/mov-to-gif) - To generate gif of screen recordings.
 - [ChatGPT](https://chat.openai.com/) - Used to help research and problem solve general coding issues
 - [Cloud Convert](https://cloudconvert.com/) - For resising and converting image files to webp format
 - [Canva](http://canva.com) - For the README banner
