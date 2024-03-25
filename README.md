@@ -11,7 +11,7 @@ To celebrate World Happiness Day, The UTime app brings an opportunity for users 
 
 ## Showcase
 
-![about.html responsive pages](documentation/rm_images/screenshots/amiresponsive_all.PNG)
+![about.html responsive pages](documentation/rm_images/screenshots/amiresponsive_all.png)
 
 A link to the deployed site can be found here at [UTime.](https://meganroberts-dev.github.io/march-24-hackathon-utime/index.html)
 

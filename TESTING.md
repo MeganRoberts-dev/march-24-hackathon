@@ -10,6 +10,10 @@ Whilst building the game, the Chrome developer Tools were used to test pages for
 
 ## Code Validation
 
+| Page | Result |
+| ---- | ------ |
+| Full Site | ![home page](/documentation/test_images/Screenshot%202024-03-25%20at%2014.42.34.png) |
+
 ### HTML
 
 [HTML W3C Validator](https://validator.w3.org) was used to validate all HTML files.
@@ -22,7 +26,6 @@ Whilst building the game, the Chrome developer Tools were used to test pages for
 | Inspire | ![affirmations.html]() | Pass. |
 | Share  | ![about.html](documentation/test_images/html-about.png) | Pass.|
 | 404 Page |  ![404.html]() | Pass. |
-
 
 ### CSS
 
@@ -49,15 +52,15 @@ Whilst building the game, the Chrome developer Tools were used to test pages for
 ## Lighthouse 
 
 | Page | Mobile | Desktop | Notes |
-| --- | --- | --- |
-| Home | ![index mobile]() | ![index desktop]() | Pass. |
-| Calm | ![calm mobile]() | ![calm desktop]() | Pass.  |
-| Energy | ![energy mobile]() | ![energy desktop]() | Pass. |
-| Inspire | ![inspire mobile]() | ![inspire desktop]() | Pass. |
-| Share | ![share mobile]() | ![share desktop]() | Pass. |
+| ---- | ------ | ------- | ----- |
+| Home | ![home page](/documentation/test_images/home-page.png) |
+| Calm | ![calm page](/documentation/test_images/calm-page2.png) |
+| Energy | ![energy mobile](/documentation/test_images/energy-page.png) |
+| Inspire | ![inspire mobile](/documentation/test_images/inspire-page.png) |
+| Share | ![share mobile](/documentation/test_images/share-page2.png) |
+<br>
 
 ## Manual Testing
-
 
 ### Browser compatibility 
 
@@ -73,10 +76,7 @@ The web browsers used for testing are:
 It was also tested on multiple devices to ensure it was responsive and behaved as expected. Devices used for testing were:
 
 1. Pixel4a (Android 13)
-2. Iphone ??? - This identified some issues, please see [Known Bugs](./README.md#bugs) section of the README.md. 
-3. 
-4. 
-5. 
+2. Iphone 14 Pro Max - This identified some issues, please see [Known Bugs](./README.md#bugs) section of the README.md. 
 <br>
 
 ## Testing Clickable Links & Buttons
@@ -161,7 +161,6 @@ It was also tested on multiple devices to ensure it was responsive and behaved a
 | To enjoy using the site in part due to the pleasing aesthetics and affordances | The site has a clean and user friendly design, and is easy to to use for anyone | Pass |
 <br>
 
-
 ### As a returning user I would like
 
 | User Story                                            | Acceptance Criteria | Result | 
@@ -170,5 +169,6 @@ It was also tested on multiple devices to ensure it was responsive and behaved a
 | To be able to find previous soundscapes to load quickly  | The users choice of added music is added stored in the browsers cookies, and will show last added sounds once the site loads | Pass |
 | To play a different game to what I played last time  | At the moment the the game choises are limited to one game | ---- |
 
-
 ### 
+
+
