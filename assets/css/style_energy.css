@@ -20,8 +20,11 @@ span {
 }
 
 body {
-  background: url(../images/energy_game.png) rgba(0, 0, 0, 0.3);
-  
+  background: url(../images/energy_game.png) rgba(0, 0, 0, 0.3) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
