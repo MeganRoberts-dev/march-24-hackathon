@@ -59,7 +59,7 @@ body {
 
 /* Modal */
 .modal {
-  background-color: blueviolet;
+  background-color:rgba(0,0,0,0.5);
 }
 .enhanced-list li {
   margin-bottom: 10px;
