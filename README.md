@@ -58,7 +58,7 @@ As a first time user I would like:
 - To navigate to my desired page easily
 - To explore other areas of the site without having to navigate home
 - To be able to choose from a selection of predefined images and sounds
-- For the game to load quickly and contain smooth animations and features
+- For the game to be resettable so that user can start a new game whenever they desire to
 - To enjoy using the site in part due to the pleasing aesthetics and affordances
 
 As a returning user I would like:

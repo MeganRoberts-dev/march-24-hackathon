@@ -77,18 +77,98 @@ It was also tested on multiple devices to ensure it was responsive and behaved a
 3. 
 4. 
 5. 
+<br>
 
+## Testing Clickable Links & Buttons
 
+### Home Page
+
+| Clickable | Result |
+| --------- | ------ |
+| Logo (Navbar) | Pass |
+| Home (Navbar) | Pass |
+| Calm (Navbar) | Pass |
+| Energy (Navbar) | Pass |
+| Inspire (Navbar) | Pass |
+| Calm (Card) | Pass |
+| Energy (Card) | Pass |
+| Inspire (Card) | Pass |
+<br>
+
+### Calm Page
+
+| Clickable | Result |
+| --------- | ------ |
+| All links in the navbar | Pass |
+| Navbar "+" Button | Pass |
+| Navbar Stop Button | Pass |
+| Navbar Close Controls Button | Pass |
+| Navbar Volume Control Button | Pass |
+| Play Button | Pass |
+| Play Next Button | Pass |
+| Controls Button | Pass |
+| Volume Control | Pass |
+| Menu Brightness | Pass |
+| Images Slides 'Next' arrow | Pass |
+| Images Slides 'Previous' arrow | Pass |
+
+<br>
+
+### Energy Page
+
+| Clickable | Result |
+| --------- | ------ |
+| All links in the navbar | Pass |
+| Supercharged Button | Pass |
+| Energised Button | Pass |
+| Calm Button | Pass |
+| Tired Button | Pass |
+| Snooze mode Button| Pass |
+| Reset Button | Pass |
+| Instructions Button | Pass |
+<br>
+
+### Inspire Page
+
+| Clickable | Result |
+| --------- | ------ |
+| All links in the navbar | Pass |
+| "Need more inspiration" Button | Pass |
+<br>
+
+### Share Page
+
+| Clickable | Result |
+| --------- | ------ |
+| All links in the navbar | Pass |
+| Happiness factor wheel | Pass |
+| PotLuck Button | Pass |
+| Submit Button | Pass |
+
+<br>
 
 ## User Story Testing
 
-### New Site User
+###  As a first time user I would like
 
-| Goal | How are they achieved? |
-| :--- | :--- |
+| User Story                                            | Acceptance Criteria | Result | 
+|-------------------------------------------------------|---------------------|--------|
+| To understand the different happiness areas the site offers and how to use them | There are intuitive menu options to lead the user through the site | Pass |
+| To navigate to my desired page easily | The home page provides cards to simplify navigation directly upon arrival, and the UTime logo is a link bck to home too | Pass |
+| To explore other areas of the site without having to navigate home | The navigation bar is present on the top of all pages with a clear visible design with despriptive links | Pass |
+| To be able to choose from a selection of predefined images and sounds | Users can browse through aselection of default sounds and images | Pass |
+| For the game to be resettable so that user can start a new game whenever they desire to | The "Reset" button in the Energy (game page) allows the player to reset the game | Pass |
+| To enjoy using the site in part due to the pleasing aesthetics and affordances | The site has a clean and user friendly design, and is easy to to use for anyone | Pass |
+<br>
 
 
-### Frequent/Return User Goals
+### As a returning user I would like
 
-| Goal | How are they achieved? |
-| :--- | :--- |
+| User Story                                            | Acceptance Criteria | Result | 
+|-------------------------------------------------------|---------------------|--------|
+| To be able to choose my own music to accompany my scene of choice | Users can choose from e default selection of sounds, but also to choose and add new sounds in the calm page by pressing the "+" button.  | Pass |
+| To be able to find previous soundscapes to load quickly  | The users choice of added music is added stored in the browsers cookies, and will show last added sounds once the site loads | Pass |
+| To play a different game to what I played last time  | At the moment the the game choises are limited to one game | ---- |
+
+
+### 
