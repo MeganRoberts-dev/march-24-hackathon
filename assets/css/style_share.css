@@ -75,7 +75,7 @@ h1 {
 }
 
 .about-info h2 {
-    font-size: calc(1rem + 0.5vw);
+    font-size: 1.4em;
 }
 
 /*-- Scrollbar --*/
