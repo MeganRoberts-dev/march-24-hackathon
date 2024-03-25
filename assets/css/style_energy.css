@@ -122,32 +122,34 @@ body {
 
 
 /* Footer */
-
+.container-fluid {
+	margin-top: 2px;
+}
 #footer {
-	background-color: #fff9eb;
-	color: #333;
+	margin-top: 15px;
+	background-color: transparent;
+	color: white;
+	width: 100%;
+	bottom: 0;
 }
 
 .footer-info h3 {
-  margin-top: 15px;
-	color: #000000;
-  margin-left: auto;
+	color: white;
 }
 
 .footer-info p {
-	color: #333;
+	color: white;
 }
 
-/* ---- Social Links ---- */
+/* social links */
 
 .social-links a {
-	color: #323232;
-	
-	font-size: 25px;
+	color: white;
+	font-size: 30px;
 }
 
 .social-links a:hover {
-	color: #700b0b;
+	color:white;
 }
 
 
@@ -156,8 +158,32 @@ body {
 	padding-left: 0;
 }
 
+
+
+@media (max-width: 767px) {
+
+	.footer-info h3,
+	.footer-info p,
+	.social-links a {
+		display: block;
+		margin: 0 auto;
+		float: none;
+		color: white;
+	}
+
+	.social-links {
+		margin-top: 2px;
+		margin-bottom: 10px;
+	}
+
+	.footer-info,
+	.social-links {
+		text-align: center;
+	}
+}
+
 .team-name {
-	color: #8f0000;
+	color: white;
 }
 
 .copyright {
