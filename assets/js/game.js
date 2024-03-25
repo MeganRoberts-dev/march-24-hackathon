@@ -9,7 +9,7 @@ var resetButton = document.getElementById("resetButton")
 
 //Play Game function - Some help provided by my mentor Brian O'Hare
 function playGame(userChoice) {
-  const possibleActions = ['super charged', 'energised', 'calm', 'tired', 'snooze mode'];
+  const possibleActions = ['super charged', 'energised', 'calm', 'flow state', 'snooze mode'];
   const computerChoice = possibleActions[Math.floor(Math.random() * possibleActions.length)];
   const jsConfetti = new JSConfetti()
 
@@ -22,22 +22,22 @@ function playGame(userChoice) {
     result.textContent += ' WOW, a tie!';
     result.style.color = "black";
 } else if (
-    (userChoice === 'tired' && computerChoice === 'snooze mode') ||
-    (userChoice === 'tired' && computerChoice === 'calm') ||
-    (userChoice === 'super charged' && computerChoice === 'tired') ||
+    (userChoice === 'flow state' && computerChoice === 'snooze mode') ||
+    (userChoice === 'flow state' && computerChoice === 'calm') ||
+    (userChoice === 'super charged' && computerChoice === 'flow state') ||
     (userChoice === 'super charged' && computerChoice === 'energised') ||
     (userChoice === 'calm' && computerChoice === 'super charged') ||
     (userChoice === 'calm' && computerChoice === 'snooze mode') ||
     (userChoice === 'snooze mode' && computerChoice === 'super charged') ||
     (userChoice === 'snooze mode' && computerChoice === 'energised') ||
     (userChoice === 'energised' && computerChoice === 'calm') ||
-    (userChoice === 'energised' && computerChoice === 'tired')
+    (userChoice === 'energised' && computerChoice === 'flow state')
     ) {
       result.textContent += ' YOU WIN THIS ROUND!';
       score++;
       if(score == maxScore) {
         jsConfetti.addConfetti()
-        swal('Congrats!!', 'you defeated Draco Well done !!','success' ,{
+        swal('Congrats!!', 'YOU WON, Well done !!','success' ,{
         button:'WOOHOO'
         });
         score = 0;
