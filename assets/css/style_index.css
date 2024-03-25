@@ -32,7 +32,8 @@ body {
 }
 
 .main-content {
-	padding-top: 70px;
+	padding-top: 30px;
+	margin-bottom: 100px;
 }
 
 .container-fluid,
@@ -103,12 +104,13 @@ span {
 
 .card {
 	overflow: visible;
-	height: 300px;
+  	height: 300px;
 	margin: 10px;
-	min-width: 300px;
-	min-height: 300px;
+	min-height: 230px;
 	margin: 10px;
 	max-width: 300px;
+	height: auto;
+  aspect-ratio: 2 / 3;
 }
 
 
