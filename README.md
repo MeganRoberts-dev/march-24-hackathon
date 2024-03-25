@@ -130,11 +130,6 @@ The following table outlines the content that should be implemented to make a fu
 
         ![screenshot of soundscape navbar timer](documentation/rm_images/screenshots/navbar_ss_timer.png)
 
-    - **Calm page for small screens**
-
-        <img src="./documentation/rm_images/screenshots/calm-sm-1.png" alt="small screen calm page" width="300"/>
-        <img src="./documentation/rm_images/screenshots/calm-sm-2.png" alt="small screen calm page active players" width="300"/>
-
 
 - **Energy Page** 
 
@@ -169,8 +164,6 @@ The following table outlines the content that should be implemented to make a fu
 
 - **Share Page**
 
-??ZZ???W?W??W THESE NEED UPDATING TO HAVE FOOTER TOO <<><><<>>>
-
 ![about.html responsive pages](documentation/rm_images/screenshots/amiresponsive_about.png)
 
 The Share page facilitates users in spreading positivity from the app. Users can input their name and the recipient's email, compose a personalised message, and opt to include a Random Affirmation. Additionally, users can convey their happiness level through an emoji face, adjustable via the slider or PotLuck button.
@@ -192,7 +185,6 @@ A "Submit" button allows users to submit the form. Upon submission, a confirmati
 
 ![email confirmation](documentation/rm_images/screenshots/email_inside.PNG)
 
-
 The page transitions into an "About" section, offering a summary of the site's purpose and its design intentions. It introduces the team behind its creation—404 Sadness Not Found—displayed via a slider bar. Each team member is presented with a link to their preferred contact method.
 
 ![404 sadness not found team](documentation/rm_images/screenshots/creators.png)
@@ -211,11 +203,6 @@ Due to time and skill constraints, the following features were not implemented a
 ### Wireframes
 
 Wireframes for the website were created using 
-
-### Game Development
-
-?????????????????????
-
 
 ### Emails
 
@@ -237,19 +224,14 @@ All decisions were decided as a team
 
 Our logo was designed in-house with simplicity and sleekness in mind, ensuring it complements rather than distracts from the site's content. This conscious decision aims to keep users immersed in their own environment. Additionally, the design emphasises the words "i" and "me" within the word "Time," cleverly playing on the concept of a user's personal space.
 
-![Utime-logo](documentation/screenshots/utime_logo.png)
+![Utime-logo](documentation/rm_images/screenshots/utime_logo.png)
 
 #### Colour Palette
 
+Colours were generated using the colour palette tool by Coolors. The original color #DD2F4C was chosen as it stands out against an otherwise simple navbar (a conscious decision to ensure the pages fit with the imagery). Other colours were chosen to complement this
 
-??ZZ???W?W??W  content <<><><<>>>
+![Utime-logo](documentation/rm_images/colours.PNG) 
 
-imput colours for screenshot cooloors: 
-
-rgb(221, 47, 76)
-rgba(255, 255, 255, 0)
-
-+??
 
 ## Tools and Technologies
 
