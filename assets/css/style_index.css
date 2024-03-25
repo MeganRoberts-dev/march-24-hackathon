@@ -17,7 +17,8 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 	margin: 0;
-	background: url('../images/index-bg.png') center / cover no-repeat fixed;
+	background: url('../images/mountains.jpg') center / cover no-repeat fixed;
+	font-family: "poppins", sans-serif;
 }
 
 .content-wrap {
@@ -315,37 +316,35 @@ span {
 	}
 }
 
-/* ---------------- End Of Cards ----------------*/
-
-
-/* -------------- Footer --------------*/
-
 /* Footer */
+.container-fluid {
+	margin-top: 5px;
+}
 #footer {
-	background-color: #fff9eb;
-	color: #333;
+	margin-top: 15px;
+	background-color: transparent;
+	color: white;
 	width: 100%;
 	bottom: 0;
 }
 
 .footer-info h3 {
-	color: #000000;
+	color: white;
 }
 
 .footer-info p {
-	color: #333;
+	color: white;
 }
 
-/* ---- Social Links ---- */
+/* social links */
 
 .social-links a {
-	color: #323232;
-	margin-right: 15px;
-	font-size: 25px;
+	color: white;
+	font-size: 30px;
 }
 
 .social-links a:hover {
-	color: #700b0b;
+	color:white;
 }
 
 
@@ -364,10 +363,11 @@ span {
 		display: block;
 		margin: 0 auto;
 		float: none;
+		color: white;
 	}
 
 	.social-links {
-		margin-top: 10px;
+		margin-top: 2px;
 		margin-bottom: 10px;
 	}
 
@@ -378,7 +378,7 @@ span {
 }
 
 .team-name {
-	color: #8f0000;
+	color: white;
 }
 
 .copyright {
