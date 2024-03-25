@@ -130,10 +130,11 @@ The following table outlines the content that should be implemented to make a fu
 
         ![screenshot of soundscape navbar timer](documentation/rm_images/screenshots/navbar_ss_timer.png)
 
+    - **Calm page for small screens**
 
+        <img src="./documentation/rm_images/screenshots/calm-sm-1.png" alt="small screen calm page" width="300"/>
+        <img src="./documentation/rm_images/screenshots/calm-sm-2.png" alt="small screen calm page active players" width="300"/>
 
-        
-??ZZ???W?W??W  add in what it looks like on small screens  <<><><<>>>
 
 - **Energy Page** 
 
