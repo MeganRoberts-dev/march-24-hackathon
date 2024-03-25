@@ -3,8 +3,6 @@
 # UTime 😊 by 404 Sadness Not Found
 ## ***Your space, your soundtrack, your UTime.*** 
 
-![about.html responsive pages](documentation/rm_images/screenshots/amiresponsive_all.PNG)
-
 ## Introduction
 
 To celebrate World Happiness Day, The UTime app brings an opportunity for users to find their own on-screen happy place. A user can find a moment of calm by personalizing a visual and musical escape. Alternatively, they can re-energize their productivity by playing one of our happy games. Then, to make the world an even happier place, a user can then share their curated spaces with friends using our built in email service.
@@ -12,9 +10,10 @@ To celebrate World Happiness Day, The UTime app brings an opportunity for users 
 ------
 
 ## Showcase
-** Content **
-** Am I responsive **
-** Deployed site **
+
+![about.html responsive pages](documentation/rm_images/screenshots/amiresponsive_all.PNG)
+
+A link to the deployed site can be found here at [UTime.](https://meganroberts-dev.github.io/march-24-hackathon-utime/index.html)
 
 ------
 
@@ -24,14 +23,13 @@ To celebrate World Happiness Day, The UTime app brings an opportunity for users 
 
 In a busy world with many of us working from home, it can be difficult to take time and find a true moment of happiness in our day. Studies have shown how important both laughter and moments of calm can be to alleviate some of life's stress. We therefore decided to build a platform that can provide these things to a user, right on their screen.
 
-** Possibly opening content from webpage if this relates to the "problem" **
-
 ## Objectives
 
 To celebrate World Happiness Day, our objective was to create a harmonious space where users could navigate to content that would provide them with happiness. This meant creating content that would appeal to people looking for different things: 
 
 1. An online moment of calm - achieved through a visual and auditory experience.
-2. Reinvigorating energy - by playing a game with a soundtrack to match.
+2. Reinvigorating energy - by playing a game.
+3. A inspirational uplift - found in a mesmerising visual space.
 
 We then wanted a user to be able to share their happiness with others by incorporating an email service.
 
@@ -44,11 +42,12 @@ The target audience for this app is anyone looking to add happiness to their day
 - Explanation of what the site offers is easy to understand
 - Scenes and sounds work as expected
 - Game is intuitive and fun to play
+- An library of inspirational quotes
 - All content is clear and accessible
 - Features and navigation work as expected
 - Option to learn more about Sadness Not Found and the app
 - Visually Attractive
-- Option to share what a user has found via email
+- Option to share happiness via email
 
 ### User Stories
 
@@ -58,14 +57,16 @@ As a first time user I would like:
 - To navigate to my desired page easily
 - To explore other areas of the site without having to navigate home
 - To be able to choose from a selection of predefined images and sounds
-- For the game to be resettable so that user can start a new game whenever they desire to
+- For the game to be resettable so that a uer can start a new game whenever the desire to
+- To be able to find an inspirational quote that matches my mood and purpose.
 - To enjoy using the site in part due to the pleasing aesthetics and affordances
 
 As a returning user I would like:
 
 - To be able to choose my own music to accompany my scene of choice
-- To be able to find previous soundscapes to load quickly
-- To play a different game to what I played last time
+- To be able to find previouse soundscapes and for them to load quickly
+- To send an email with an alternative level of happiness
+
 
 ### Trade Offs
 
@@ -82,11 +83,13 @@ The following table outlines the content that should be implemented to make a fu
 | Option to find an inspiring quote                                          |     3      |            5            |       Y     |
 | Info modal that tells the user how to play the game                        |     4      |            5            |       Y     |
 | Score incrementation with successful game elements                         |     5      |            5            |       Y     |
-| Option to send curated spaces by email to a friend (via the built in form) |     5      |            5            |       Y     |
+| Option to send curated spaces by email to a friend (via the built in form) |     5      |            2            |       N     |
+| Option to send an happy email to a freind                                  |     5      |            5            |       Y     |
 | User feedback after submitting the form                                    |     5      |            5            |       Y     |
-| Page to remember soundscape profiles (for quick loading on return visits)  |     3      |            3            |       N     |
+| Page to remember soundscape profiles (for quick loading on return visits)  |     3      |            3            |      Y/N*   |
 | Links to social media                                                      |     5      |            5            |       Y     |
 
+* This feature has been partially implemented. At present sounds are stored using browser cookies. However, we haven't implemented a login function, which would enable users to access their soundscapes from different devices. Additionally, images are not currently saved.
 
 ### Features
 
@@ -109,11 +112,13 @@ The following table outlines the content that should be implemented to make a fu
 
  ![calm.html am I responsive image](documentation/rm_images/screenshots/amiresponsive_calm.png)
 
-- This page opens with the slogan 'Create a happy place.' It is a page where users can choose from a preselected sound to accompany an image of their choice (selected using the carousel of images). They can then sit back and enjoy the page, creating their own moment of calm in a busy, screen-filled day.
+- This page opens with a modal slogan 'Create a happy place.' It is a page where users can choose from a preselected sound to accompany an image of their choice (selected using the carousel of images). They can then sit back and enjoy the page, creating their own moment of calm in a busy, screen-filled day.
 
 - The pre-loaded music options offer flexibility, allowing users to position them anywhere on the screen. Coupled with the ability to adjust their appearance using the contrast slider, users can seamlessly integrate them with the background image, minimising distractions and enhancing the visual experience. The other in built options allow a user to pause the music, change the volume or remove any music they don't want to appear on their page.
 
-    ![screenshot of soundscape navbar](documentation/rm_images/screenshots/calm_music_moved.png)
+     - Demo of Calm page user experience and design (UXUI)
+
+        ![UIUX Demo](documentation/rm_images/calm_uxui.gif)
 
 - The navbar on this page has additional features, all of which are explained to a user when the hover over the feature. 
 
@@ -125,8 +130,7 @@ The following table outlines the content that should be implemented to make a fu
 
         ![screenshot of soundscape navbar timer](documentation/rm_images/screenshots/navbar_ss_timer.png)
 
-    - Demo of Calm page user experience and design (UXUI)
-   ![UIUX Demo](documentation/rm_images/calm_uxui.gif)
+
 
         
 ??ZZ???W?W??W  add in what it looks like on small screens  <<><><<>>>
@@ -135,13 +139,32 @@ The following table outlines the content that should be implemented to make a fu
 
  ![game.html am I responsive image](documentation/rm_images/screenshots/amiresponsive_energy.png)
 
-??ZZ???W?W??W  content <<><><<>>>
+- The energy page is a space for users to engage their brain, but in a relaxed way. It is a simple rock, paper, scissors, lizard, spock style game themed around different energy modes. A user plays against the universe (computer) and is notified if they won, lost or tied. Scores for each "player" increment as the rounds progress. The first user to reach 10 points wins. 
+ 
+   - Demo of Energy game
+
+    ![UIUX Demo Game](documentation/rm_images/game_walkthrough.gif)
+
+- The first user to reach 10 points wins. As the player you are either displayed a "Congrats" modal (with confetti) if you win or a "Unlucky" modal if you lose.
+
+    ![Congrats modal](documentation/rm_images/screenshots/congrats.png)
+
+    ![unlucky modal](documentation/rm_images/screenshots/unlucky.png)
+
+- The "i" button takes you into a modal explaining which energy which. 
+
+    ![info modal](documentation/rm_images/screenshots/instructions_modal.png)
+
 
 - **Inspire Page**
 
  ![affirmations.html am I responsive image](documentation/rm_images/screenshots/amiresponsive_inspire.png)
 
-??ZZ???W?W??W  content <<><><<>>>
+- This page gives the user access to inspirational quotes, and a visually rich space in which to enjoy it. They can select a diferent quote by clicking the "Need more inspiration" button, allowing them to find a quote that suits their mood and promotes their own happiness. With each click, the background colours change, further enriching their experience. 
+
+ - Demo of inspiration page
+
+    ![UIUX Demo Inspiration](documentation/rm_images/inspiration_walkthrough.gif)
 
 - **Share Page**
 
