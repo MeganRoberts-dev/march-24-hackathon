@@ -57,6 +57,10 @@ body {
 
 }
 
+#result {
+  margin-top: 50px;
+}
+
 /* Modal */
 .modal {
   background-color:rgba(0,0,0,0.5);
