@@ -343,11 +343,10 @@ Resources used on the site were taken from the following sources:
 
 
 
-
 The 404 Sadness Not Found Team:
 
 - [Meghan Roberts](https://github.com/MeganRoberts-dev)
 - [Karen Samad](https://github.com/kosamad)
-- [Alex Hoenig](https://github.com/A-Hoenig)
+- [Alex Hönig](https://github.com/A-Hoenig)
 - [Colin Breakwell](https://github.com/BreakellrZ)
-- [Soroush](https://github.com/SoroushGReza)
+- [Soroush Gholamreza](https://github.com/SoroushGReza)
