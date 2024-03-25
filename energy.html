@@ -80,12 +80,11 @@
                 <figcaption class="blockquote-footer">
                   <div id="gameBlurb">
                     This game is desgined to engage your brain, but in a relaxed way. Don't think too much and enjoy
-                    some simple pleasure while you play against your computer.<cite title="Source Title"></cite>
+                    some simple pleasure while you play against The Universe.<cite title="Source Title"></cite>
                   </div>
                 </figcaption>
                 <div class="ml-1">
-                  <button class="btn btn-outline-info" id="btn_1" onclick="playGame('super charged')">Super
-                    charged</button>
+                  <button class="btn btn-outline-info" id="btn_1" onclick="playGame('super charged')">Super charged</button>
                   <button class="btn btn-outline-info" id="btn_2" onclick="playGame('energised')">Energised</button>
                   <button class="btn btn-outline-info" id="btn_3" onclick="playGame('calm')">Calm</button>
                   <button class="btn btn-outline-info" id="btn_4" onclick="playGame('tired')">Tired</button>
@@ -135,20 +134,22 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Game Instructions</h5>
+            <h4 class="modal-title" id="exampleModalLabel">Game Instructions</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p> -- First to 10 points wins the battle -- </p>
-            <p> -- Based on Rock, Paper, Scissors concept -- </p>
-            <p> -- Expelliarmus beats Stupefy & Confundo -- </p>
-            <p> -- Accio beats Expelliarmus & Petrificus Totalus -- </p>
-            <p> -- Stupefy beats Accio & Confundo -- </p>
-            <p> -- Confundo beats Accio & Petrificus Totalus -- </p>
-            <p> -- Petrificus beats Expelliarmus & Stupefy -- </p>
-            <p> -- Accio beats Expelliarmus & Petrificus Totalus -- </p>
+            <h5> First to 10 points wins the battle</h5>
+            <small>Based on Rock, Paper, Scissors, Lizard, Spock</small>
+            <p></p>
+            <ul class="enhanced-list">
+              <li><strong>Snooze Mode</strong> beats Energised and Tired <small>It's the ultimate low energy, catching those who've expended theirs.</small></li>
+              <li><strong>Calm</strong> beats Snooze Mode and Super Charged <small>The calm can weather the storm and also ease into rest.</small></li>
+              <li><strong>Tired</strong> beats Calm and Super Charged <small>Too tired to keep up the energy or be disturbed by the calm.</small></li>
+              <li><strong>Energised</strong> beats Calm and Tired <small>The energy to break through tiredness and calm.</small></li>
+              <li><strong>Super Charged</strong> beats Energised and Snooze Mode <small>The peak energy overwhelms others but can be soothed by calm or succumb to tiredness.</small></li>
+            </ul>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -158,36 +159,31 @@
     </div>
     </div>
     <!-- Footer -->
-    <footer id="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6">
-              <div class="footer-info">
-                <h3>UT<span>i</span>me<span>.</span></h3>
-                <p class="custom-p">Elevates Your Happiness.</p>
-              </div>
-              <div class="col-12 col-md-6 text-center text-md-start">
-                <div class="social-links d-none d-md-block">
-                  <a href="https://github.com/MeganRoberts-dev/march-24-hackathon-utime" class="me-2 social-link"><i
-                      class="bi bi-github"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 text-center mt-2 d-none d-md-block">
-                <div class="copyright">
-                  &copy; Built by <span class="team-name">404 Sadness Not Found</span> <strong>During World Happiness
-                    Day
-                    Hackathon</strong>
-                  March 2024
-                </div>
-              </div>
-            </div>
+  <footer id="footer" class="pt-4 pb-1 bg-light">
+    <div class="container-fluid">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-12 col-md-6 footer-info text-center text-md-start mb-3 mb-md-0">
+          <h3>UT<span>i</span>me<span>.</span></h3>
+          <p class="custom-p">Elevates Your Happiness.</p>
+        </div>
+        <div class="col-12 col-md-6 text-center text-md-start">
+          <div class="social-links d-none d-md-block">
+            <a href="https://github.com/MeganRoberts-dev/march-24-hackathon-utime" target="_blank" class="me-2 social-link"><i
+                class="bi bi-github"></i></a>
           </div>
         </div>
       </div>
-    </footer>
+      <div class="row">
+        <div class="col-12 text-center mt-2 d-none d-md-block">
+          <div class="copyright">
+            &copy; Built by <span class="team-name">404 Sadness Not Found</span> <strong>During World Happiness Day
+              Hackathon</strong>
+            March 2024
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
 

@@ -57,9 +57,31 @@ body {
 
 }
 
+#result {
+  margin-top: 50px;
+}
+
 /* Modal */
 .modal {
-  background-color: blueviolet;
+  background-color:rgba(0,0,0,0.5);
+}
+.enhanced-list li {
+  margin-bottom: 10px;
+}
+
+.enhanced-list li:first-child strong {
+  font-weight: bold;
+}
+
+.enhanced-list li small {
+  display: block;
+  color: rgb(137, 137, 137)
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 30px; 
 }
 
 /* Reset button */

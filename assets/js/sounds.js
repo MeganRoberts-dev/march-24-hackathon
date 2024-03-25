@@ -717,3 +717,13 @@ document.querySelectorAll('#backgroundSelectionModal .list-group-item').forEach(
         modal.hide();
     });
 });
+
+// show welcome modal on load
+document.addEventListener('DOMContentLoaded', function() {
+    var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+    welcomeModal.show();
+    // auto hide after 5"
+    setTimeout(function() {
+        welcomeModal.hide();
+    }, 4000);
+});
